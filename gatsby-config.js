@@ -6,7 +6,7 @@
  *
  */
 
-module.exports = {
+ module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -28,7 +28,7 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+          `http://tgb-foundation.theremotecreative.com/graphql`,
       },
     },
 
@@ -51,8 +51,11 @@ module.exports = {
      * See https://www.gatsbyjs.com/docs/gatsby-image/#setting-up-gatsby-image
      * if you're curious about it.
      */
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-page-transitions',
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest

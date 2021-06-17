@@ -1,3 +1,33 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Bodoni Regular";
+  src: url("../../static/fonts/bodoni-regular/font.woff"),
+       url("../../static/fonts/bodoni-regular/font.woff2");
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: "Bodoni Classic";
+  src: url("../../static/fonts/bodoni-classic/font.woff"),
+       url("../../static/fonts/bodoni-classic/font.woff2");
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: "Stay Bright Script";
+  src: url("../../static/fonts/staybright/font.woff"),
+       url("../../static/fonts/staybright/font.woff2");
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: "Antique Roman";
+  src: url("../../static/fonts/antique-roman/font.woff"),
+       url("../../static/fonts/antique-roman/font.woff2");
+  font-display: swap;
+} 
+
 /* CSS Custom Properties Definitions */
 
 :root {
