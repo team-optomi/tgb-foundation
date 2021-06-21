@@ -191,9 +191,9 @@ const MenuRight = styled.div`
     }
   }
   p {
-    font-family: "Kessel Light";
-    font-size: 12px;
-    line-height: 15px;
+    font-family: "Bodoni Classic";
+    font-size: 15px;
+    line-height: 1.3;
     font-weight: 700;
     color: #896d49;
     margin-bottom: 0;

@@ -106,6 +106,34 @@ const MainSection = styled.section`
             }
         }
     }
+    @media(max-width:1600px) {
+        form {
+            .flex-row {
+                max-width: 1420px;
+                .col-four {
+                    h2 {
+                        font-size: 100px;
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width:1400px) {
+        form {
+            .flex-row {
+                max-width: 1220px;
+                .col-four {
+                    padding: 0 20px;
+                    h2 {
+                        font-size: 80px;
+                    }
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 `
 
 export default FormSection

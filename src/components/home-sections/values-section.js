@@ -187,7 +187,7 @@ export default props => (
                                 childImageSharp {
                                     gatsbyImageData (
                                         width: 200
-                                        placeholder: TRACED_SVG
+                                        placeholder: BLURRED
                                         formats: [AUTO, WEBP, AVIF]
                                     )
                                 }
@@ -200,7 +200,7 @@ export default props => (
                                 childImageSharp {
                                     gatsbyImageData (
                                         width: 200
-                                        placeholder: TRACED_SVG
+                                        placeholder: BLURRED
                                         formats: [AUTO, WEBP, AVIF]
                                     )
                                 }
@@ -213,7 +213,7 @@ export default props => (
                                 childImageSharp {
                                     gatsbyImageData (
                                         width: 200
-                                        placeholder: TRACED_SVG
+                                        placeholder: BLURRED
                                         formats: [AUTO, WEBP, AVIF]
                                     )
                                 }
@@ -226,7 +226,7 @@ export default props => (
                                 childImageSharp {
                                     gatsbyImageData (
                                         width: 200
-                                        placeholder: TRACED_SVG
+                                        placeholder: BLURRED
                                         formats: [AUTO, WEBP, AVIF]
                                     )
                                 }

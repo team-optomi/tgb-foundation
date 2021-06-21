@@ -125,7 +125,7 @@ export default props => (
                   childImageSharp {
                       gatsbyImageData (
                           width: 800
-                          placeholder: TRACED_SVG
+                          placeholder: BLURRED
                           formats: [AUTO, WEBP, AVIF]
                       )
                   }

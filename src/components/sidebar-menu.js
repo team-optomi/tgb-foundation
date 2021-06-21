@@ -133,7 +133,7 @@ const MenuItem = styled.li`
     margin: 0 0 10px;
     letter-spacing: 1px;
     font-size: 18px;
-    font-family: "Kessel Light";
+    font-family: "Bodoni Classic";
     a {
         letter-spacing: 1px;
         font-size: 18px;
@@ -148,7 +148,7 @@ const MenuItem = styled.li`
 
 const SubMenuToggle = styled.div`
     p {
-        font-family: "Kessel Light";
+        font-family: "Bodoni Classic";
         letter-spacing: 1px;
         font-size: 18px;
         color: #fff;
