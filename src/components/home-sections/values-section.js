@@ -76,6 +76,7 @@ const MainSection = styled.section`
             color: #8e8f91;
             margin-top: 0;
             margin-bottom: 0;
+            transition-duration: .3s;
         }
         h3 {
             font-family: "Bodoni Classic";
@@ -100,6 +101,7 @@ const MainSection = styled.section`
         h3,
         p {
             color: #012756;
+            transition-duration: .3s;
         }
         h2 {
             margin-top: 0;
@@ -110,6 +112,7 @@ const MainSection = styled.section`
             font-size: 48px;
             font-weight: 100;
             line-height: 1.2; 
+            display: block;
         }
     }
     .row-three {
@@ -119,6 +122,7 @@ const MainSection = styled.section`
         h3,
         p {
             color: #8e8f91;
+            transition-duration: .3s;
         }
         h2 {
             margin-top: 0;
@@ -134,6 +138,7 @@ const MainSection = styled.section`
             font-weight: 100;
             line-height: 1.2; 
             text-transform: none;
+            display: block;
         }
         span.stay-bright {
             font-family: "Stay Bright Script";
@@ -142,6 +147,7 @@ const MainSection = styled.section`
             font-weight: 100;
             line-height: 1.2; 
             text-transform: none;
+            display: block;
         }
     }
     .flex-row {
@@ -165,10 +171,48 @@ const MainSection = styled.section`
         width: 25%;
         padding: 0 10px;
         margin-top: 20px;
+        transition-duration: .3s;
     }
     .col-five {
         width: 20%;
         padding: 0 20px;
+        transition-duration: .3s;
+    }
+    @media(max-width:1200px) {
+        .col-five {
+            width: 30%;
+        }
+    }
+    @media(max-width:992px) {
+        .col-four {
+            width: 50%;
+        }
+        .col-five {
+            width: 50%;
+        }
+        p {
+            br {
+                display: none;
+            }
+        }
+    }
+    @media(max-width: 530px) {
+        .col-four {
+            width: 100%;
+        }
+        .col-five {
+            width: 100%;
+        }
+        .flex-row {
+            h2 {
+                font-size: 56px;
+            }
+        }
+        .row-three {
+            span.script-large {
+                font-size: 36px;
+            }
+        }
     }
 `
 

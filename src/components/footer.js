@@ -29,6 +29,7 @@ const FooterMain = styled.footer`
         align-items: center;
         .section-one {
             width: 25%;
+            transition-duration: .3s;
             .footer-logo {
                 max-width: 200px;
                 width: 100%;
@@ -39,6 +40,7 @@ const FooterMain = styled.footer`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition-duration: .3s;
                 .gatsby-image-wrapper {
                     max-width: 35px !important;
                     margin-right: 10px;
@@ -54,6 +56,7 @@ const FooterMain = styled.footer`
             width: 50%;
             text-align: center;
             margin-top: 200px;
+            transition-duration: .3s;
             p.stay-bright {
                 font-family: "Stay Bright Script";
                 width: 100%;
@@ -63,6 +66,7 @@ const FooterMain = styled.footer`
                 line-height: 1.2;
                 text-transform: none;
                 margin-bottom: 10px;
+                transition-duration: .3s;
             }
             p.footer-sub {
                 color: #8e8f91;
@@ -76,6 +80,7 @@ const FooterMain = styled.footer`
         }
         .section-three {
             width: 25%;
+            transition-duration: .3s;
             h3 {
                 font-family: "Stay Bright Script";
                 width: 100%;
@@ -90,6 +95,7 @@ const FooterMain = styled.footer`
                 list-style: none;
                 display: flex;
                 flex-wrap: wrap;
+                transition-duration: .3s;
                 li {
                     width: 50%;
                     font-size: 18px;
@@ -99,6 +105,49 @@ const FooterMain = styled.footer`
                         color: #8e8f91;
                         text-decoration: none;
                     }
+                }
+            }
+        }
+    }
+    @media(max-width:1000px) {
+        .footer-flex {
+            flex-wrap: wrap;
+            .section-one {
+                order: 1;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                .footer-logo {
+                    margin: 20px auto;
+                }
+                .footer-socials {
+                    max-width: 100%;
+                }
+            }
+            .middle-section {
+                order: 3;
+                width: 100%;
+                margin-top: 35px;
+            }
+            .section-three {
+                order: 2;
+                width: 100%;
+                margin-top: 35px;
+                h3 {
+                    text-align: center;
+                }
+                ul {
+                    max-width: 230px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    @media(max-width:560px) {
+        .footer-flex {
+            .middle-section {
+                p.stay-bright {
+                    font-size: 32px;
                 }
             }
         }

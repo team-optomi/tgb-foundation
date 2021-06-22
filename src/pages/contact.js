@@ -283,6 +283,31 @@ const FormSection = styled.section`
             }
         }
     }
+    @media(max-width:1000px) {
+        form {
+            .flex-row {
+                flex-wrap: wrap;
+                .col-four {
+                    width: 30%;
+                    &:first-child {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        form {
+            .flex-row {
+                .col-four {
+                    width: 100%;
+                    h2 {
+                        font-size: 44px;
+                    }
+                }
+            }
+        }
+    }
 `
 
 export default props => (

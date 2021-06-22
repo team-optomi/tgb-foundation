@@ -65,7 +65,21 @@ const MainSection = styled.section`
             display: inline-block;
         }
     }
-    
+    @media(max-width:1200px) {
+        .flex-row {
+            h2 {
+                font-size: 90px;
+            }
+        }
+        
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            h2 {
+                font-size: 44px;
+            }
+        }
+    }
 `
 
 export default props => (

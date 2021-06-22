@@ -46,6 +46,7 @@ const MainSection = styled.section`
         font-size: 150px;
         font-weight: 100;
         line-height: 1.2;
+        transition-duration: .3s;
     }
     .box-row {
         max-width: 1320px;
@@ -68,6 +69,7 @@ const MainSection = styled.section`
         }
         .left-col {
             position: relative;
+            transition-duration: .3s;
             &:before {
                 content: '';
                 position: absolute;
@@ -98,6 +100,7 @@ const MainSection = styled.section`
             }
         }
         .right-col {
+            transition-duration: .3s;
             .top-row {
                 padding: 30px 10px;
                 padding-top: 0;
@@ -144,6 +147,25 @@ const MainSection = styled.section`
                         margin-bottom: 10px;
                     }
                 }
+            }
+        }
+    }
+    @media(max-width:1200px) {
+        h2 {
+            font-size: 90px;
+        }
+    }
+    @media(max-width:767px) {
+        h2 {
+            font-size: 44px;
+        }
+        .box-row {
+            flex-wrap: wrap;
+            .left-col {
+                width: 100%;
+            }
+            .right-col {
+                width: 100%;
             }
         }
     }
