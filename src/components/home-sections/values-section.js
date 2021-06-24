@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const ValuesSection = ({ data: { queryContent } }) => {
 
     const iconOne = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.localFile.childImageSharp.gatsbyImageData)
+    const iconOneHalf = getImage(queryContent.homePageContent.homeProvidingSection.hpNewImage.localFile.childImageSharp.gatsbyImageData)
     const iconTwo = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.localFile.childImageSharp.gatsbyImageData)
     const iconThree = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
     const iconFour = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.localFile.childImageSharp.gatsbyImageData)
@@ -16,19 +17,23 @@ const ValuesSection = ({ data: { queryContent } }) => {
             <div class="row-one">
                 <div class="flex-row">
                     <h2>{queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
-                    <div class="col-four">
+                    <div class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
                         <GatsbyImage image={iconOne} alt={queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
                     </div>
-                    <div class="col-four">
+                    <div class="col-five">
+                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
+                        <GatsbyImage image={iconOneHalf} alt={queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
+                    </div>
+                    <div class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
                         <GatsbyImage image={iconTwo} alt={queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
                     </div>
-                    <div class="col-four">
+                    <div class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
                         <GatsbyImage image={iconThree} alt={queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
                     </div>
-                    <div class="col-four">
+                    <div class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
                         <GatsbyImage image={iconFour} alt={queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
                     </div>
@@ -139,6 +144,7 @@ const MainSection = styled.section`
             line-height: 1.2; 
             text-transform: none;
             display: block;
+            margin-bottom: -20px;
         }
         span.stay-bright {
             font-family: "Stay Bright Script";
@@ -190,6 +196,11 @@ const MainSection = styled.section`
         .col-five {
             width: 50%;
         }
+        .flex-row {
+            span.script-large {
+                margin-bottom: 0;
+            }
+        }
         p {
             br {
                 display: none;
@@ -226,6 +237,19 @@ export default props => (
                         homeProvidingTitle
                         hpColumnOneTitle
                         hpColumnOneIcon {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        hpColumnOneHalfTitle
+                        hpNewImage {
                             title
                             localFile {
                                 childImageSharp {

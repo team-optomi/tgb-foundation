@@ -13,17 +13,19 @@ const ProgramsPage = ({ data: { queryContent } }) => {
     const sectionTwoImage = getImage(queryContent.programsContent.pSectionTwoMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionThreeImage = getImage(queryContent.programsContent.pSectionThreeMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionFourImage = getImage(queryContent.programsContent.pSectionFourMainImage.localFile.childImageSharp.gatsbyImageData)
+    const sectionFiveImage = getImage(queryContent.programsContent.pSectionFiveMainImage.localFile.childImageSharp.gatsbyImageData)
 
     const galleryOne = queryContent.programsContent.pSectionOneImageGallery
     const galleryTwo = queryContent.programsContent.pSectionTwoGallery
     const galleryThree = queryContent.programsContent.pSectionThreeGallery
     const galleryFour = queryContent.programsContent.pSectionFourGallery
+    const galleryFive = queryContent.programsContent.pSectionFiveGallery
 
 
     return(
         <Layout>
             <SEO 
-            title={"About page"} 
+            title={"Programs page"} 
             description={"SEO description"}
             />
             <HeroSection>
@@ -38,12 +40,12 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </HeroSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-image">
-                        <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
-                    </div>
                     <div class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
                     </div>
+                    <div class="main-image">
+                        <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
+                    </div>   
                 </div>
                 <div class="gallery-row">
                 {galleryOne.map(imageSrc => (
@@ -53,11 +55,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionTwoContent }} />
-                    </div>
                     <div class="main-image">
                         <GatsbyImage image={sectionTwoImage} alt={queryContent.programsContent.pSectionTwoMainImage.title} />
+                    </div>
+                    <div class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionTwoContent }} />
                     </div>
                 </div>
                 <div class="gallery-row">
@@ -68,11 +70,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-image">
-                        <GatsbyImage image={sectionThreeImage} alt={queryContent.programsContent.pSectionThreeMainImage.title} />
-                    </div>
                     <div class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionThreeContent }} />
+                    </div>
+                    <div class="main-image">
+                        <GatsbyImage image={sectionThreeImage} alt={queryContent.programsContent.pSectionThreeMainImage.title} />
                     </div>
                 </div>
                 <div class="gallery-row">
@@ -83,15 +85,30 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFourContent }} />
-                    </div>
                     <div class="main-image">
                         <GatsbyImage image={sectionFourImage} alt={queryContent.programsContent.pSectionFourMainImage.title} />
+                    </div>
+                    <div class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFourContent }} />
                     </div>
                 </div>
                 <div class="gallery-row">
                 {galleryFour.map(imageSrc => (
+                    <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                ))}
+                </div>
+            </MainSection>
+            <MainSection>
+                <div class="main-row">
+                    <div class="main-image">
+                        <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
+                    </div>
+                    <div class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                {galleryFive.map(imageSrc => (
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
@@ -324,6 +341,30 @@ export default props => (
                         }
                     }
                     pSectionFourGallery {
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 800
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                    pSectionFiveContent
+                    pSectionFiveMainImage {
+                        title
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 1200
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                    pSectionFiveGallery {
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (

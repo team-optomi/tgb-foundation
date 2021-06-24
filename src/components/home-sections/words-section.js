@@ -36,19 +36,19 @@ const WordsSection = () => {
 const MainSection = styled.section`
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 610px;
     background-color: #fff;
     p {
         font-family: "Antique Roman";
     }
     #words_line_one {
         position: absolute;
-        top: 0px;
-        left: calc( 50% - 440px);
+        top: -45px;
+        left: calc( 50% - 600px);
         display: flex;
         justify-content: center;
         p {
-            font-size: 140px;
+            font-size: 200px;
             letter-spacing: 10px;
             margin: 0 20px;
         }
@@ -62,11 +62,11 @@ const MainSection = styled.section`
     #words_line_two {
         position: absolute;
         top: 120px;
-        left: calc( 50% - 458px);
+        left: calc( 50% - 618px);
         display: flex;
         justify-content: center;
         p {
-            font-size: 140px;
+            font-size: 200px;
             letter-spacing: 10px;
             margin: 0 20px;
         }
@@ -89,12 +89,12 @@ const MainSection = styled.section`
     }
     #words_line_three {
         position: absolute;
-        top: 180px;
-        left: calc( 50% - 132px);
+        top: 206px;
+        left: calc( 50% - 190px);
         display: flex;
         justify-content: center;
         p {
-            font-size: 140px;
+            font-size: 200px;
             letter-spacing: 10px;
             margin: 0 20px;
         }
@@ -111,12 +111,12 @@ const MainSection = styled.section`
     }
     #words_line_four {
         position: absolute;
-        top: 290px;
-        left: calc( 50% - 568px);
+        top: 370px;
+        left: calc( 50% - 758px);
         display: flex;
         justify-content: center;
         p {
-            font-size: 140px;
+            font-size: 200px;
             letter-spacing: 10px;
             margin: 0 20px;
         }
