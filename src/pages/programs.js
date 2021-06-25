@@ -40,7 +40,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </HeroSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-content">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
                     </div>
                     <div class="main-image">
@@ -58,7 +62,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     <div class="main-image">
                         <GatsbyImage image={sectionTwoImage} alt={queryContent.programsContent.pSectionTwoMainImage.title} />
                     </div>
-                    <div class="main-content">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionTwoContent }} />
                     </div>
                 </div>
@@ -70,7 +78,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
             <MainSection>
                 <div class="main-row">
-                    <div class="main-content">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionThreeContent }} />
                     </div>
                     <div class="main-image">
@@ -88,7 +100,11 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     <div class="main-image">
                         <GatsbyImage image={sectionFourImage} alt={queryContent.programsContent.pSectionFourMainImage.title} />
                     </div>
-                    <div class="main-content">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFourContent }} />
                     </div>
                 </div>
@@ -100,11 +116,15 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
             <MainSection>
                 <div class="main-row">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
+                    </div>
                     <div class="main-image">
                         <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
-                    </div>
-                    <div class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
                     </div>
                 </div>
                 <div class="gallery-row">
@@ -180,6 +200,30 @@ const HeroSection = styled.section`
             }
         }
     }
+    @media(max-width:900px) {
+        .hero-content {
+            > div {
+                margin-bottom: 50px;
+                > div {
+                    margin-right: auto; 
+                }
+            }
+        }
+    }
+    @media(max-width:550px) {
+        .hero-content {
+            > div {
+                > div {
+                    h1 {
+                        font-size: 44px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
 `
 
 const MainSection = styled.section`
@@ -201,6 +245,7 @@ const MainSection = styled.section`
         }
         .main-content {
             padding: 40px;
+            transition-delay: .6s;
             h2 {
                 font-family: "Stay Bright Script";
                 width: 100%;
@@ -231,6 +276,58 @@ const MainSection = styled.section`
     }
     .gallery-row {
         display: flex;
+    }
+    @media(max-width:1250px) {
+        .main-row {
+            .main-content {
+                h2 {
+                    font-size: 44px;
+                    line-height: 1;
+                    margin-top: -20px;
+                }
+                p {
+                    br {
+                        display: none;
+                    }
+                }
+                .gatsby-image-wrapper {
+                    max-width: 150px !important;
+                    img {
+                        max-width: 150px;
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .main-row {
+            flex-wrap: wrap;
+            > div {
+                &.main-content {
+                    width: 100%;
+                    order: 1;
+                }
+                &.main-image {
+                    width: 100%;
+                    order: 2;
+                }
+            }
+        }
+        .gallery-row {
+            background-color: #000;
+            flex-wrap: wrap;
+            justify-content: center;
+            .gatsby-image-wrapper {
+                width: 50%;
+            }
+        }
+    }
+    @media(max-width:440px) {
+        .main-row {
+            .main-content {
+                padding: 40px 20px;
+            }
+        }
     }
 `
 

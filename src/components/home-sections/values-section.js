@@ -16,24 +16,48 @@ const ValuesSection = ({ data: { queryContent } }) => {
         <MainSection>
             <div class="row-one">
                 <div class="flex-row">
-                    <h2>{queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
-                    <div class="col-five">
+                    <h2
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >{queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
                         <GatsbyImage image={iconOne} alt={queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
                         <GatsbyImage image={iconOneHalf} alt={queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
                         <GatsbyImage image={iconTwo} alt={queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
                         <GatsbyImage image={iconThree} alt={queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
                         <GatsbyImage image={iconFour} alt={queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
                     </div>
@@ -41,26 +65,58 @@ const ValuesSection = ({ data: { queryContent } }) => {
             </div>
             <div class="row-two">
                 <div class="flex-row">
-                    <h2>{queryContent.homePageContent.homeOurValuesSection.homeValuesTitle}</h2>
-                    <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeOurValuesSection.homeValuesContent}} />
+                    <h2
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >{queryContent.homePageContent.homeOurValuesSection.homeValuesTitle}</h2>
+                    <div 
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeOurValuesSection.homeValuesContent}} />
                 </div>
             </div>
             <div class="row-three">
                 <div class="flex-row">
-                    <h2>{queryContent.homePageContent.homeImpactSection.homeImpactTitle}</h2>
-                    <div class="col-five">
+                    <h2
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >{queryContent.homePageContent.homeImpactSection.homeImpactTitle}</h2>
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnOne}} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnTwo}} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnThree}} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnFour}} />
                     </div>
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnFive}} />
                     </div>
                 </div>
@@ -81,7 +137,7 @@ const MainSection = styled.section`
             color: #8e8f91;
             margin-top: 0;
             margin-bottom: 0;
-            transition-duration: .3s;
+            transition-delay: .6s;
         }
         h3 {
             font-family: "Bodoni Classic";
@@ -106,7 +162,10 @@ const MainSection = styled.section`
         h3,
         p {
             color: #012756;
-            transition-duration: .3s;
+            transition-delay: .6s;
+        }
+        div {
+            transition-delay: .6s;
         }
         h2 {
             margin-top: 0;
@@ -127,7 +186,7 @@ const MainSection = styled.section`
         h3,
         p {
             color: #8e8f91;
-            transition-duration: .3s;
+            transition-delay: .6s;
         }
         h2 {
             margin-top: 0;
@@ -182,7 +241,21 @@ const MainSection = styled.section`
     .col-five {
         width: 20%;
         padding: 0 20px;
-        transition-duration: .3s;
+        &:nth-child(2) {
+            transition-delay: .6s;
+        }
+        &:nth-child(3) {
+            transition-delay: .9s;
+        }
+        &:nth-child(4) {
+            transition-delay: 1.2s;
+        }
+        &:nth-child(5) {
+            transition-delay: 1.5s;
+        }
+        &:nth-child(6) {
+            transition-delay: 1.8s;
+        }
     }
     @media(max-width:1200px) {
         .col-five {
@@ -195,6 +268,21 @@ const MainSection = styled.section`
         }
         .col-five {
             width: 50%;
+            &:nth-child(2) {
+                transition-delay: .6s;
+            }
+            &:nth-child(3) {
+                transition-delay: .6s;
+            }
+            &:nth-child(4) {
+                transition-delay: .6s;
+            }
+            &:nth-child(5) {
+                transition-delay: .6s;
+            }
+            &:nth-child(6) {
+                transition-delay: .6s;
+            }
         }
         .flex-row {
             span.script-large {

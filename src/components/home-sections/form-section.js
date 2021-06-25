@@ -10,7 +10,11 @@ const FormSection = () => {
         <MainSection>
             <form name="TGB Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
                 <input type="hidden" name="form-name" value="TGB Email" aria-label="Input"/>
-                <div class="flex-row">
+                <div 
+                data-sal="slide-up"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="flex-row">
                     <div class="col-four">
                         <h2>stay connected</h2>
                     </div>
@@ -69,6 +73,7 @@ const MainSection = styled.section`
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition-delay: .6s;
             .col-four {
                 width: 20%;
                 &:first-child {

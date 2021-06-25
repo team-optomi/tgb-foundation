@@ -11,8 +11,16 @@ const LegacySection = ({ data: { queryContent } }) => {
 
         <MainSection>
             <div class="flex-row">
-                <h2>{queryContent.homePageContent.homeLegacySection.legacySectionTitle}</h2>
-                <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeLegacySection.legacySectionContent}} />
+                <h2
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                >{queryContent.homePageContent.homeLegacySection.legacySectionTitle}</h2>
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeLegacySection.legacySectionContent}} />
             </div>
             <GatsbyImage image={bottomImage} alt={queryContent.homePageContent.homeBottomFullImage.title} />
         </MainSection>
@@ -31,6 +39,9 @@ const MainSection = styled.section`
         margin: 0 auto;
         padding: 0 20px;
         text-align: center;
+        div {
+            transition-delay: .6s;
+        }
         h2 {
             text-align: center;
             font-family: "Stay Bright Script";
@@ -39,6 +50,7 @@ const MainSection = styled.section`
             font-weight: 100;
             line-height: 1.2;
             margin-top: 0;
+            transition-delay: .6s;
         }
         p {
             color: #8e8f91;

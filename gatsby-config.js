@@ -56,6 +56,12 @@
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-page-transitions',
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+          threshold: 0.05, // Percentage of an element's area that needs to be visible to launch animation
+      }
+    },
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest

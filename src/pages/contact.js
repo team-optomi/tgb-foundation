@@ -120,6 +120,19 @@ const HeroSection = styled.section`
             }
         }
     }
+    @media(max-width:900px) {
+        .hero-content {
+            > div {
+                margin-bottom: 50px;
+                h1 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
 `
 
 const FormSection = styled.section`
@@ -293,6 +306,23 @@ const FormSection = styled.section`
                         width: 100%;
                     }
                 }
+            }
+        }
+    }
+    @media(max-width:900px) {
+        .top-row {
+            > div {
+                h3 {
+                    margin: 0 auto;
+                }
+                p {
+                    margin: 0 auto;
+                }
+            }
+        }
+        .bottom-row {
+            > div {
+                margin-right: auto;
             }
         }
     }

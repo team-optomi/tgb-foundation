@@ -11,16 +11,28 @@ const HomeHero = ({ data: { queryContent } }) => {
   return(
 
     <HeroSection>
-      <div class="hero-background">
+      <div 
+      data-sal="fade"
+      data-sal-duration="1000"
+      data-sal-easing="ease"
+      class="hero-background">
         <GatsbyImage image={heroImage} alt={queryContent.featuredImage.node.title} />
       </div>
 
       <div class="hero-content">
         <div class="hero-flex">
-          <div class="hero-left">
+          <div 
+          data-sal="slide-right"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
+          class="hero-left">
             <GatsbyImage image={heroLogo} alt={queryContent.homePageContent.homeHeroLogo.title} />
           </div>
-          <div class="hero-right">
+          <div 
+          data-sal="slide-left"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
+          class="hero-right">
             <div dangerouslySetInnerHTML={{ __html: queryContent.homePageContent.homeHeroContent }}/>
           </div>
         </div>
@@ -77,7 +89,7 @@ const HeroSection = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition-duration: .3s;
+        transition-delay: 1s;
         .gatsby-image-wrapper {
           max-width: 800px;
           width: 100%;
@@ -91,7 +103,7 @@ const HeroSection = styled.section`
         justify-content: center;
         align-items: flex-end;
         padding-bottom: 100px;
-        transition-duration: .3s;
+        transition-delay: 1.5s;
         > div {
           text-align: right;
           h1 {
@@ -140,6 +152,7 @@ const HeroSection = styled.section`
           width: 100%;
           .gatsby-image-wrapper {
             margin-top: 20vh;
+            margin-left: 0;
             max-width: 400px;
             width: 100%;
           }

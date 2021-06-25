@@ -25,74 +25,150 @@ const AboutPage = ({ data: { queryContent } }) => {
             description={"SEO description"}
             />
             <HeroSection>
-                <div class="hero-background">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="hero-background">
                     <GatsbyImage image={heroImage} alt={queryContent.featuredImage.node.title} />
                 </div>
-                <div class="hero-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="hero-content">
                     <div dangerouslySetInnerHTML={{ __html: queryContent.content }} />
                 </div>
-                <div class="hero-sub">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="hero-sub">
                     <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.aboutHeroSub}} />
                 </div>
             </HeroSection>
             <SectionOne>
-                <div class="section-background">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-background">
                     <GatsbyImage image={sectionOne} alt={queryContent.aboutPageContent.aboutSectionOneBackground.title} />
                 </div>
-                <div class="section-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-content">
                     <div>
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.aboutSectionOneContent}} />
                     </div>
                 </div>
             </SectionOne>
             <StewardsSection>
-                <h2>foundation stewards</h2>
-                <hr/>
+                <h2
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                >foundation stewards</h2>
+                <hr
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                />
                 <div class="flex-row">
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionOneContent}} />
                     </div>
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardOne} alt={queryContent.aboutPageContent.foundationStewards.fSectionOneImage.title} />
                     </div>
                 </div>
                 <div class="flex-row">
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardTwo} alt={queryContent.aboutPageContent.foundationStewards.fSectionTwoImage.title} />
                     </div>
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionTwoContent}} />
                     </div>
                 </div>
                 <div class="flex-row">
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionThreeContent}} />
                     </div>
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardThree} alt={queryContent.aboutPageContent.foundationStewards.fSectionThreeImage.title} />
                     </div>
                 </div>
                 <div class="flex-row">
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardFour} alt={queryContent.aboutPageContent.foundationStewards.fSectionFourImage.title} />
                     </div>
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionFourContent}} />
                     </div>
                 </div>
                 <div class="flex-row">
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionFiveContent}} />
                     </div>
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardFive} alt={queryContent.aboutPageContent.foundationStewards.fSectionFiveImage.title} />
                     </div>
                 </div>
                 <div class="flex-row">
-                    <div class="section-background">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
                         <GatsbyImage image={stewardSix} alt={queryContent.aboutPageContent.foundationStewards.fSectionSixImage.title} />
                     </div>
-                    <div class="section-content">
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSixContent}} />
                     </div>
                 </div>
@@ -110,7 +186,7 @@ const HeroSection = styled.section`
     .hero-background {
         width: 60%;
         height: 100vh;
-        transition-duration: .3s;
+        transition-delay: .6s;
         .gatsby-image-wrapper {
             height: 100vh;
             img {
@@ -123,7 +199,7 @@ const HeroSection = styled.section`
         width: 40%;
         height: 100vh;
         background-color: #fff;
-        transition-duration: .3s;
+        transition-delay: .9s;
         > div {
             padding: 0 20px;
         }
@@ -182,7 +258,7 @@ const HeroSection = styled.section`
     }
     .hero-sub {
         width: 100%;
-        transition-duration: .3s;
+        transition-delay: .6s;
         background-color: #fff;
         padding: 35px 20px;
         > div {
@@ -259,6 +335,34 @@ const HeroSection = styled.section`
             }
         }
     }
+    @media(max-width:900px) {
+        .hero-sub {
+            > div {
+                text-align: center;
+            }
+        }
+    }
+    @media(max-width:768px) {
+        .hero-content {
+            padding-top: 80px;
+        }
+    }
+    @media(max-width:750px) {
+        .hero-background {
+            width: 100%;
+            order: 2;
+        }
+        .hero-content {
+            width: 100%;
+            order: 1;
+            p {
+                text-align: center;
+            }
+        }
+        .hero-sub {
+            order: 3;
+        }
+    }
 `
 
 const SectionOne = styled.section`
@@ -269,6 +373,7 @@ const SectionOne = styled.section`
         position: absolute;
         width: 100%;
         height: 100vh;
+        transition-delay: .6s;
         img {
             width: 100%;
             height: 100vh;
@@ -280,6 +385,7 @@ const SectionOne = styled.section`
         width: 100%;
         display: flex;
         align-items: flex-end;
+        transition-delay: .9s;
         > div {
             max-width: 1620px;
             width: 100%;
@@ -321,6 +427,15 @@ const SectionOne = styled.section`
             }
         }
     }
+    @media(max-width:600px) {
+        .section-content {
+            > div {
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
 `
 
 const StewardsSection = styled.section`
@@ -357,6 +472,7 @@ const StewardsSection = styled.section`
         }
         > div {
             width: 50%;
+            transition-delay: .6s;
         }
         .section-content {
             padding: 150px 100px;
@@ -389,6 +505,43 @@ const StewardsSection = styled.section`
                     color: #012756;
                     padding: 0 5px;
                 }
+            }
+        }
+    }
+    @media(max-width:1200px) {
+        .flex-row {
+            .section-content {
+                padding: 75px;
+            }
+            .section-background {
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            flex-wrap: wrap;
+            > div {
+                width: 100%;
+            }
+            .section-content {
+                order: 1;
+                text-align: center !important;
+            }
+            .section-background {
+                order: 2;
+            }
+        }
+    }
+    @media(max-width:600px) {
+        h2 {
+            font-size: 36px;
+        }
+        .flex-row {
+            .section-content {
+                padding: 40px 20px;
             }
         }
     }

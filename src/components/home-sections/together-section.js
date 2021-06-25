@@ -11,8 +11,16 @@ const TogetherSection = ({ data: { queryContent } }) => {
     return(
 
         <MainSection>
-            <h2>{queryContent.homePageContent.homeTogetherSection.homeTogetherTitle}</h2>
-            <div class="box-row">
+            <h2
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            >{queryContent.homePageContent.homeTogetherSection.homeTogetherTitle}</h2>
+            <div 
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            class="box-row">
                 <div class="left-col">
                     <GatsbyImage image={imageLeft} alt={queryContent.homePageContent.homeTogetherSection.htLeftColumnBackground.title} />
                     <div class="left-col-content" dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeTogetherSection.htLeftColumnContent}} />
@@ -46,7 +54,7 @@ const MainSection = styled.section`
         font-size: 150px;
         font-weight: 100;
         line-height: 1.2;
-        transition-duration: .3s;
+        transition-delay: .6s;
     }
     .box-row {
         max-width: 1320px;
@@ -54,6 +62,7 @@ const MainSection = styled.section`
         margin: 0 auto;
         background-color: #012756;
         display: flex;
+        transition-delay: .6s;
         a.white-button {
             background-color: #fff;
             padding: 10px 30px;
