@@ -120,7 +120,7 @@ const MainSection = styled.section`
                     color: #734c28;
                     opacity: 0;
                     position: relative;
-                    left: -100px;
+                    left: -40px;
                 }
             }
         }
@@ -150,7 +150,7 @@ const MainSection = styled.section`
                     color: #734c28;
                     opacity: 0;
                     position: relative;
-                    left: -100px;
+                    left: -40px;
                 }
             }
         }
@@ -184,10 +184,13 @@ const MainSection = styled.section`
                     color: #734c28;
                     opacity: 0;
                     position: relative;
-                    left: -100px;
+                    left: -40px;
                 }
             }
         }
+    }
+    @media(max-width:1500px) {
+        
     }
 `
 
