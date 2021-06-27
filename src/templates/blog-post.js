@@ -51,6 +51,7 @@ export const pageQuery = graphql`
             includeTitle
             builderHeroTitle
             builderHeroImage {
+              title
               localFile {
                 childImageSharp {
                   gatsbyImageData
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
             bgPaddingTop
             bgTitleColor
             bgGalleryImages {
+              title
               localFile {
                 childImageSharp {
                   gatsbyImageData

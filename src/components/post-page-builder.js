@@ -1,6 +1,9 @@
 // src/components/post-page-builder.js
 
 import React from "react"
+import PostHeroImage from "../layouts/PostHeroImage"
+import PostContentSection from "../layouts/PostContentSection"
+import PostGallerySection from "../layouts/PostGallerySection"
 
 const PostPageBuilder = ({ layoutData }) => {
 
@@ -15,6 +18,9 @@ const PostPageBuilder = ({ layoutData }) => {
    * Mapping the fieldGroupName(s) to our components
    */
   const layouts = {
+    Post_Postpagebuilder_PostBuilder_BuilderFullWidthImage: PostHeroImage,
+    Post_Postpagebuilder_PostBuilder_BuilderContentSection: PostContentSection,
+    Post_Postpagebuilder_PostBuilder_BuilderGallerySection: PostGallerySection,
     page_default: Default
   }
 
