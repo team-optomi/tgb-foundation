@@ -214,6 +214,10 @@ const MainSection = styled.section`
             text-transform: none;
             display: block;
         }
+        .gatsby-image-wrapper {
+            max-width: 75px !important;
+            margin-top: -28px;
+        }
     }
     .flex-row {
         max-width: 1620px;

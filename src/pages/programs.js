@@ -369,7 +369,6 @@ export default props => (
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (
-                                    width: 800
                                     placeholder: BLURRED
                                     formats: [AUTO, WEBP, AVIF]
                                 )
@@ -393,7 +392,6 @@ export default props => (
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (
-                                    width: 800
                                     placeholder: BLURRED
                                     formats: [AUTO, WEBP, AVIF]
                                 )
@@ -417,7 +415,6 @@ export default props => (
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (
-                                    width: 800
                                     placeholder: BLURRED
                                     formats: [AUTO, WEBP, AVIF]
                                 )
@@ -441,7 +438,6 @@ export default props => (
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (
-                                    width: 800
                                     placeholder: BLURRED
                                     formats: [AUTO, WEBP, AVIF]
                                 )
@@ -465,7 +461,6 @@ export default props => (
                         localFile {
                             childImageSharp {
                                 gatsbyImageData (
-                                    width: 800
                                     placeholder: BLURRED
                                     formats: [AUTO, WEBP, AVIF]
                                 )

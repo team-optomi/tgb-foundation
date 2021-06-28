@@ -24,18 +24,18 @@ const WordsSection = () => {
                 },
             })
 
-        tlWords.to('.letter_t', { duration: 1, opacity: '1' }, 1)
-        tlWords.to('.letter_g', { duration: 1, opacity: '1' }, 2)
-        tlWords.to('.letter_b', { duration: 1, opacity: '1' }, 3)
-        tlWords.to('.letters_hink', { duration: 1, opacity: '1', left: '0px' }, 3.5)
-        tlWords.to('.letters_ive', { duration: 1, opacity: '1', left: '0px' }, 4)
-        tlWords.to('.letters_oldly', { duration: 1, opacity: '1', left: '0px' }, 4.5)
-        tlWords.to('#word_dream', { duration: 4, opacity: '1' }, 5)
-        tlWords.to('#word_live', { duration: 4, opacity: '1' }, 6)
-        tlWords.to('#word_care', { duration: 4, opacity: '1' }, 7)
-        tlWords.to('#word_share', { duration: 4, opacity: '1' }, 8)
-        tlWords.to('#word_inspire', { duration: 4, opacity: '1' }, 9)
-        tlWords.to('#word_love', { duration: 4, opacity: '1' }, 10)
+        tlWords.to('.letter_t', { duration: 0.5, top: '0', opacity: '1' }, 0.5)
+        tlWords.to('.letter_g', { duration: 0.5, top: '0', opacity: '1' }, 1)
+        tlWords.to('.letter_b', { duration: 0.5, top: '0', opacity: '1' }, 1.5)
+        tlWords.to('.letters_hink', { duration: 1, opacity: '1', left: '0px' }, 1)
+        tlWords.to('.letters_ive', { duration: 1, opacity: '1', left: '0px' }, 1.5)
+        tlWords.to('.letters_oldly', { duration: 1, opacity: '1', left: '0px' }, 2)
+        tlWords.to('#word_dream', { duration: 4, opacity: '1' }, 2)
+        tlWords.to('#word_share', { duration: 4, opacity: '1' }, 2.5)
+        tlWords.to('#word_inspire', { duration: 4, opacity: '1' }, 3)
+        tlWords.to('#word_live', { duration: 4, opacity: '1' }, 3.5)
+        tlWords.to('#word_care', { duration: 4, opacity: '1' }, 4)
+        tlWords.to('#word_love', { duration: 4, opacity: '1' }, 4.5)
 
     }, []);
 
@@ -115,6 +115,8 @@ const MainSection = styled.section`
                 &:first-child {
                     color: #002654;
                     opacity: 0;
+                    position: relative;
+                    top: 40px;
                 }
                 &:last-child {
                     color: #734c28;
@@ -145,6 +147,8 @@ const MainSection = styled.section`
                 &:first-child {
                     color: #002654;
                     opacity: 0;
+                    position: relative;
+                    top: 40px;
                 }
                 &:last-child {
                     color: #734c28;
@@ -179,6 +183,8 @@ const MainSection = styled.section`
                 &:first-child {
                     color: #002654;
                     opacity: 0;
+                    position: relative;
+                    top: 40px;
                 }
                 &:last-child {
                     color: #734c28;

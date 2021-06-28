@@ -41,12 +41,14 @@ const FooterMain = styled.footer`
                 justify-content: center;
                 align-items: center;
                 transition-duration: .3s;
+                a {
+                    width: 25px;
+                    margin: 0 10px;
+                }
                 .gatsby-image-wrapper {
-                    max-width: 35px !important;
-                    margin-right: 10px;
-                    margin-left: 10px;
+                    max-width: 25px !important;
                     img {
-                        max-width: 35px;
+                        max-width: 25px;
                         object-fit: contain !important;
                     }
                 }
