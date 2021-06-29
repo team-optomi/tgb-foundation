@@ -14,8 +14,11 @@ const BlogIndex = ({ data: { allPosts, pageContent }, pageContext: { nextPagePat
 
   return (
     <Layout>
-      <Seo title="Newsroom" />
-
+      <Seo 
+      title={pageContent.seo.title} 
+      description={pageContent.seo.metaDesc}
+      metaImage={pageContent.seo.opengraphImage.localFile.childImageSharp.fluid}
+      />
       <HeroSection>
           <div class="hero-background">
               <GatsbyImage image={heroImage} alt={pageContent.featuredImage.node.title} />
@@ -247,6 +250,19 @@ export const pageQuery = graphql`
                     )
                 }
             }
+        }
+      }
+      seo {
+        title
+        metaDesc
+        opengraphImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }

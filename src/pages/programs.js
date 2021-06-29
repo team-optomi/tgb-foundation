@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 import Layout from "../components/layout-v2"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const ProgramsPage = ({ data: { queryContent } }) => {
 
@@ -24,9 +24,10 @@ const ProgramsPage = ({ data: { queryContent } }) => {
 
     return(
         <Layout>
-            <SEO 
-            title={"Programs page"} 
-            description={"SEO description"}
+            <Seo 
+            title={queryContent.seo.title} 
+            description={queryContent.seo.metaDesc}
+            metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <HeroSection>
                 <div class="hero-background">
@@ -349,6 +350,19 @@ export default props => (
                                 )
                             }
                         }
+                    }
+                }
+                seo {
+                    title
+                    metaDesc
+                    opengraphImage {
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 1920) {
+                            ...GatsbyImageSharpFluid_withWebp
+                          }
+                        }
+                      }
                     }
                 }
                 programsContent {

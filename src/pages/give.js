@@ -13,8 +13,9 @@ const GivePage = ({ data: { queryContent } }) => {
     return(
         <Layout>
             <SEO 
-            title={"Give page"} 
-            description={"SEO description"}
+            title={queryContent.seo.title} 
+            description={queryContent.seo.metaDesc}
+            metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <HeroSection>
                 <div class="hero-background">
@@ -136,6 +137,19 @@ export const pageQuery = graphql`
                             )
                         }
                     }
+                }
+            }
+            seo {
+                title
+                metaDesc
+                opengraphImage {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_withWebp
+                      }
+                    }
+                  }
                 }
             }
         }

@@ -11,8 +11,11 @@ const BlogPostTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <Seo title={post.title} description={post.excerpt} />
-
+      <Seo 
+      title={post.seo.title} 
+      description={post.seo.metaDesc}
+      metaImage={post.seo.opengraphImage.localFile.childImageSharp.fluid}
+      />
       <article
         className="blog-post"
         itemScope
@@ -42,6 +45,19 @@ export const pageQuery = graphql`
       excerpt
       content
       title
+      seo {
+        title
+        metaDesc
+        opengraphImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
       postPageBuilder {
         fieldGroupName
         postBuilder {

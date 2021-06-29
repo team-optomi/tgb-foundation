@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout-v2"
 import SEO from "../components/seo"
@@ -10,13 +11,14 @@ import TogetherSection from "../components/home-sections/together-section"
 import LegacySection from "../components/home-sections/legacy-section"
 import FormSection from "../components/home-sections/form-section"
 
-const IndexPage = () => {
+const IndexPage = ({ data: { queryContent } }) => {
 
     return(
         <Layout>
             <SEO 
-            title={"Home page"} 
-            description={"SEO description"}
+            title={queryContent.seo.title} 
+            description={queryContent.seo.metaDesc}
+            metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <HomeHero />
             <WordsSection />
@@ -30,3 +32,23 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+    query {
+        queryContent: wpPage(databaseId: {eq: 7}) {
+            seo {
+                title
+                metaDesc
+                opengraphImage {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_withWebp
+                      }
+                    }
+                  }
+                }
+            }
+        }
+    }
+`

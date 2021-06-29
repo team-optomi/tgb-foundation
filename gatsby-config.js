@@ -7,6 +7,12 @@
  */
 
  module.exports = {
+  siteMetadata: {
+    title: `The TGB Foundation | Together Giving Back`,
+    description: `An impact-driven nonprofit providing opportunity for kids to live their best lives.`,
+    author: `TGB`,
+    siteUrl: `https://tgbfoundation.org`,
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *

@@ -21,8 +21,9 @@ const AboutPage = ({ data: { queryContent } }) => {
   
         <Layout>
             <SEO 
-            title={"About page"} 
-            description={"SEO description"}
+            title={queryContent.seo.title} 
+            description={queryContent.seo.metaDesc}
+            metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <HeroSection>
                 <div 
@@ -573,6 +574,19 @@ export default props => (
                   }
                 }
               }
+            }
+            seo {
+                title
+                metaDesc
+                opengraphImage {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_withWebp
+                      }
+                    }
+                  }
+                }
             }
             aboutPageContent {
               aboutHeroSub
