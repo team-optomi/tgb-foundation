@@ -1,12 +1,48 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-const HomeHero = ({ data: { queryContent } }) => {
+const HomeHero = () => {
 
-  const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
-  const heroLogo = getImage(queryContent.homePageContent.homeHeroLogo.localFile.childImageSharp.gatsbyImageData)
+  const data = useStaticQuery(graphql`
+    query {
+      queryContent: wpPage(databaseId: {eq: 7}) {
+        homePageContent {
+          homeHeroContent
+          homeHeroLogo {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 800
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+        }
+        featuredImage {
+          node {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 2400
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const heroImage = getImage(data.queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
+  const heroLogo = getImage(data.queryContent.homePageContent.homeHeroLogo.localFile.childImageSharp.gatsbyImageData)
 
   return(
 
@@ -16,7 +52,7 @@ const HomeHero = ({ data: { queryContent } }) => {
       data-sal-duration="1000"
       data-sal-easing="ease"
       class="hero-background">
-        <GatsbyImage image={heroImage} alt={queryContent.featuredImage.node.title} />
+        <GatsbyImage image={heroImage} alt={data.queryContent.featuredImage.node.title} />
       </div>
 
       <div class="hero-content">
@@ -26,14 +62,14 @@ const HomeHero = ({ data: { queryContent } }) => {
           data-sal-duration="1000"
           data-sal-easing="ease"
           class="hero-left">
-            <GatsbyImage image={heroLogo} alt={queryContent.homePageContent.homeHeroLogo.title} />
+            <GatsbyImage image={heroLogo} alt={data.queryContent.homePageContent.homeHeroLogo.title} />
           </div>
           <div 
           data-sal="slide-left"
           data-sal-duration="1000"
           data-sal-easing="ease"
           class="hero-right">
-            <div dangerouslySetInnerHTML={{ __html: queryContent.homePageContent.homeHeroContent }}/>
+            <div dangerouslySetInnerHTML={{ __html: data.queryContent.homePageContent.homeHeroContent }}/>
           </div>
         </div>
       </div>
@@ -186,43 +222,4 @@ const HeroSection = styled.section`
   }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-          queryContent: wpPage(databaseId: {eq: 7}) {
-            homePageContent {
-              homeHeroContent
-              homeHeroLogo {
-                title
-                localFile {
-                  childImageSharp {
-                      gatsbyImageData (
-                          width: 800
-                          placeholder: BLURRED
-                          formats: [AUTO, WEBP, AVIF]
-                      )
-                  }
-                }
-              }
-            }
-            featuredImage {
-              node {
-                title
-                localFile {
-                  childImageSharp {
-                      gatsbyImageData (
-                          width: 2400
-                          placeholder: BLURRED
-                          formats: [AUTO, WEBP, AVIF]
-                      )
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => <HomeHero data={data} {...props} />}
-    />
-  );
+export default HomeHero

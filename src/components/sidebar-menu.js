@@ -21,14 +21,14 @@ class SideMainMenu extends Component {
     }
 
     render() {
-        let menuOneName = "subMenuOne";
-        if (this.state.oneOpen) {
-          menuOneName += ' menuOpen';
-        }
-        let menuTwoName = "subMenuTwo";
-        if (this.state.twoOpen) {
-          menuTwoName += ' menuOpen';
-        }
+        // let menuOneName = "subMenuOne";
+        // if (this.state.oneOpen) {
+        //   menuOneName += ' menuOpen';
+        // }
+        // let menuTwoName = "subMenuTwo";
+        // if (this.state.twoOpen) {
+        //   menuTwoName += ' menuOpen';
+        // }
         return (
             <MainMenu>
                 <MenuItem>
@@ -146,54 +146,54 @@ const MenuItem = styled.li`
     }
 `
 
-const SubMenuToggle = styled.div`
-    p {
-        font-family: "Bodoni Classic";
-        letter-spacing: 1px;
-        font-size: 18px;
-        color: #fff;
-        text-decoration: none;
-        transition-duration: .3s;
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        &:hover {
-            cursor: pointer;
-            color: #fff;
-        }
-        svg {
-            margin-left: 3px;
-        }
-    }
-`
+// const SubMenuToggle = styled.div`
+//     p {
+//         font-family: "Bodoni Classic";
+//         letter-spacing: 1px;
+//         font-size: 18px;
+//         color: #fff;
+//         text-decoration: none;
+//         transition-duration: .3s;
+//         display: flex;
+//         align-items: center;
+//         margin-bottom: 10px;
+//         &:hover {
+//             cursor: pointer;
+//             color: #fff;
+//         }
+//         svg {
+//             margin-left: 3px;
+//         }
+//     }
+// `
 
-const SubMenu = styled.ul`
-    margin: 0;
-    position: relative;
-    top: 0px;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    transition-duration: .5s;
-    list-style: none;
-    &.subMenuOne {
-        &.menuOpen {
-            left: 20px;
-            opacity: 1;
-            visibility: visible;
-            height: 150px;
-        }
-    }
-    &.subMenuTwo {
-        &.menuOpen {
-            left: 20px;
-            opacity: 1;
-            visibility: visible;
-            height: 110px;
-        }
-    }
-`
+// const SubMenu = styled.ul`
+//     margin: 0;
+//     position: relative;
+//     top: 0px;
+//     left: 0;
+//     opacity: 0;
+//     visibility: hidden;
+//     height: 0;
+//     overflow: hidden;
+//     transition-duration: .5s;
+//     list-style: none;
+//     &.subMenuOne {
+//         &.menuOpen {
+//             left: 20px;
+//             opacity: 1;
+//             visibility: visible;
+//             height: 150px;
+//         }
+//     }
+//     &.subMenuTwo {
+//         &.menuOpen {
+//             left: 20px;
+//             opacity: 1;
+//             visibility: visible;
+//             height: 110px;
+//         }
+//     }
+// `
 
 export default SideMainMenu

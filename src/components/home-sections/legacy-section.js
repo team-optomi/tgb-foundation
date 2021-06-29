@@ -1,11 +1,36 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-const LegacySection = ({ data: { queryContent } }) => {
+const LegacySection = () => {
 
-    const bottomImage = getImage(queryContent.homePageContent.homeBottomFullImage.localFile.childImageSharp.gatsbyImageData)
+    const data = useStaticQuery(graphql`
+        query {
+            queryContent: wpPage(databaseId: {eq: 7}) {
+                homePageContent {
+                    homeLegacySection {
+                        legacySectionTitle
+                        legacySectionContent
+                    }
+                    homeBottomFullImage  {
+                        title
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 2560
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    const bottomImage = getImage(data.queryContent.homePageContent.homeBottomFullImage.localFile.childImageSharp.gatsbyImageData)
 
     return(
 
@@ -15,14 +40,14 @@ const LegacySection = ({ data: { queryContent } }) => {
                 data-sal="fade"
                 data-sal-duration="1000"
                 data-sal-easing="ease"
-                >{queryContent.homePageContent.homeLegacySection.legacySectionTitle}</h2>
+                >{data.queryContent.homePageContent.homeLegacySection.legacySectionTitle}</h2>
                 <div 
                 data-sal="fade"
                 data-sal-duration="1000"
                 data-sal-easing="ease"
-                dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeLegacySection.legacySectionContent}} />
+                dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeLegacySection.legacySectionContent}} />
             </div>
-            <GatsbyImage image={bottomImage} alt={queryContent.homePageContent.homeBottomFullImage.title} />
+            <GatsbyImage image={bottomImage} alt={data.queryContent.homePageContent.homeBottomFullImage.title} />
         </MainSection>
         
     )
@@ -94,32 +119,4 @@ const MainSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-            queryContent: wpPage(databaseId: {eq: 7}) {
-                homePageContent {
-                    homeLegacySection {
-                        legacySectionTitle
-                        legacySectionContent
-                      }
-                    homeBottomFullImage  {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 2560
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-      `}
-      render={data => <LegacySection data={data} {...props} />}
-    />
-  );
+export default LegacySection

@@ -1,15 +1,29 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-const Footer = ({ data: { sectionOne, middleSection, sectionThree} }) => {
+const Footer = () => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            sectionOne: wpFooterSection(databaseId: {eq: 79}) {
+                content
+            }
+            middleSection: wpFooterSection(databaseId: {eq: 77}) {
+                content
+            }
+            sectionThree: wpFooterSection(databaseId: {eq: 75}) {
+                content
+            }
+        }
+    `)
 
     return(
         <FooterMain>
             <div class="footer-flex">
-                <div class="section-one" dangerouslySetInnerHTML={{ __html: sectionOne.content }} />
-                <div class="middle-section" dangerouslySetInnerHTML={{ __html: middleSection.content }} />
-                <div class="section-three" dangerouslySetInnerHTML={{ __html: sectionThree.content }} />
+                <div class="section-one" dangerouslySetInnerHTML={{ __html: data.sectionOne.content }} />
+                <div class="middle-section" dangerouslySetInnerHTML={{ __html: data.middleSection.content }} />
+                <div class="section-three" dangerouslySetInnerHTML={{ __html: data.sectionThree.content }} />
             </div>
         </FooterMain>
     )
@@ -156,21 +170,4 @@ const FooterMain = styled.footer`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-          sectionOne: wpFooterSection(databaseId: {eq: 79}) {
-            content
-          }
-          middleSection: wpFooterSection(databaseId: {eq: 77}) {
-            content
-          }
-          sectionThree: wpFooterSection(databaseId: {eq: 75}) {
-            content
-          }
-        }
-      `}
-      render={data => <Footer data={data} {...props} />}
-    />
-  );
+export default Footer

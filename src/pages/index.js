@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout-v2"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import HomeHero from "../components/home-sections/home-hero"
 import WordsSection from "../components/home-sections/words-section"
@@ -15,7 +15,7 @@ const IndexPage = ({ data: { queryContent } }) => {
 
     return(
         <Layout>
-            <SEO 
+            <Seo 
             title={queryContent.seo.title} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}

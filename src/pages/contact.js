@@ -1,10 +1,10 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 import Layout from "../components/layout-v2"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const ContactPage = ({ data: { queryContent } }) => {
 
@@ -12,7 +12,7 @@ const ContactPage = ({ data: { queryContent } }) => {
 
     return(
         <Layout>
-            <SEO 
+            <Seo 
             title={queryContent.seo.title} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
@@ -351,46 +351,43 @@ const FormSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-            queryContent: wpPage(databaseId: {eq: 191}) {
-                content
-                featuredImage {
-                    node {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 2400
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
-                        }
-                    }
-                }
-                seo {
+export default ContactPage
+
+export const pageQuery = graphql`
+    query {
+        queryContent: wpPage(databaseId: {eq: 191}) {
+            content
+            featuredImage {
+                node {
                     title
-                    metaDesc
-                    opengraphImage {
-                      localFile {
+                    localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1920) {
-                            ...GatsbyImageSharpFluid_withWebp
-                          }
+                            gatsbyImageData (
+                                width: 2400
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
-                      }
                     }
-                }
-                contactPageContent {
-                    cContactInfoOne
-                    cContactInfoTwo
                 }
             }
+            seo {
+                title
+                metaDesc
+                opengraphImage {
+                localFile {
+                    childImageSharp {
+                    fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                    }
+                }
+                }
+            }
+            contactPageContent {
+                cContactInfoOne
+                cContactInfoTwo
+            }
         }
-    `}
-  render={data => <ContactPage data={data} {...props} />}
-/>
-);
+    }
+`

@@ -1,12 +1,51 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-const TogetherSection = ({ data: { queryContent } }) => {
+const TogetherSection = () => {
 
-    const imageLeft = getImage(queryContent.homePageContent.homeTogetherSection.htLeftColumnBackground.localFile.childImageSharp.gatsbyImageData)
-    const imageRight = getImage(queryContent.homePageContent.homeTogetherSection.htRightColumnBackground.localFile.childImageSharp.gatsbyImageData)
+    const data = useStaticQuery(graphql`
+        query {
+            queryContent: wpPage(databaseId: {eq: 7}) {
+                homePageContent {
+                    homeTogetherSection {
+                        homeTogetherTitle
+                        htLeftColumnContent
+                        htLeftColumnBackground {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 928
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        htRightColumnTop
+                        htRightColumnContent
+                        htRightColumnBackground {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 968
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    const imageLeft = getImage(data.queryContent.homePageContent.homeTogetherSection.htLeftColumnBackground.localFile.childImageSharp.gatsbyImageData)
+    const imageRight = getImage(data.queryContent.homePageContent.homeTogetherSection.htRightColumnBackground.localFile.childImageSharp.gatsbyImageData)
 
     return(
 
@@ -15,23 +54,23 @@ const TogetherSection = ({ data: { queryContent } }) => {
             data-sal="fade"
             data-sal-duration="1000"
             data-sal-easing="ease"
-            >{queryContent.homePageContent.homeTogetherSection.homeTogetherTitle}</h2>
+            >{data.queryContent.homePageContent.homeTogetherSection.homeTogetherTitle}</h2>
             <div 
             data-sal="slide-up"
             data-sal-duration="1000"
             data-sal-easing="ease"
             class="box-row">
                 <div class="left-col">
-                    <GatsbyImage image={imageLeft} alt={queryContent.homePageContent.homeTogetherSection.htLeftColumnBackground.title} />
-                    <div class="left-col-content" dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeTogetherSection.htLeftColumnContent}} />
+                    <GatsbyImage image={imageLeft} alt={data.queryContent.homePageContent.homeTogetherSection.htLeftColumnBackground.title} />
+                    <div class="left-col-content" dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeTogetherSection.htLeftColumnContent}} />
                 </div>
                 <div class="right-col">
                     <div class="top-row">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeTogetherSection.htRightColumnTop}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeTogetherSection.htRightColumnTop}} />
                     </div>
                     <div class="bottom-row">
-                        <GatsbyImage image={imageRight} alt={queryContent.homePageContent.homeTogetherSection.htRightColumnBackground.title} />
-                        <div class="right-col-content" dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeTogetherSection.htRightColumnContent}} />
+                        <GatsbyImage image={imageRight} alt={data.queryContent.homePageContent.homeTogetherSection.htRightColumnBackground.title} />
+                        <div class="right-col-content" dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeTogetherSection.htRightColumnContent}} />
                     </div>
                 </div>
             </div>
@@ -180,46 +219,4 @@ const MainSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-            queryContent: wpPage(databaseId: {eq: 7}) {
-                homePageContent {
-                    homeTogetherSection {
-                        homeTogetherTitle
-                        htLeftColumnContent
-                        htLeftColumnBackground {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 928
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        htRightColumnTop
-                        htRightColumnContent
-                        htRightColumnBackground {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 968
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-      `}
-      render={data => <TogetherSection data={data} {...props} />}
-    />
-  );
+export default TogetherSection

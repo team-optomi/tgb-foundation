@@ -1,10 +1,10 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 import Layout from "../components/layout-v2"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const AboutPage = ({ data: { queryContent } }) => {
 
@@ -20,7 +20,7 @@ const AboutPage = ({ data: { queryContent } }) => {
     return(
   
         <Layout>
-            <SEO 
+            <Seo 
             title={queryContent.seo.title} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
@@ -555,138 +555,135 @@ const StewardsSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-          queryContent: wpPage(databaseId: {eq: 92}) {
-            content
-            featuredImage {
-              node {
-                title
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData (
-                        width: 2400
-                        placeholder: BLURRED
-                        formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-              }
+export default AboutPage
+
+export const pageQuery = graphql`
+query {
+    queryContent: wpPage(databaseId: {eq: 92}) {
+      content
+      featuredImage {
+        node {
+          title
+          localFile {
+            childImageSharp {
+              gatsbyImageData (
+                  width: 2400
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+              )
             }
-            seo {
-                title
-                metaDesc
-                opengraphImage {
-                  localFile {
-                    childImageSharp {
-                      fluid(maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid_withWebp
-                      }
-                    }
-                  }
-                }
-            }
-            aboutPageContent {
-              aboutHeroSub
-              aboutSectionOneContent
-              aboutSectionOneBackground {
-                title
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 2400
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                }
-              }
-              foundationStewards {
-                fSectionOneContent
-                fSectionOneImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
-                }
-                fSectionTwoContent
-                fSectionTwoImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
-                }
-                fSectionThreeContent
-                fSectionThreeImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
-                }
-                fSectionFourContent
-                fSectionFourImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
-                }
-                fSectionFiveContent
-                fSectionFiveImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
-                }
-                fSectionSixContent
-                fSectionSixImage {
-                  title
-                  localFile {
-                    childImageSharp {
-                        gatsbyImageData (
-                            width: 1200
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                        )
-                    }
-                  }
+          }
+        }
+      }
+      seo {
+          title
+          metaDesc
+          opengraphImage {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
           }
+      }
+      aboutPageContent {
+        aboutHeroSub
+        aboutSectionOneContent
+        aboutSectionOneBackground {
+          title
+          localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 2400
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+          }
         }
-      `}
-      render={data => <AboutPage data={data} {...props} />}
-    />
-  );
+        foundationStewards {
+          fSectionOneContent
+          fSectionOneImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionTwoContent
+          fSectionTwoImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionThreeContent
+          fSectionThreeImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionFourContent
+          fSectionFourImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionFiveContent
+          fSectionFiveImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionSixContent
+          fSectionSixImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -1,15 +1,104 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-const ValuesSection = ({ data: { queryContent } }) => {
+const ValuesSection = () => {
 
-    const iconOne = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.localFile.childImageSharp.gatsbyImageData)
-    const iconOneHalf = getImage(queryContent.homePageContent.homeProvidingSection.hpNewImage.localFile.childImageSharp.gatsbyImageData)
-    const iconTwo = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.localFile.childImageSharp.gatsbyImageData)
-    const iconThree = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
-    const iconFour = getImage(queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.localFile.childImageSharp.gatsbyImageData)
+    const data = useStaticQuery(graphql`
+        query {
+            queryContent: wpPage(databaseId: {eq: 7}) {
+                homePageContent {
+                    homeProvidingSection {
+                        homeProvidingTitle
+                        hpColumnOneTitle
+                        hpColumnOneIcon {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        hpColumnOneHalfTitle
+                        hpNewImage {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        hpColumnTwoTitle
+                        hpColumnTwoIcon {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        hpColumnThreeTitle
+                        hpColumnThreeIcon {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        hpColumnFourTitle
+                        hpColumnFourIcon {
+                            title
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData (
+                                        width: 200
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    homeOurValuesSection {
+                        homeValuesTitle
+                        homeValuesContent
+                    }
+                    homeImpactSection {
+                        homeImpactTitle
+                        hiColumnOne
+                        hiColumnTwo
+                        hiColumnThree
+                        hiColumnFour
+                        hiColumnFive
+                    }
+                }
+            }
+        }
+    `)
+
+    const iconOne = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.localFile.childImageSharp.gatsbyImageData)
+    const iconOneHalf = getImage(data.queryContent.homePageContent.homeProvidingSection.hpNewImage.localFile.childImageSharp.gatsbyImageData)
+    const iconTwo = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.localFile.childImageSharp.gatsbyImageData)
+    const iconThree = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
+    const iconFour = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.localFile.childImageSharp.gatsbyImageData)
 
     return(
 
@@ -20,46 +109,46 @@ const ValuesSection = ({ data: { queryContent } }) => {
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    >{queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
+                    >{data.queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
-                        <GatsbyImage image={iconOne} alt={queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
+                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
+                        <GatsbyImage image={iconOne} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
-                        <GatsbyImage image={iconOneHalf} alt={queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
+                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
+                        <GatsbyImage image={iconOneHalf} alt={data.queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
-                        <GatsbyImage image={iconTwo} alt={queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
+                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
+                        <GatsbyImage image={iconTwo} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
-                        <GatsbyImage image={iconThree} alt={queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
+                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
+                        <GatsbyImage image={iconThree} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <h3>{queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
-                        <GatsbyImage image={iconFour} alt={queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
+                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
+                        <GatsbyImage image={iconFour} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
                     </div>
                 </div>
             </div>
@@ -69,12 +158,12 @@ const ValuesSection = ({ data: { queryContent } }) => {
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    >{queryContent.homePageContent.homeOurValuesSection.homeValuesTitle}</h2>
+                    >{data.queryContent.homePageContent.homeOurValuesSection.homeValuesTitle}</h2>
                     <div 
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeOurValuesSection.homeValuesContent}} />
+                    dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeOurValuesSection.homeValuesContent}} />
                 </div>
             </div>
             <div class="row-three">
@@ -83,41 +172,41 @@ const ValuesSection = ({ data: { queryContent } }) => {
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    >{queryContent.homePageContent.homeImpactSection.homeImpactTitle}</h2>
+                    >{data.queryContent.homePageContent.homeImpactSection.homeImpactTitle}</h2>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnOne}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeImpactSection.hiColumnOne}} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnTwo}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeImpactSection.hiColumnTwo}} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnThree}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeImpactSection.hiColumnThree}} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnFour}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeImpactSection.hiColumnFour}} />
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <div dangerouslySetInnerHTML={{__html: queryContent.homePageContent.homeImpactSection.hiColumnFive}} />
+                        <div dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeImpactSection.hiColumnFive}} />
                     </div>
                 </div>
             </div>
@@ -319,96 +408,4 @@ const MainSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-            queryContent: wpPage(databaseId: {eq: 7}) {
-                homePageContent {
-                    homeProvidingSection {
-                        homeProvidingTitle
-                        hpColumnOneTitle
-                        hpColumnOneIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnOneHalfTitle
-                        hpNewImage {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnTwoTitle
-                        hpColumnTwoIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnThreeTitle
-                        hpColumnThreeIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnFourTitle
-                        hpColumnFourIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                    }
-                    homeOurValuesSection {
-                        homeValuesTitle
-                        homeValuesContent
-                    }
-                    homeImpactSection {
-                        homeImpactTitle
-                        hiColumnOne
-                        hiColumnTwo
-                        hiColumnThree
-                        hiColumnFour
-                        hiColumnFive
-                    }
-                }
-            }
-        }
-      `}
-      render={data => <ValuesSection data={data} {...props} />}
-    />
-  );
+export default ValuesSection

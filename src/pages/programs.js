@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
@@ -332,159 +332,156 @@ const MainSection = styled.section`
     }
 `
 
-export default props => (
-    <StaticQuery
-      query={graphql`
-        query {
-            queryContent: wpPage(databaseId: {eq: 132}) {
-                content
-                featuredImage {
-                    node {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 2400
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
-                        }
-                    }
-                }
-                seo {
+export default ProgramsPage
+
+export const pageQuery = graphql`
+    query {
+        queryContent: wpPage(databaseId: {eq: 132}) {
+            content
+            featuredImage {
+                node {
                     title
-                    metaDesc
-                    opengraphImage {
-                      localFile {
+                    localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1920) {
-                            ...GatsbyImageSharpFluid_withWebp
-                          }
+                            gatsbyImageData (
+                                width: 2400
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
-                      }
                     }
                 }
-                programsContent {
-                    pSectionOneContent
-                    pSectionOneMainImage {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 1200
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+            }
+            seo {
+                title
+                metaDesc
+                opengraphImage {
+                localFile {
+                    childImageSharp {
+                    fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                    }
+                }
+                }
+            }
+            programsContent {
+                pSectionOneContent
+                pSectionOneMainImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionOneImageGallery {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionOneImageGallery {
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionTwoContent
-                    pSectionTwoMainImage {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 1200
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionTwoContent
+                pSectionTwoMainImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionTwoGallery {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionTwoGallery {
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionThreeContent
-                    pSectionThreeMainImage {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 1200
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionThreeContent
+                pSectionThreeMainImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionThreeGallery {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionThreeGallery {
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionFourContent
-                    pSectionFourMainImage {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 1200
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionFourContent
+                pSectionFourMainImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionFourGallery {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionFourGallery {
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionFiveContent
-                    pSectionFiveMainImage {
-                        title
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    width: 1200
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionFiveContent
+                pSectionFiveMainImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
-                    pSectionFiveGallery {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData (
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                )
-                            }
+                }
+                pSectionFiveGallery {
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
                         }
                     }
                 }
             }
         }
-    `}
-  render={data => <ProgramsPage data={data} {...props} />}
-/>
-);
+    }
+`
