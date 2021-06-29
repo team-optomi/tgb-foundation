@@ -102,7 +102,7 @@ const HeroSection = styled.section`
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         transition-delay: 1.5s;
         > div {
           text-align: right;
@@ -119,7 +119,7 @@ const HeroSection = styled.section`
             color: #fff;
             text-transform: uppercase;
             font-weight: 100;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 1.3;
             letter-spacing: 1px;
             transition-duration: .3s;

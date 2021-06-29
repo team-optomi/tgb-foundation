@@ -233,6 +233,13 @@ const HeroSection = styled.section`
             font-size: 13px;
             color: #8e8f91;
             transition-duration: .3s;
+            a {
+                color: #8e8f91;
+                text-decoration: none;
+                &:hover {
+                    color: #012756;
+                }
+            }
         }
         p.stay-bright {
             font-family: "Stay Bright Script";

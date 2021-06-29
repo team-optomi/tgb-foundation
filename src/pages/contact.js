@@ -33,7 +33,7 @@ const ContactPage = ({ data: { queryContent } }) => {
                 <form name="TGB Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
                     <input type="hidden" name="form-name" value="TGB Email" aria-label="Input"/>
                     <div class="flex-row">
-                        <div class="col-four">
+                        <div class="col-full">
                             <h2>stay connected</h2>
                         </div>
                         <div class="col-four">
@@ -47,6 +47,9 @@ const ContactPage = ({ data: { queryContent } }) => {
                         </div>
                         <div class="col-four">
                             <label htmlFor="last_name"><span>Last Name</span><input type="text" name="last_name" aria-label="Input" required/></label> 
+                        </div>
+                        <div class="col-four">
+                            <label htmlFor="state"><span>State</span><input type="text" name="state" aria-label="Input" required/></label> 
                         </div>
                     </div>
                 </form>
@@ -217,13 +220,23 @@ const FormSection = styled.section`
             padding: 0px 20px;
             margin: 0 auto;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            .col-four {
-                width: 20%;
-                &:first-child {
-                    width: 40%;
+            .col-full {
+                width: 100%;
+                h2 {
+                    text-align: center;
+                    font-family: "Stay Bright Script";
+                    color: #012756;
+                    font-size: 150px;
+                    font-weight: 100;
+                    line-height: 1.2;
+                    margin-top: 0;
                 }
+            }
+            .col-four {
+                width: 25%;
                 h2 {
                     text-align: center;
                     font-family: "Stay Bright Script";
@@ -302,9 +315,6 @@ const FormSection = styled.section`
                 flex-wrap: wrap;
                 .col-four {
                     width: 30%;
-                    &:first-child {
-                        width: 100%;
-                    }
                 }
             }
         }
