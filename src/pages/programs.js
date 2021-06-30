@@ -278,6 +278,19 @@ const MainSection = styled.section`
     .gallery-row {
         display: flex;
     }
+    @media(max-width: 1540px) {
+        &:nth-child(4) {
+            .main-row {
+                .main-content {
+                    p {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
     @media(max-width:1250px) {
         .main-row {
             .main-content {
