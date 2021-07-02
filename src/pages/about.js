@@ -16,6 +16,7 @@ const AboutPage = ({ data: { queryContent } }) => {
     const stewardFour = getImage(queryContent.aboutPageContent.foundationStewards.fSectionFourImage.localFile.childImageSharp.gatsbyImageData)
     const stewardFive = getImage(queryContent.aboutPageContent.foundationStewards.fSectionFiveImage.localFile.childImageSharp.gatsbyImageData)
     const stewardSix = getImage(queryContent.aboutPageContent.foundationStewards.fSectionSixImage.localFile.childImageSharp.gatsbyImageData)
+    const stewardSeven = getImage(queryContent.aboutPageContent.foundationStewards.fSectionSevenImage.localFile.childImageSharp.gatsbyImageData)
   
     return(
   
@@ -171,6 +172,22 @@ const AboutPage = ({ data: { queryContent } }) => {
                     data-sal-easing="ease"
                     class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSixContent}} />
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSevenContent}} />
+                    </div>
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
+                        <GatsbyImage image={stewardSeven} alt={queryContent.aboutPageContent.foundationStewards.fSectionSevenImage.title} />
                     </div>
                 </div>
             </StewardsSection>
@@ -515,16 +532,16 @@ const StewardsSection = styled.section`
                 }
             }
         }
+        .section-background {
+            .gatsby-image-wrapper {
+                height: 100%;
+            }
+        }
     }
     @media(max-width:1200px) {
         .flex-row {
             .section-content {
                 padding: 75px;
-            }
-            .section-background {
-                .gatsby-image-wrapper {
-                    height: 100%;
-                }
             }
         }
     }
@@ -671,6 +688,19 @@ query {
           }
           fSectionSixContent
           fSectionSixImage {
+            title
+            localFile {
+              childImageSharp {
+                  gatsbyImageData (
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                  )
+              }
+            }
+          }
+          fSectionSevenContent
+          fSectionSevenImage {
             title
             localFile {
               childImageSharp {
