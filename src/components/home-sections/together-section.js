@@ -214,6 +214,9 @@ const MainSection = styled.section`
             }
             .right-col {
                 width: 100%;
+                .bottom-row {
+                    display: none;
+                }
             }
         }
     }

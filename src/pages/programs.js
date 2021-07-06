@@ -335,6 +335,25 @@ const MainSection = styled.section`
                 width: 50%;
             }
         }
+        &:nth-child(5) {
+            .gallery-row {
+                .gatsby-image-wrapper {
+                    &:nth-child(2) {
+                        order: 5;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &:nth-child(6) {
+            .gallery-row {
+                .gatsby-image-wrapper {
+                    &:nth-child(3) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
     @media(max-width:440px) {
         .main-row {

@@ -154,8 +154,15 @@ const MainSection = styled.section`
         form {
             .flex-row {
                 flex-wrap: wrap;
+                justify-content: center;
+                .col-full {
+                    h2 {
+                        font-size: 100px;
+                    }
+                }
                 .col-four {
                     width: 30%;
+                    margin-bottom: 20px;
                 }
             }
         }
@@ -163,11 +170,13 @@ const MainSection = styled.section`
     @media(max-width:767px) {
         form {
             .flex-row {
+                .col-full {
+                    h2 {
+                        font-size: 72px;
+                    }
+                }
                 .col-four {
                     width: 100%;
-                    h2 {
-                        font-size: 44px;
-                    }
                 }
             }
         }

@@ -305,6 +305,8 @@ const MainSection = styled.section`
         }
         .gatsby-image-wrapper {
             max-width: 75px !important;
+            display: block;
+            margin: 0 auto;
             margin-top: -28px;
         }
     }

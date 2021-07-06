@@ -139,6 +139,8 @@ const HeaderMain = styled.div`
   @media(max-width:768px) {
     background-color: #000;
     justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `
 
@@ -158,8 +160,8 @@ const MobileLogo = styled.div`
   visibility: hidden;
   padding-right: 15px;
   .gatsby-image-wrapper {
-    width: 117px;
-    height: 34px;
+    width: 100px;
+    height: 72px;
     img {
       margin-bottom: 0;
     }
