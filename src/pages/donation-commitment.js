@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from "../components/layout-v2"
 import Seo from "../components/seo"
 
-const PrivacyPolicyPage = ({ data: { queryContent } }) => {
+const DonationCommitmentPage = ({ data: { queryContent } }) => {
 
     return(
         <Layout>
@@ -15,7 +15,7 @@ const PrivacyPolicyPage = ({ data: { queryContent } }) => {
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <TitleSection>
-                <h1>Privacy Policy</h1>
+                <h1>Donation Commitment</h1>
             </TitleSection>
             <ContentSection>
                 <div dangerouslySetInnerHTML={{ __html: queryContent.content }} />
@@ -72,11 +72,11 @@ const ContentSection = styled.section`
     }
 `
 
-export default PrivacyPolicyPage
+export default DonationCommitmentPage
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 3}) {
+        queryContent: wpPage(databaseId: {eq: 371}) {
             content
             featuredImage {
               node {

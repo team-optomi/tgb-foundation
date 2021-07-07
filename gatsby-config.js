@@ -10,7 +10,7 @@
   siteMetadata: {
     title: `The TGB Foundation | Together Giving Back`,
     description: `An impact-driven nonprofit providing opportunity for kids to live their best lives.`,
-    author: `TGB`,
+    author: `TGB Foundation`,
     siteUrl: `https://tgbfoundation.org`,
   },
   /**
@@ -34,7 +34,7 @@
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `http://tgb-foundation.theremotecreative.com/graphql`,
+          `https://tgbfoundation.wpengine.com/graphql`,
       },
     },
 
@@ -73,13 +73,13 @@
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter WordPress Blog`,
-        short_name: `GatsbyJS & WP`,
+        name: `The TGB Foundation`,
+        short_name: `TGB`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#012756`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/tgb-favicon.png`,
       },
     },
 
@@ -90,6 +90,6 @@
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline
      */
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
