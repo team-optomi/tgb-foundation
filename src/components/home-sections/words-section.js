@@ -195,8 +195,149 @@ const MainSection = styled.section`
             }
         }
     }
-    @media(max-width:1500px) {
-        
+    @media(max-width:1480px) {
+        height: 445px;
+        #words_line_one {
+            top: -35px;
+            left: calc( 50% - 430px);
+            p {
+                font-size: 140px;
+                letter-spacing: 7px;
+            }
+        }
+        #words_line_two {
+            top: 80px;
+            left: calc( 50% - 440px);
+            p {
+                font-size: 140px;
+                letter-spacing: 7px;
+            }
+        }
+        #words_line_three {
+            top: 140px;
+            left: calc( 50% - 130px);
+            p {
+                font-size: 140px;
+                letter-spacing: 7px;
+            }
+        }
+        #words_line_four {
+            top: 260px;
+            left: calc( 50% - 548px);
+            p {
+                font-size: 140px;
+                letter-spacing: 7px;
+            }
+        }
+    }
+    @media(max-width:1080px) {
+        height: 310px;
+        #words_line_one {
+            top: -25px;
+            left: calc( 50% - 300px);
+            p {
+                font-size: 100px;
+                letter-spacing: 5px;
+                margin: 0 10px;
+            }
+        }
+        #words_line_two {
+            top: 55px;
+            left: calc( 50% - 310px);
+            p {
+                font-size: 100px;
+                letter-spacing: 5px;
+                margin: 0 10px;
+            }
+        }
+        #words_line_three {
+            top: 98px;
+            left: calc( 50% - 90px);
+            p {
+                font-size: 100px;
+                letter-spacing: 5px;
+                margin: 0 10px;
+            }
+        }
+        #words_line_four {
+            top: 185px;
+            left: calc( 50% - 380px);
+            p {
+                font-size: 100px;
+                letter-spacing: 5px;
+                margin: 0 10px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        height: 260px;
+        #words_line_one {
+            top: 0px;
+            left: calc( 50% - 220px);
+            p {
+                font-size: 70px;
+                letter-spacing: 4px;
+            }
+        }
+        #words_line_two {
+            top: 65px;
+            left: calc( 50% - 230px);
+            p {
+                font-size: 70px;
+                letter-spacing: 4px;
+            }
+        }
+        #words_line_three {
+            top: 93px;
+            left: calc( 50% - 73px);
+            p {
+                font-size: 70px;
+                letter-spacing: 4px;
+            }
+        }
+        #words_line_four {
+            top: 160px;
+            left: calc( 50% - 280px);
+            p {
+                font-size: 70px;
+                letter-spacing: 4px;
+            }
+        }
+    }
+    @media(max-width:560px) {
+        height: 180px;
+        #words_line_one {
+            top: 10px;
+            left: calc( 50% - 140px);
+            p {
+                font-size: 42px;
+                letter-spacing: 3px;
+            }
+        }
+        #words_line_two {
+            top: 50px;
+            left: calc( 50% - 150px);
+            p {
+                font-size: 42px;
+                letter-spacing: 3px;
+            }
+        }
+        #words_line_three {
+            top: 68px;
+            left: calc( 50% - 48px);
+            p {
+                font-size: 42px;
+                letter-spacing: 3px;
+            }
+        }
+        #words_line_four {
+            top: 110px;
+            left: calc( 50% - 190px);
+            p {
+                font-size: 42px;
+                letter-spacing: 3px;
+            }
+        }
     }
 `
 
