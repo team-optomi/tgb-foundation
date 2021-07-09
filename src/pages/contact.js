@@ -52,6 +52,9 @@ const ContactPage = ({ data: { queryContent } }) => {
                         <div class="col-four">
                             <label htmlFor="state"><span>State</span><input type="text" name="state" aria-label="Input" required/></label> 
                         </div>
+                        <div class="col-full">
+                            <button type="submit" name="submit" class={"submit"} aria-label="Send">Send</button>
+                        </div>
                     </div>
                 </form>
                 <div class="bottom-row">
@@ -234,6 +237,17 @@ const FormSection = styled.section`
                     font-weight: 100;
                     line-height: 1.2;
                     margin-top: 0;
+                }
+                button {
+                    margin: 35px auto;
+                    display: block;
+                    background-color: #012756;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 30px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
             .col-four {
