@@ -27,6 +27,12 @@ const GivePage = ({ data: { queryContent } }) => {
                     </div>
                 </div>
             </HeroSection>
+            <GiveSection>
+                <h2>Foundation Donations</h2>
+                <div>
+                    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/foundation-donations-5" name="donorbox" allowpaymentrequest="" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style={{maxWidth: '425px', minWidth: '250px', maxHeight: 'none!important'}} ></iframe>
+                </div>
+            </GiveSection>
         </Layout>
     )
 
@@ -117,6 +123,31 @@ const HeroSection = styled.section`
             }
         }
     }
+`
+
+const GiveSection = styled.section`
+    background-color: #fff;
+    padding: 100px 20px 50px;
+    h2 {
+        font-family: "Stay Bright Script";
+        font-weight: 100;
+        color: #012756;
+        font-size: 100px;
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+    > div {
+        max-width: 425px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    @media(max-width:560px) {
+        h2 {
+          font-size: 64px;
+        }
+      }
 `
 
 export default GivePage
