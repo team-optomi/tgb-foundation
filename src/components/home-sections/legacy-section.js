@@ -78,6 +78,9 @@ const MainSection = styled.section`
             transition-delay: .6s;
         }
         p {
+            font-family: "Bodoni Classic";
+            font-size: 22px;
+            line-height: 1.2;
             color: #8e8f91;
         }
         span.stay-bright {

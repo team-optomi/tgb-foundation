@@ -67,7 +67,9 @@ const ContentSection = styled.section`
           line-height: 1.3;
         }
         p {
-
+          font-family: "Bodoni Classic";
+          font-size: 20px;
+          line-height: 1.2;
         }
     }
 `

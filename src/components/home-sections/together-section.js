@@ -102,6 +102,11 @@ const MainSection = styled.section`
         background-color: #012756;
         display: flex;
         transition-delay: .6s;
+        p {
+            font-family: "Bodoni Classic";
+            font-size: 22px;
+            line-height: 1.2;
+        }
         a.white-button {
             background-color: #fff;
             padding: 10px 30px;

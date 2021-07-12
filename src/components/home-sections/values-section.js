@@ -253,6 +253,11 @@ const MainSection = styled.section`
             color: #012756;
             transition-delay: .6s;
         }
+        p {
+            font-family: "Bodoni Classic";
+            font-size: 22px;
+            line-height: 1.2;
+        }
         div {
             transition-delay: .6s;
         }

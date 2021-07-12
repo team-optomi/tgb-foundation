@@ -24,11 +24,11 @@ const BlockContent = styled.section`
   > div {
     max-width: 1000px;
     margin: 0 auto;
-    p, li {
-      font-family: "Antique Roman";
-      font-size: 28px;
-      line-height: 1.2;
-    }
+  }
+  p, li {
+    font-family: "Bodoni Classic";
+    font-size: 20px;
+    line-height: 1.2;
   }
 `
 

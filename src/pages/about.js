@@ -247,8 +247,10 @@ const HeroSection = styled.section`
             transition-duration: .3s;
         }
         p {
+            font-family: "Bodoni Classic";
+            line-height: 1.2;
             text-align: right;
-            font-size: 13px;
+            font-size: 18px;
             color: #8e8f91;
             transition-duration: .3s;
             a {
@@ -327,7 +329,6 @@ const HeroSection = styled.section`
                 font-size: 16px;
             }
             p {
-                font-size: 12px;
                 margin-bottom: 15px;
             }
             p.stay-bright {
@@ -381,6 +382,7 @@ const HeroSection = styled.section`
             width: 100%;
             order: 1;
             p {
+                font-size: 16px;
                 text-align: center;
             }
         }
@@ -521,6 +523,9 @@ const StewardsSection = styled.section`
                 margin-bottom: 0;
             }
             p {
+                font-family: "Bodoni Classic";
+                font-size: 22px;
+                line-height: 1.2;
                 span.stay-bright {
                     font-family: "Stay Bright Script";
                     width: 100%;

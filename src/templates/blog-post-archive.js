@@ -199,6 +199,11 @@ const BlogSection = styled.section`
               color: #012756;
             }
           }
+          p {
+            font-family: "Bodoni Classic";
+            font-size: 20px;
+            line-height: 1.2;
+          }
           a.article-link {
             display: inline-block;
             margin-top: 20px;

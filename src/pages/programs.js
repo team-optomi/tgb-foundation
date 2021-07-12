@@ -259,8 +259,10 @@ const MainSection = styled.section`
                 text-align: center;
             }
             p {
+                font-family: "Bodoni Classic";
+                font-size: 20px;
+                line-height: 1.2;
                 color: #012756;
-                font-size: 14px;
                 text-align: center;
                 margin-bottom: 0;
             }
