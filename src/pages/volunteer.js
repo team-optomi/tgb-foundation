@@ -244,12 +244,19 @@ const FormSection = styled.section`
                     margin-top: 0;
                 }
                 button {
-                    margin: 35px auto;
-                    display: block;
                     background-color: #012756;
-                    color: #fff;
-                    border: none;
                     padding: 10px 30px;
+                    border-radius: 35px;
+                    color: #fff;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    letter-spacing: 1px;
+                    display: block;
+                    margin: 35px auto;
+                    border: none;
                     &:hover {
                         cursor: pointer;
                     }

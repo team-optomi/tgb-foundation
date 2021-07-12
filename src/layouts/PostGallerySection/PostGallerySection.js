@@ -44,6 +44,10 @@ const BlockContent = styled.section`
     max-width: 1000px;
     margin: 0 auto;
     h2 {
+      font-family: "Stay Bright Script";
+      color: #fff;
+      font-size: 72px;
+      font-weight: 100;
       text-align: center;
       margin-top: 0;
       margin-bottom: 35px;
@@ -57,7 +61,13 @@ const BlockContent = styled.section`
       }
     }
   }
-
+  @media(max-width:550px) {
+    .flex-row {
+      h2 {
+        font-size: 44px;
+      }
+    }
+  }
 `
 
 export default PostGallerySection

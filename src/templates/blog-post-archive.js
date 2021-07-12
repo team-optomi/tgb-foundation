@@ -178,6 +178,9 @@ const BlogSection = styled.section`
         display: flex;
         .article-image {
           width: 50%;
+          .gatsby-image-wrapper {
+            height: 100%;
+          }
           .image-placeholder {
             width: 100%;
             height: 400px;
@@ -203,6 +206,19 @@ const BlogSection = styled.section`
             text-transform: uppercase;
             color: #012756;
             text-decoration: none;
+          }
+        }
+      }
+    }
+    @media(max-width:767px) {
+      article {
+        .article-main {
+          flex-wrap: wrap;
+          .article-image {
+            width: 100%;
+          }
+          .article-content {
+            width: 100%;
           }
         }
       }

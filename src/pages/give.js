@@ -30,7 +30,7 @@ const GivePage = ({ data: { queryContent } }) => {
             <GiveSection>
                 <h2>Foundation Donations</h2>
                 <div>
-                    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/foundation-donations-5" name="donorbox" allowpaymentrequest="" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style={{maxWidth: '425px', minWidth: '250px', maxHeight: 'none!important'}} ></iframe>
+                    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe title="Donorbox" src="https://donorbox.org/embed/foundation-donations-5" name="donorbox" allowpaymentrequest="" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style={{maxWidth: '425px', minWidth: '250px', maxHeight: 'none!important'}} ></iframe>
                 </div>
             </GiveSection>
         </Layout>

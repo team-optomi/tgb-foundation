@@ -47,7 +47,17 @@ const BlockContent = styled.section`
     align-items: center;
     z-index: 2;
     h1 {
+      font-family: "Stay Bright Script";
       color: #fff;
+      font-size: 72px;
+      font-weight: 100;
+    }
+  }
+  @media(max-width:550px) {
+    .hero-title {
+      h1 {
+        font-size: 44px;
+      }
     }
   }
 `
