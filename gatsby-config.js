@@ -68,7 +68,15 @@
           threshold: 0.05, // Percentage of an element's area that needs to be visible to launch animation
       }
     },
-
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-0FC01SNG1V", // Google Analytics / GA
+        ],
+      },
+    },
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
