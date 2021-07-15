@@ -73,7 +73,7 @@
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-0FC01SNG1V", // Google Analytics / GA
+          "G-JLJRDNE4KS", // Google Analytics / GA
         ],
       },
     },
