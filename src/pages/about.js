@@ -207,6 +207,7 @@ const HeroSection = styled.section`
         transition-delay: .6s;
         .gatsby-image-wrapper {
             height: 100vh;
+            width: 100%;
             img {
                 width: 100%;
                 height: 100vh;
@@ -401,6 +402,9 @@ const SectionOne = styled.section`
         width: 100%;
         height: 100vh;
         transition-delay: .6s;
+        .gatsby-image-wrapper {
+            width: 100%;
+        }
         img {
             width: 100%;
             height: 100vh;

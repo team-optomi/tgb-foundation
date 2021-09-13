@@ -86,6 +86,9 @@ const HeroSection = styled.section`
         position: absolute;
         width: 100%;
         height: 100vh;
+        .gatsby-image-wrapper {
+          width: 100%;
+        }
         img {
             width: 100%;
             height: 100vh;

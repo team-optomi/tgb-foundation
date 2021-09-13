@@ -148,6 +148,9 @@ const HeroSection = styled.section`
         position: absolute;
         width: 100%;
         height: 100vh;
+        .gatsby-image-wrapper {
+            width: 100%;
+        }
         img {
             width: 100%;
             height: 100vh;
@@ -242,6 +245,7 @@ const MainSection = styled.section`
         .main-image {
             .gatsby-image-wrapper {
                 height: 100%;
+                width: 100%;
             }
         }
         .main-content {
