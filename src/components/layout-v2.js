@@ -9,6 +9,9 @@ import HeaderLogo from "../components/header-logo"
 import SideBarMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
 
+import "../css/slick.css"
+import "../css/slick-theme.css"
+
 class Layout extends Component {
 
     constructor(props) {

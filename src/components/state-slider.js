@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import { GatsbyImage } from "gatsby-plugin-image"
 import Slider from 'react-slick'
 
-import "../css/slick.css"
-import "../css/slick-theme.css"
-
 class StateSlider extends Component {
 
     constructor(props) {
