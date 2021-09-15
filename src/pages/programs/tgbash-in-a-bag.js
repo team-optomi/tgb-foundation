@@ -7,11 +7,10 @@ import Slider from 'react-slick'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const FeedingThoseInNeed = ({ data: { queryContent } }) => {
+const TGBashBags = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
-    const heroIcon = getImage(queryContent.programSingleSide.psBackgroundIcon.localFile.childImageSharp.gatsbyImageData)
-    const giveImage = getImage(queryContent.programSingleMain.psGiveImage.localFile.childImageSharp.gatsbyImageData)
+    const wordGroup = getImage(queryContent.programSingleMain.psWordGroup.localFile.childImageSharp.gatsbyImageData)
 
     const settings = {
         dots: false,
@@ -49,9 +48,6 @@ const FeedingThoseInNeed = ({ data: { queryContent } }) => {
                 <div class="hero-background">
                     <GatsbyImage image={heroImage} alt={queryContent.featuredImage.node.title} />
                 </div>
-                <div class="hero-icon">
-                    <GatsbyImage image={heroIcon} alt={queryContent.programSingleSide.psBackgroundIcon.title} />
-                </div>
                 <div class="hero-content">
                     <div>
                         <div>
@@ -61,19 +57,19 @@ const FeedingThoseInNeed = ({ data: { queryContent } }) => {
                     </div>
                 </div>
             </HeroSection>
-            <CopySection>
-                <div dangerouslySetInnerHTML={{ __html: queryContent.content }} />
-            </CopySection>
             <GiveSection>
                 <div class="give-image">
                     <div class="give-background">
-                        <GatsbyImage image={giveImage} alt={queryContent.programSingleMain.psGiveImage.title} />
+                        <GatsbyImage image={wordGroup} alt={queryContent.programSingleMain.psWordGroup.title} />
                     </div>
                     <div class="button-row">
                         <p>{queryContent.programSingleMain.psGiveSubheading}</p>
                         <Link to="/give/">Give</Link>
                     </div>
                 </div>
+                <CopySection>
+                    <div dangerouslySetInnerHTML={{ __html: queryContent.content }} />
+                </CopySection>
             </GiveSection>
             <SliderSection>
                 <div class="slider-row">
@@ -150,7 +146,6 @@ const HeroSection = styled.section`
                 color: #fff;
                 margin-top: 0;
                 margin-bottom: 0;
-                text-transform: lowercase;
                 text-align: center;
             }
             p {
@@ -199,50 +194,33 @@ const HeroSection = styled.section`
 
 const CopySection = styled.section`
     background-color: #fff;
-    padding: 50px 0;
-    > div {
-        max-width: 1340px;
-        width: 100%;
-        padding: 0 20px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        .half-col {
-            width: 50%;
-            &:first-child {
-                padding-right: 25px;
-            }
-            &:last-child {
-                padding-left: 25px;
-            }
-        }
-        p, li {
-            font-family: "Bodoni Classic";
-            color: rgb(1, 39, 86);
-            font-size: 24px;
-            line-height: 1.2;
-        }
+    padding: 50px;
+    width: 60%;
+    p, li {
+        font-family: "Bodoni Classic";
+        color: rgb(1, 39, 86);
+        font-size: 24px;
+        line-height: 1.2;
     }
 `
 
 const GiveSection = styled.section`
     background-color: #828588;
-    padding: 100px 0;
+    display: flex;
     .give-image {
-        max-width: 940px;
-        width: 100%;
-        padding: 0 20px;
+        width: 40%;
+        padding: 50px 0;
         margin: 0 auto;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .button-row {
-            position: absolute;
-            top: 0;
-            left: 20px;
+            position: relative;
             max-width: 350px;
             width: 100%;
-            margin-top: 100px;
-            margin-left: 50px;
+            margin: 0 auto;
             text-align: center;
             p {
                 font-family: "Bodoni Classic";
@@ -334,11 +312,11 @@ const SliderSection = styled.section`
     }
 `
 
-export default FeedingThoseInNeed
+export default TGBashBags
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 562}) {
+        queryContent: wpPage(databaseId: {eq: 558}) {
             title
             content
             featuredImage {
@@ -384,7 +362,7 @@ export const pageQuery = graphql`
                 }
             }
             programSingleMain {
-                psGiveImage {
+                psWordGroup {
                     title
                     localFile {
                         childImageSharp {
