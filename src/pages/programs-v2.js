@@ -283,11 +283,11 @@ const MainSection = styled.section`
             }
             a {
                 background-color: rgb(1, 39, 86);
-                padding: 10px 30px;
+                padding: 8px 25px;
                 border-radius: 35px;
                 color: rgb(255, 255, 255);
                 font-family: sans-serif;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: bold;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -372,7 +372,6 @@ const MainSection = styled.section`
                 }
             }
         }
-        
     }
     @media(max-width:440px) {
         .main-row {

@@ -203,6 +203,13 @@ const CopySection = styled.section`
         font-size: 24px;
         line-height: 1.2;
     }
+    @media(max-width: 1090px) {
+        order: 1;
+        width: 100%;
+    }
+    @media(max-width:420px) {
+        padding: 50px 20px;
+    }
 `
 
 const GiveSection = styled.section`
@@ -243,6 +250,16 @@ const GiveSection = styled.section`
                 text-decoration: none;
                 letter-spacing: 1px;
                 display: inline-block;
+            }
+        }
+    }
+    @media(max-width: 1090px) {
+        flex-wrap: wrap;
+        .give-image {
+            order: 2;
+            width: 100%;
+            .give-background {
+                max-width: 800px;
             }
         }
     }

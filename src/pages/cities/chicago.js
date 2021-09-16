@@ -126,17 +126,6 @@ const HeroSection = styled.section`
         position: absolute;
         width: 100%;
         height: 100vh;
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #002855;
-            opacity: .8;
-            z-index: 2;
-        }
         .gatsby-image-wrapper {
             width: 100%;
         }
