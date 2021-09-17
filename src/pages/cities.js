@@ -99,15 +99,20 @@ const HeroSection = styled.section`
             }
         }
     }
-    @media(max-width:900px) {
+    @media(max-width:1070px) {
         .hero-content {
             > div {
-                margin-bottom: 50px;
                 h1 {
-                    text-align: center;
+                    font-size: 140px;
                 }
-                p {
-                    text-align: center;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .hero-content {
+            > div {
+                h1 {
+                    font-size: 72px;
                 }
             }
         }

@@ -215,13 +215,29 @@ const StateSliderSection = styled.section`
             }
         }
     }
+    @media(max-width:767px) {
+        h2 {
+            font-size: 60px;
+        }
+        .slick-slider {
+            .slick-slide {
+                .state-slide {
+                    .state-link {
+                        h3 {
+                            font-size: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 `
 
 export default props => (
     <StaticQuery
       query={graphql`
         query {
-            allWpCity {
+            allWpCity(sort: {fields: date, order: DESC}) {
                 nodes {
                     title
                     slug
