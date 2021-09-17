@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
@@ -39,49 +39,6 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     </div>
                 </div>
             </HeroSection>
-
-            <MainSection>
-                <div class="main-row">
-                    <div 
-                    data-sal="slide-right"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
-                        <Link to={"/programs/tgbash-in-a-bag/"}>Learn More</Link>
-                    </div>
-                    <div class="main-image">
-                        <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
-                    </div>
-                </div>
-                <div class="gallery-row">
-                {galleryFive.map(imageSrc => (
-                    <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
-                ))}
-                </div>
-            </MainSection>
-
-            <MainSection>
-                <div class="main-row">
-                    <div class="main-image">
-                        <GatsbyImage image={sectionThreeImage} alt={queryContent.programsContent.pSectionThreeMainImage.title} />
-                    </div>
-                    <div 
-                    data-sal="slide-left"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionThreeContent }} />
-                        <Link to={"/programs/gifting-gallant-gowns/"}>Learn More</Link>
-                    </div>
-                </div>
-                <div class="gallery-row">
-                {galleryThree.map(imageSrc => (
-                    <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
-                ))}
-                </div>
-            </MainSection>
-
             <MainSection>
                 <div class="main-row">
                     <div 
@@ -90,7 +47,6 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-easing="ease"
                     class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
-                        <Link to={"/programs/feeding-kids-in-need/"}>Learn More</Link>
                     </div>
                     <div class="main-image">
                         <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
@@ -102,7 +58,44 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                 ))}
                 </div>
             </MainSection>
-
+            <MainSection>
+                <div class="main-row">
+                    <div class="main-image">
+                        <GatsbyImage image={sectionTwoImage} alt={queryContent.programsContent.pSectionTwoMainImage.title} />
+                    </div>
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionTwoContent }} />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                {galleryTwo.map(imageSrc => (
+                    <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                ))}
+                </div>
+            </MainSection>
+            <MainSection>
+                <div class="main-row">
+                    <div 
+                    data-sal="slide-right"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="main-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionThreeContent }} />
+                    </div>
+                    <div class="main-image">
+                        <GatsbyImage image={sectionThreeImage} alt={queryContent.programsContent.pSectionThreeMainImage.title} />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                {galleryThree.map(imageSrc => (
+                    <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                ))}
+                </div>
+            </MainSection>
             <MainSection>
                 <div class="main-row">
                     <div class="main-image">
@@ -114,7 +107,6 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-easing="ease"
                     class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFourContent }} />
-                        <Link to={"/programs/volunteering/"}>Learn More</Link>
                     </div>
                 </div>
                 <div class="gallery-row">
@@ -123,7 +115,6 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                 ))}
                 </div>
             </MainSection>
-
             <MainSection>
                 <div class="main-row">
                     <div 
@@ -131,15 +122,14 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionTwoContent }} />
-                        <Link to={"/programs/loving-our-neighbors/"}>Learn More</Link>
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
                     </div>
                     <div class="main-image">
-                        <GatsbyImage image={sectionTwoImage} alt={queryContent.programsContent.pSectionTwoMainImage.title} />
+                        <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
                     </div>
                 </div>
                 <div class="gallery-row">
-                {galleryTwo.map(imageSrc => (
+                {galleryFive.map(imageSrc => (
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
@@ -261,7 +251,6 @@ const MainSection = styled.section`
         .main-content {
             padding: 40px;
             transition-delay: .6s;
-            text-align: center;
             h2 {
                 font-family: "Stay Bright Script";
                 width: 100%;
@@ -279,20 +268,7 @@ const MainSection = styled.section`
                 line-height: 1.2;
                 color: #012756;
                 text-align: center;
-                margin-bottom: 10px;
-            }
-            a {
-                background-color: rgb(1, 39, 86);
-                padding: 8px 25px;
-                border-radius: 35px;
-                color: rgb(255, 255, 255);
-                font-family: sans-serif;
-                font-size: 12px;
-                font-weight: bold;
-                text-transform: uppercase;
-                text-decoration: none;
-                letter-spacing: 1px;
-                display: inline-block;
+                margin-bottom: 0;
             }
             .gatsby-image-wrapper {
                 max-width: 200px !important;
@@ -364,11 +340,23 @@ const MainSection = styled.section`
             .gatsby-image-wrapper {
                 width: 50%;
             }
-            > div {
-                &:nth-child(3),
-                &:nth-child(4),
-                &:nth-child(5) {
-                    display: none !important;
+        }
+        &:nth-child(5) {
+            .gallery-row {
+                .gatsby-image-wrapper {
+                    &:nth-child(2) {
+                        order: 5;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &:nth-child(6) {
+            .gallery-row {
+                .gatsby-image-wrapper {
+                    &:nth-child(3) {
+                        width: 100%;
+                    }
                 }
             }
         }
