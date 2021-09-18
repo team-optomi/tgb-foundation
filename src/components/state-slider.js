@@ -140,8 +140,8 @@ const StateSliderSection = styled.section`
                     align-items: center;
                     justify-content: center;
                     transition-duration: .3s;
-                    opacity: 0;
-                    visibility: hidden;
+                    opacity: 1;
+                    visibility: visible;
                 }
                 .state-full {
                     position: absolute;
@@ -153,8 +153,8 @@ const StateSliderSection = styled.section`
                     align-items: center;
                     justify-content: center;
                     transition-duration: .3s;
-                    opacity: 1;
-                    visibility: visible;
+                    opacity: 0;
+                    visibility: hidden;
                 }
                 .state-link {
                     position: absolute;
@@ -181,8 +181,10 @@ const StateSliderSection = styled.section`
                         margin-bottom: 70px;
                     }
                 }
-                &:hover {
-                    cursor: pointer;
+            }
+            &:hover {
+                cursor: pointer;
+                .state-slide {
                     .state-full {
                         opacity: 1;
                         visibility: visible;
