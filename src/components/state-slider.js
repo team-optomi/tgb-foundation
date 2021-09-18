@@ -130,9 +130,6 @@ const StateSliderSection = styled.section`
                 width: 100%;
                 height: 300px;
                 position: relative;
-                &:hover {
-                    cursor: pointer;
-                }
                 .state-faded {
                     position: absolute;
                     top: 0;
@@ -182,6 +179,17 @@ const StateSliderSection = styled.section`
                         text-align: center;
                         text-decoration: none;
                         margin-bottom: 70px;
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                    .state-full {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    .state-link {
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
             }
