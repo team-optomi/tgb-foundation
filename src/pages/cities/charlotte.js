@@ -79,8 +79,8 @@ const CharlottePage = ({ data: { queryContent } }) => {
             </MainSection>
             <FooterSection>
                 <div class="form-row">
-                    <form name="Chicago Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                        <input type="hidden" name="form-name" value="Chicago Email" aria-label="Input"/>
+                    <form name="Charlotte Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                        <input type="hidden" name="form-name" value="Charlotte Email" aria-label="Input"/>
                         <div class="flex-row">
                             <div class="col-full">
                                 <h2>Give Back With Us!</h2>
