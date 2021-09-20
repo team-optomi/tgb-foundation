@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
@@ -115,40 +115,50 @@ const ValuesSection = () => {
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
+                        <Link to={"/programs/gifting-gallant-gowns/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
                         <GatsbyImage image={iconOne} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
+                        </Link>
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
+                        <Link to={"/programs/feeding-kids-in-need/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
                         <GatsbyImage image={iconOneHalf} alt={data.queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
+                        </Link>                    
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
+                        <Link to={"/programs/tgbash-in-a-bag/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
                         <GatsbyImage image={iconTwo} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
+                        </Link>
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
+                        <Link to={"/programs/volunteering/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
                         <GatsbyImage image={iconThree} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
+                        </Link>
                     </div>
                     <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
+                        <Link to={"/programs/loving-our-neighbors/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
                         <GatsbyImage image={iconFour} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -242,6 +252,9 @@ const MainSection = styled.section`
                 max-width: 100px; 
                 object-fit: contain;
             }
+        }
+        a {
+            text-decoration: none;
         }
     }
     .row-two {

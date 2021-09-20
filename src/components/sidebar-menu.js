@@ -85,13 +85,6 @@ class SideMainMenu extends Component {
                 </MenuItem>
                 {/* <MenuItem>
                     <Link
-                    to="/cities/"
-                    >
-                    Cities
-                    </Link>
-                </MenuItem> */}
-                {/* <MenuItem>
-                    <Link
                     to="/positive-change/community-contribution/"
                     >
                     Community Impact
@@ -116,6 +109,13 @@ class SideMainMenu extends Component {
                     to="/volunteer/"
                     >
                     Volunteer
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link
+                    to="/cities/"
+                    >
+                    Cities
                     </Link>
                 </MenuItem>
                 <MenuItem>

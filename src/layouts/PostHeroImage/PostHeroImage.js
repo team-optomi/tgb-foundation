@@ -51,6 +51,10 @@ const BlockContent = styled.section`
       color: #fff;
       font-size: 72px;
       font-weight: 100;
+      max-width: 1000px;
+      padding: 0 20px;
+      margin: 0 auto;
+      text-align: center;
     }
   }
   @media(max-width:550px) {
