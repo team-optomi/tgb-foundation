@@ -11,6 +11,9 @@ const ChicagoPage = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
     const stateImage = getImage(queryContent.cityPageContent.stateThumbnail.localFile.childImageSharp.gatsbyImageData)
+    const bagImage = getImage(queryContent.cityPageContent.bagImage.localFile.childImageSharp.gatsbyImageData)
+    const heartImage = getImage(queryContent.cityPageContent.cityHeartIcon.localFile.childImageSharp.gatsbyImageData)
+
 
     const settings = {
         dots: false,
@@ -68,19 +71,21 @@ const ChicagoPage = ({ data: { queryContent } }) => {
                     </div>
                     <div class="half-col padding">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityVolunteerOpportunities }} />
-                    </div>
-                    <div class="half-col padding">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityUpcomingProjects }} />
                     </div>
+                    <div class="half-col padding">
+                        <GatsbyImage image={bagImage} alt={queryContent.cityPageContent.bagImage.title} />
+                    </div>
                     <div class="med-col padding">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityRelatedSearches }} />
+                        <div class="med-col-copy" dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityRelatedSearches }} />
+                        <GatsbyImage class="heart-icon" image={heartImage} alt={queryContent.cityPageContent.cityHeartIcon.title} />
                     </div>
                 </div>
             </MainSection>
             <FooterSection>
                 <div class="form-row">
-                    <form name="Chicago Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                        <input type="hidden" name="form-name" value="Chicago Email" aria-label="Input"/>
+                    <form name="Brewton Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                        <input type="hidden" name="form-name" value="Brewton Email" aria-label="Input"/>
                         <div class="flex-row">
                             <div class="col-full">
                                 <h2>Give Back With Us!</h2>
@@ -177,15 +182,27 @@ const HeroSection = styled.section`
             }
         }
     }
-    @media(max-width:900px) {
+    @media(max-width:1070px) {
         .hero-content {
             > div {
-                margin-bottom: 50px;
                 h1 {
+                    font-size: 240px;
+                    margin-bottom: 0;
+                    right: auto;
                     text-align: center;
                 }
                 p {
+                    right: auto;
                     text-align: center;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .hero-content {
+            > div {
+                h1 {
+                    font-size: 72px;
                 }
             }
         }
@@ -211,17 +228,32 @@ const MainSection = styled.section`
             text-align: center;
         }
         .med-col {
-            width: 75%;
+            width: 100%;
+            padding-bottom: 100px !important;
+            .med-col-copy {
+                width: 70%;
+                margin-left: auto;
+            }
+            .heart-icon {
+                position: absolute;
+                left: -100px;
+                top: -10px;
+                max-width: 800px;
+            }
         }
         .padding {
             padding-top: 50px;
             padding-bottom: 50px;
+            position: relative;
+            z-index: 2;
         }
         .image {
             position: relative;
+            z-index: 1;
             right: -50px;
+            top: -50px;
             .gatsby-image-wrapper {
-                transform: scale(1.5);
+                transform: scale(1.4);
             }
         }
         p {
@@ -229,6 +261,43 @@ const MainSection = styled.section`
             color: rgb(1, 39, 86);
             font-size: 20px;
             line-height: 1.2;
+        }
+    }
+    @media(max-width:1070px) {
+        .flex-row {
+            .half-col {
+                width: 100%;
+                text-align: center;
+                &:first-child {
+                    text-align: left;
+                }
+            }
+            .med-col {
+                text-align: center;
+                width: 100%;
+                padding-bottom: 0 !important;
+                .med-col-copy {
+                    width: 100%;
+                }
+                .heart-icon {
+                    display: none;
+                }
+            }
+        }
+        .padding {
+            padding-bottom: 0 !important;
+        }
+        .image {
+            right: auto !important;
+            top: auto !important;
+            padding-top: 50px;
+            .gatsby-image-wrapper {
+                transform: scale(1) !important;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
         }
     }
 `
@@ -414,7 +483,7 @@ const FooterSection = styled.section`
             form {
                 .flex-row {
                     max-width: 1220px;
-                    .col-four {
+                    .col-three {
                         padding: 0 20px;
                         h2 {
                             font-size: 80px;
@@ -436,7 +505,7 @@ const FooterSection = styled.section`
                             font-size: 100px;
                         }
                     }
-                    .col-four {
+                    .col-three {
                         width: 30%;
                         margin-bottom: 20px;
                     }
@@ -468,7 +537,7 @@ const FooterSection = styled.section`
                             font-size: 72px;
                         }
                     }
-                    .col-four {
+                    .col-three {
                         width: 100%;
                     }
                 }
@@ -579,6 +648,30 @@ export const pageQuery = graphql`
                 cityUpcomingProjects
                 cityRelatedSearches
                 stateThumbnail {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                bagImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                cityHeartIcon {
                     title
                     localFile {
                         childImageSharp {

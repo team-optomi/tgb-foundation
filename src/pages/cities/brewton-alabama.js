@@ -11,6 +11,9 @@ const BrewtonPage = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
     const stateImage = getImage(queryContent.cityPageContent.stateThumbnail.localFile.childImageSharp.gatsbyImageData)
+    const bagImage = getImage(queryContent.cityPageContent.bagImage.localFile.childImageSharp.gatsbyImageData)
+    const heartImage = getImage(queryContent.cityPageContent.cityHeartIcon.localFile.childImageSharp.gatsbyImageData)
+
 
     const settings = {
         dots: false,
@@ -68,12 +71,14 @@ const BrewtonPage = ({ data: { queryContent } }) => {
                     </div>
                     <div class="half-col padding">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityVolunteerOpportunities }} />
-                    </div>
-                    <div class="half-col padding">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityUpcomingProjects }} />
                     </div>
+                    <div class="half-col padding">
+                        <GatsbyImage image={bagImage} alt={queryContent.cityPageContent.bagImage.title} />
+                    </div>
                     <div class="med-col padding">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityRelatedSearches }} />
+                        <div class="med-col-copy" dangerouslySetInnerHTML={{ __html: queryContent.cityPageContent.cityRelatedSearches }} />
+                        <GatsbyImage class="heart-icon" image={heartImage} alt={queryContent.cityPageContent.cityHeartIcon.title} />
                     </div>
                 </div>
             </MainSection>
@@ -223,7 +228,18 @@ const MainSection = styled.section`
             text-align: center;
         }
         .med-col {
-            width: 75%;
+            width: 100%;
+            padding-bottom: 100px !important;
+            .med-col-copy {
+                width: 70%;
+                margin-left: auto;
+            }
+            .heart-icon {
+                position: absolute;
+                left: -100px;
+                top: -10px;
+                max-width: 800px;
+            }
         }
         .padding {
             padding-top: 50px;
@@ -259,6 +275,13 @@ const MainSection = styled.section`
             .med-col {
                 text-align: center;
                 width: 100%;
+                padding-bottom: 0 !important;
+                .med-col-copy {
+                    width: 100%;
+                }
+                .heart-icon {
+                    display: none;
+                }
             }
         }
         .padding {
@@ -625,6 +648,30 @@ export const pageQuery = graphql`
                 cityUpcomingProjects
                 cityRelatedSearches
                 stateThumbnail {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                bagImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                cityHeartIcon {
                     title
                     localFile {
                         childImageSharp {
