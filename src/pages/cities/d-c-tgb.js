@@ -84,8 +84,8 @@ const DCPage = ({ data: { queryContent } }) => {
             </MainSection>
             <FooterSection>
                 <div class="form-row">
-                    <form name="Brewton Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                        <input type="hidden" name="form-name" value="Brewton Email" aria-label="Input"/>
+                    <form name="DC Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                        <input type="hidden" name="form-name" value="DC Email" aria-label="Input"/>
                         <div class="flex-row">
                             <div class="col-full">
                                 <h2>Give Back With Us!</h2>
@@ -251,9 +251,9 @@ const MainSection = styled.section`
             position: relative;
             z-index: 1;
             right: -50px;
-            top: -50px;
+            top: 210px;
             .gatsby-image-wrapper {
-                transform: scale(1.4);
+                transform: scale(1.5);
             }
         }
         p {
@@ -465,7 +465,7 @@ const FooterSection = styled.section`
             form {
                 .flex-row {
                     max-width: 1420px;
-                    .col-four {
+                    .col-three {
                         h2 {
                             font-size: 100px;
                         }

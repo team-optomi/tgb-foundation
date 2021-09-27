@@ -465,7 +465,7 @@ const FooterSection = styled.section`
             form {
                 .flex-row {
                     max-width: 1420px;
-                    .col-four {
+                    .col-three {
                         h2 {
                             font-size: 100px;
                         }

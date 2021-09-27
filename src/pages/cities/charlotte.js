@@ -84,8 +84,8 @@ const CharlottePage = ({ data: { queryContent } }) => {
             </MainSection>
             <FooterSection>
                 <div class="form-row">
-                    <form name="Brewton Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                        <input type="hidden" name="form-name" value="Brewton Email" aria-label="Input"/>
+                    <form name="Charlotte Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                        <input type="hidden" name="form-name" value="Charlotte Email" aria-label="Input"/>
                         <div class="flex-row">
                             <div class="col-full">
                                 <h2>Give Back With Us!</h2>
@@ -155,7 +155,7 @@ const HeroSection = styled.section`
             h1 {
                 font-family: "Stay Bright Script";
                 width: 100%;
-                font-size: 600px;
+                font-size: 500px;
                 font-weight: 100;
                 line-height: 1.2;
                 color: #fff;
@@ -250,10 +250,10 @@ const MainSection = styled.section`
         .image {
             position: relative;
             z-index: 1;
-            right: -50px;
-            top: -50px;
+            right: -150px;
+            top: 100px;
             .gatsby-image-wrapper {
-                transform: scale(1.4);
+                transform: scale(1.5);
             }
         }
         p {
@@ -465,7 +465,7 @@ const FooterSection = styled.section`
             form {
                 .flex-row {
                     max-width: 1420px;
-                    .col-four {
+                    .col-three {
                         h2 {
                             font-size: 100px;
                         }

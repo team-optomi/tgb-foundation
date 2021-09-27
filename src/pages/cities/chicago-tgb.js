@@ -84,8 +84,8 @@ const ChicagoPage = ({ data: { queryContent } }) => {
             </MainSection>
             <FooterSection>
                 <div class="form-row">
-                    <form name="Brewton Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                        <input type="hidden" name="form-name" value="Brewton Email" aria-label="Input"/>
+                    <form name="Chicago Email" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                        <input type="hidden" name="form-name" value="Chicago Email" aria-label="Input"/>
                         <div class="flex-row">
                             <div class="col-full">
                                 <h2>Give Back With Us!</h2>
@@ -182,7 +182,7 @@ const HeroSection = styled.section`
             }
         }
     }
-    @media(max-width:1070px) {
+    @media(max-width:900px) {
         .hero-content {
             > div {
                 h1 {
@@ -253,7 +253,7 @@ const MainSection = styled.section`
             right: -50px;
             top: -50px;
             .gatsby-image-wrapper {
-                transform: scale(1.4);
+                transform: scale(1.5);
             }
         }
         p {
@@ -465,7 +465,7 @@ const FooterSection = styled.section`
             form {
                 .flex-row {
                     max-width: 1420px;
-                    .col-four {
+                    .col-three {
                         h2 {
                             font-size: 100px;
                         }
