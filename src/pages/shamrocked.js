@@ -31,7 +31,7 @@ const CharmPage = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <Link to={"/charm-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
+                    <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
                     <div dangerouslySetInnerHTML={{ __html: queryContent.BuyACharmContent.charmBannerCopy }} />
                 </div>
             </BannerSection>
