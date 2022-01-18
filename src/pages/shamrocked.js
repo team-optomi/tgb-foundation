@@ -76,6 +76,9 @@ const CharmPage = ({ data: { queryContent } }) => {
                         ))}
                         </div>
                     </div>
+                    <div class="bottom-row">
+                        <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
+                    </div>
                 </div>
             </SectionThree>
         </Layout>
@@ -129,6 +132,13 @@ const BannerSection = styled.section`
             margin-bottom: 25px;
         }
     }
+    @media(max-width:767px) {
+        padding: 120px 20px;
+        a {
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
 `
 
 const SectionOne = styled.section`
@@ -155,13 +165,16 @@ const SectionOne = styled.section`
             padding: 30px;
             text-align: center;
             position: relative;
-            h2 {
+            h1 {
                 font-family: "Bodoni Classic";
                 margin: 0;
                 font-size: 32px;
                 text-transform: uppercase;
                 line-height: 1.1;
                 margin-bottom: 0px;
+                span.large {
+                    font-size: 52px;
+                }
             }
             p.small {
                 font-family: "Bodoni Classic";
@@ -187,6 +200,23 @@ const SectionOne = styled.section`
                 width: 265px;
                 height: 2px;
                 background-color: #007f3d;
+            }
+        }
+    }
+    @media(max-width:1140px) {
+        .flex-row {
+            max-width: 700px;
+            flex-wrap: wrap;
+            .gatsby-image-wrapper {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .section-one-copy {
+                margin: 30px auto;
+                margin-bottom: 0px;
+                &:before {
+                    display: none;
+                }
             }
         }
     }
@@ -238,6 +268,32 @@ const SectionTwo = styled.section`
             }
         }
     }
+    @media(max-width:1000px) {
+        .flex-row {
+            flex-wrap: wrap;
+            .gatsby-image-wrapper {
+                width: 100%;
+            }
+            .section-two-copy {
+                max-width: 600px;
+                width: 100%;
+                margin: 0 auto;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 35px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .section-two-copy {
+                h3 {
+                    font-size: 18px;
+                    text-align: center;
+                }
+            }
+        }
+    }
 `
 
 const SectionThree = styled.section`
@@ -249,6 +305,7 @@ const SectionThree = styled.section`
         width: 100%;
         margin: 0 auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         .left-col {
             max-width: 600px;
@@ -257,8 +314,10 @@ const SectionThree = styled.section`
             justify-content: flex-end;
             align-items: center;
             .section-three-copy {
-                padding-right: 50px;
                 text-align: center;
+                border: 1px solid #00ff00;
+                padding: 10px;
+                margin-right: 30px;
                 h2 {
                     font-family: "Bodoni Classic";
                     margin: 0;
@@ -323,6 +382,58 @@ const SectionThree = styled.section`
                     margin-top: 5px;
                     text-transform: uppercase;
                     color: #007f3d;
+                }
+            }
+        }
+        .bottom-row {
+            width: 100%;
+            padding: 70px 20px;
+            padding-bottom: 0px;
+            display: flex;
+            justify-content: center;
+            a {
+                font-family: "Bodoni Classic";
+                color: #000;
+                background-color: #00ff00;
+                display: block;
+                width: 250px;
+                padding: 10px 35px;
+                padding-top: 15px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 24px;
+                line-height: .5;
+                text-transform: uppercase;
+                margin-bottom: 0px;
+                span {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+    @media(max-width:1140px) {
+        .flex-row {
+            max-width: 700px;
+            .left-col {
+                width: 100%;
+            }
+            .right-col {
+                width: 100%;
+                padding-left: 0px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .left-col {
+                padding: 0 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                .section-three-copy {
+                    max-width: 250px;
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 25px;
                 }
             }
         }
