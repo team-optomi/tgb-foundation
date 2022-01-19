@@ -220,6 +220,17 @@ const SectionOne = styled.section`
             }
         }
     }
+    @media(min-width:460px) {
+        .flex-row {
+            .section-one-copy {
+                h3 {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 `
 
 const SectionTwo = styled.section`
@@ -255,6 +266,18 @@ const SectionTwo = styled.section`
                 font-weight: 100;
                 line-height: 1.4;
                 margin-bottom: 40px;
+            }
+            ul {
+                list-style-position: inside;
+            }
+            li {
+                font-family: "Bodoni Classic";
+                color: #007f3d;
+                margin: 0;
+                font-size: 18px;
+                font-weight: 100;
+                line-height: 1.4;
+                margin-bottom: 5px;
             }
             h3 {
                 font-family: "Bodoni Classic";

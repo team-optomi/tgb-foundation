@@ -106,6 +106,13 @@ class SideMainMenu extends Component {
                 </MenuItem>
                 <MenuItem>
                     <Link
+                    to="/shamrocked/"
+                    >
+                    Get Rocked
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link
                     to="/volunteer/"
                     >
                     Volunteer
