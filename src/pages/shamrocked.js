@@ -406,6 +406,11 @@ const SectionThree = styled.section`
                     text-transform: uppercase;
                     color: #007f3d;
                 }
+                .gatsby-image-wrapper {
+                    img {
+                        object-fit: contain !important;
+                    }
+                }
             }
         }
         .bottom-row {
