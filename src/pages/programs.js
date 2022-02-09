@@ -10,15 +10,15 @@ const ProgramsPage = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.programsContent.pSectionOneMainImage.localFile.childImageSharp.gatsbyImageData)
-    const sectionTwoImage = getImage(queryContent.programsContent.pSectionTwoMainImage.localFile.childImageSharp.gatsbyImageData)
+    //const sectionTwoImage = getImage(queryContent.programsContent.pSectionTwoMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionThreeImage = getImage(queryContent.programsContent.pSectionThreeMainImage.localFile.childImageSharp.gatsbyImageData)
-    const sectionFourImage = getImage(queryContent.programsContent.pSectionFourMainImage.localFile.childImageSharp.gatsbyImageData)
+    //const sectionFourImage = getImage(queryContent.programsContent.pSectionFourMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionFiveImage = getImage(queryContent.programsContent.pSectionFiveMainImage.localFile.childImageSharp.gatsbyImageData)
 
     const galleryOne = queryContent.programsContent.pSectionOneImageGallery
-    const galleryTwo = queryContent.programsContent.pSectionTwoGallery
+    //const galleryTwo = queryContent.programsContent.pSectionTwoGallery
     const galleryThree = queryContent.programsContent.pSectionThreeGallery
-    const galleryFour = queryContent.programsContent.pSectionFourGallery
+    //const galleryFour = queryContent.programsContent.pSectionFourGallery
     const galleryFive = queryContent.programsContent.pSectionFiveGallery
 
 
@@ -62,7 +62,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
             </MainSection>
 
             <MainSection>
-                <div class="main-row">
+                <div class="main-row middle-section">
                     <div class="main-image">
                         <GatsbyImage image={sectionThreeImage} alt={queryContent.programsContent.pSectionThreeMainImage.title} />
                     </div>
@@ -72,7 +72,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-easing="ease"
                     class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionThreeContent }} />
-                        <Link to={"/programs/gifting-gallant-gowns/"}>Learn More</Link>
+                        <Link to={"/programs/kids-coding-camps/"}>Learn More</Link>
                     </div>
                 </div>
                 <div class="gallery-row">
@@ -103,7 +103,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                 </div>
             </MainSection>
 
-            <MainSection>
+            {/* <MainSection>
                 <div class="main-row">
                     <div class="main-image">
                         <GatsbyImage image={sectionFourImage} alt={queryContent.programsContent.pSectionFourMainImage.title} />
@@ -122,9 +122,9 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
-            </MainSection>
+            </MainSection> */}
 
-            <MainSection>
+            {/* <MainSection>
                 <div class="main-row">
                     <div 
                     data-sal="slide-right"
@@ -143,7 +143,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
-            </MainSection>
+            </MainSection> */}
             
         </Layout>
     )
@@ -250,6 +250,16 @@ const MainSection = styled.section`
             }
             &:last-child {
                 width: 62%;
+            }
+        }
+        &.middle-section {
+            > div {
+                &:first-child {
+                    width: 60%;
+                }
+                &:last-child {
+                    width: 40%;
+                }
             }
         }
         .main-image {

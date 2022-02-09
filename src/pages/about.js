@@ -14,7 +14,7 @@ const AboutPage = ({ data: { queryContent } }) => {
     const stewardTwo = getImage(queryContent.aboutPageContent.foundationStewards.fSectionTwoImage.localFile.childImageSharp.gatsbyImageData)
     const stewardThree = getImage(queryContent.aboutPageContent.foundationStewards.fSectionThreeImage.localFile.childImageSharp.gatsbyImageData)
     const stewardFour = getImage(queryContent.aboutPageContent.foundationStewards.fSectionFourImage.localFile.childImageSharp.gatsbyImageData)
-    const stewardFive = getImage(queryContent.aboutPageContent.foundationStewards.fSectionFiveImage.localFile.childImageSharp.gatsbyImageData)
+    //const stewardFive = getImage(queryContent.aboutPageContent.foundationStewards.fSectionFiveImage.localFile.childImageSharp.gatsbyImageData)
     const stewardSix = getImage(queryContent.aboutPageContent.foundationStewards.fSectionSixImage.localFile.childImageSharp.gatsbyImageData)
     const stewardSeven = getImage(queryContent.aboutPageContent.foundationStewards.fSectionSevenImage.localFile.childImageSharp.gatsbyImageData)
   
@@ -142,7 +142,7 @@ const AboutPage = ({ data: { queryContent } }) => {
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionFourContent}} />
                     </div>
                 </div>
-                <div class="flex-row">
+                {/* <div class="flex-row">
                     <div 
                     data-sal="slide-right"
                     data-sal-duration="1000"
@@ -157,37 +157,37 @@ const AboutPage = ({ data: { queryContent } }) => {
                     class="section-background">
                         <GatsbyImage image={stewardFive} alt={queryContent.aboutPageContent.foundationStewards.fSectionFiveImage.title} />
                     </div>
-                </div>
+                </div> */}
                 <div class="flex-row">
                     <div 
                     data-sal="slide-right"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="section-background">
-                        <GatsbyImage image={stewardSix} alt={queryContent.aboutPageContent.foundationStewards.fSectionSixImage.title} />
-                    </div>
-                    <div 
-                    data-sal="slide-left"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSixContent}} />
                     </div>
+                    <div 
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="section-background">
+                        <GatsbyImage image={stewardSix} alt={queryContent.aboutPageContent.foundationStewards.fSectionSixImage.title} />
+                    </div>
                 </div>
                 <div class="flex-row">
                     <div 
                     data-sal="slide-right"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    class="section-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSevenContent}} />
+                    class="section-background">
+                        <GatsbyImage image={stewardSeven} alt={queryContent.aboutPageContent.foundationStewards.fSectionSevenImage.title} />
                     </div>
                     <div 
                     data-sal="slide-left"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    class="section-background">
-                        <GatsbyImage image={stewardSeven} alt={queryContent.aboutPageContent.foundationStewards.fSectionSevenImage.title} />
+                    class="section-content">
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.aboutPageContent.foundationStewards.fSectionSevenContent}} />
                     </div>
                 </div>
             </StewardsSection>

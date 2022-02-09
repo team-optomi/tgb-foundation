@@ -9,6 +9,7 @@ import Seo from "../components/seo"
 const VolunteerPage = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
+    const heartImage = getImage(queryContent.volunteerContent.volunteerRightImage.localFile.childImageSharp.gatsbyImageData)
 
     return(
         <Layout>
@@ -27,13 +28,18 @@ const VolunteerPage = ({ data: { queryContent } }) => {
                     </div>
                 </div>
             </HeroSection>
+            <ContentSection>
+                <div class="flex-row">
+                    <div class="vol-content" dangerouslySetInnerHTML={{ __html: queryContent.volunteerContent.volunteerLeftContent }} />
+                    <div class="vol-icon">
+                        <GatsbyImage class="heart-icon" image={heartImage} alt={queryContent.volunteerContent.volunteerRightImage.title} />
+                    </div>
+                </div>
+            </ContentSection>
             <FormSection>
                 <form name="TGB Volunteer" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
                     <input type="hidden" name="form-name" value="TGB Volunteer" aria-label="Input"/>
                     <div class="flex-row">
-                        <div class="col-full">
-                            <h2>volunteer</h2>
-                        </div>
                         <div class="col-four">
                             <p class="hidden">
                                 <label>Don’t fill this out if you're human: <input name="bot-field" aria-label="Input" /></label>
@@ -145,6 +151,45 @@ const HeroSection = styled.section`
                         font-size: 16px;
                     }
                 }
+            }
+        }
+    }
+`
+
+const ContentSection = styled.section`
+    background-color: #fff;
+    padding: 20px;
+    .flex-row {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        .vol-content {
+            width: 45%;
+            h2 {
+                text-align: center;
+                font-family: "Stay Bright Script";
+                color: #012756;
+                font-size: 150px;
+                font-weight: 100;
+                line-height: 1.2;
+                margin-top: 0;
+            }
+            p {
+                font-family: "Bodoni Classic";
+                font-size: 22px;
+                line-height: 1.2;
+                color: rgb(1, 39, 86);
+            }
+        }
+        .vol-icon {
+            width: 55%;
+            height: 100%;
+            position: relative;
+            .gatsby-image-wrapper {
+                position: absolute;
+                top: -140px;
+                left: 0;
+                transform: scale(1.35);
             }
         }
     }
@@ -395,6 +440,21 @@ export const pageQuery = graphql`
                         childImageSharp {
                             gatsbyImageData (
                                 width: 2400
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+            }
+            volunteerContent {
+                volunteerLeftContent
+                volunteerRightImage {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 1200
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )
