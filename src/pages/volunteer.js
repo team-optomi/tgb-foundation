@@ -193,6 +193,24 @@ const ContentSection = styled.section`
             }
         }
     }
+    @media(max-width:1600px) {
+        .flex-row {
+            .vol-content {
+                h2 {
+                    font-size: 100px;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .vol-content {
+                h2 {
+                    font-size: 72px;
+                }
+            }
+        }
+    }
     @media(max-width:1090px) {
         .flex-row {
             width: 100%;

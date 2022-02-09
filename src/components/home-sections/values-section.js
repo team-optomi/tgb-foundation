@@ -256,6 +256,26 @@ const MainSection = styled.section`
         a {
             text-decoration: none;
         }
+        .flex-row {
+            .col-five {
+                width: 25%;
+            }
+            @media(max-width:1200px) {
+                .col-five {
+                    width: 30%;
+                }
+            }
+            @media(max-width:992px) {
+                .col-five {
+                    width: 50%;
+                }
+            }
+            @media(max-width:530px) {
+                .col-five {
+                    width: 100%;
+                }
+            }
+        }
     }
     .row-two {
         background-color: #8e8f91;
@@ -352,7 +372,7 @@ const MainSection = styled.section`
         transition-duration: .3s;
     }
     .col-five {
-        width: 25%;
+        width: 20%;
         padding: 0 20px;
         &:nth-child(2) {
             transition-delay: .6s;
