@@ -125,7 +125,7 @@ const ValuesSection = () => {
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="col-five">
-                        <Link to={"/programs/feeding-kids-in-need/"}>
+                        <Link to={"/programs/kids-coding-camps/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
                         <GatsbyImage image={iconOneHalf} alt={data.queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
                         </Link>                    

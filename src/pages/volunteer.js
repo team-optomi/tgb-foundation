@@ -193,6 +193,31 @@ const ContentSection = styled.section`
             }
         }
     }
+    @media(max-width:1090px) {
+        .flex-row {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            .vol-content {
+                width: 100%;
+            }
+            .vol-icon {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .gatsby-image-wrapper {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    transform: scale(1);
+                    max-width: 350px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 `
 
 const FormSection = styled.section`
