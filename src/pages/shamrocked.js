@@ -78,6 +78,7 @@ const CharmPage = ({ data: { queryContent } }) => {
                     </div>
                     <div class="bottom-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
+                        <div class="video-embed" dangerouslySetInnerHTML={{ __html: queryContent.BuyACharmContent.shamrockedVideoEmbed }} />
                     </div>
                 </div>
             </SectionThree>
@@ -570,6 +571,7 @@ export const pageQuery = graphql`
                     hospitalPartnerLocation
                     hospitalPartnerLink
                 }
+                shamrockedVideoEmbed
             }
         }
     }
