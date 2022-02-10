@@ -358,11 +358,11 @@ const MainSection = styled.section`
             flex-wrap: wrap;
             > div {
                 &.main-content {
-                    width: 100%;
+                    width: 100% !important;
                     order: 1;
                 }
                 &.main-image {
-                    width: 100%;
+                    width: 100% !important;
                     order: 2;
                 }
             }
