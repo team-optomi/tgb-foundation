@@ -78,8 +78,8 @@ const CharmPage = ({ data: { queryContent } }) => {
                     </div>
                     <div class="bottom-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
-                        <div class="video-embed" dangerouslySetInnerHTML={{ __html: queryContent.BuyACharmContent.shamrockedVideoEmbed }} />
                     </div>
+                    <div class="video-embed" dangerouslySetInnerHTML={{ __html: queryContent.BuyACharmContent.shamrockedVideoEmbed }} />
                 </div>
             </SectionThree>
         </Layout>
@@ -439,6 +439,21 @@ const SectionThree = styled.section`
                 }
             }
         }
+        .video-embed {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 30px;
+            > div {
+                max-width: 800px;
+                width: 100%;
+            }
+            video {
+                max-width: 800px;
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
     @media(max-width:1140px) {
         .flex-row {
@@ -449,6 +464,21 @@ const SectionThree = styled.section`
             .right-col {
                 width: 100%;
                 padding-left: 0px;
+            }
+            .video-embed {
+                max-width: 600px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 30px;
+                > div {
+                    max-width: 600px;
+                    width: 100%;
+                }
+                video {
+                    max-width: 600px;
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -463,6 +493,40 @@ const SectionThree = styled.section`
                     width: 100%;
                     margin: 0 auto;
                     margin-bottom: 25px;
+                }
+            }
+            .video-embed {
+                max-width: 400px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 30px;
+                > div {
+                    max-width: 400px;
+                    width: 100%;
+                }
+                video {
+                    max-width: 400px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    @media(max-width: 440px) {
+        .flex-row {
+            .video-embed {
+                max-width: 300px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 30px;
+                > div {
+                    max-width: 300px;
+                    width: 100%;
+                }
+                video {
+                    max-width: 300px;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
