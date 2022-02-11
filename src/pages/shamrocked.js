@@ -79,7 +79,20 @@ const CharmPage = ({ data: { queryContent } }) => {
                     <div class="bottom-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
                     </div>
-                    <div class="video-embed" dangerouslySetInnerHTML={{ __html: queryContent.BuyACharmContent.shamrockedVideoEmbed }} />
+                    <div class="video-embed">
+                        <video
+                            className="video-player"
+                            height="100%"
+                            width="100%"
+                            controls
+                            //poster={queryContent.BuyACharmContent.shamrockedVideoThumbnail.localFile.childImageSharp.gatsbyImageData}
+                            >
+                            <source
+                                src={queryContent.BuyACharmContent.shamrockedVideoEmbed}
+                                type="video/mp4"
+                            />
+                        </video>
+                    </div>
                 </div>
             </SectionThree>
         </Layout>
@@ -636,6 +649,18 @@ export const pageQuery = graphql`
                     hospitalPartnerLink
                 }
                 shamrockedVideoEmbed
+                shamrockedVideoThumbnail {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 800
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
             }
         }
     }
