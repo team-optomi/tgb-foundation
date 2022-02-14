@@ -85,7 +85,7 @@ const CharmPage = ({ data: { queryContent } }) => {
                             height="100%"
                             width="100%"
                             controls
-                            //poster={queryContent.BuyACharmContent.shamrockedVideoThumbnail.localFile.childImageSharp.gatsbyImageData}
+                            poster={queryContent.BuyACharmContent.videoThumbnailSource}
                             >
                             <source
                                 src={queryContent.BuyACharmContent.shamrockedVideoEmbed}
@@ -661,6 +661,7 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                videoThumbnailSource
             }
         }
     }
