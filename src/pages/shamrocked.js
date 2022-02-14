@@ -79,6 +79,9 @@ const CharmPage = ({ data: { queryContent } }) => {
                     <div class="bottom-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
                     </div>
+                    <div class="title-row">
+                        <h2>Here's how you "shamrock"</h2>
+                    </div>
                     <div class="video-embed">
                         <video
                             className="video-player"
@@ -452,6 +455,21 @@ const SectionThree = styled.section`
                 }
             }
         }
+        .title-row {
+            width: 100%;
+            h2 {
+                font-family: "Stay Bright Script";
+                width: 100%;
+                font-size: 42px;
+                color: rgb(0, 127, 61);
+                font-weight: 100;
+                line-height: 1.2;
+                text-transform: none;
+                text-align: center;
+                margin: 25px auto;
+                margin-bottom: 0px;
+            }
+        }
         .video-embed {
             max-width: 800px;
             width: 100%;
@@ -465,6 +483,9 @@ const SectionThree = styled.section`
                 max-width: 800px;
                 width: 100%;
                 height: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -506,6 +527,11 @@ const SectionThree = styled.section`
                     width: 100%;
                     margin: 0 auto;
                     margin-bottom: 25px;
+                }
+            }
+            .title-row {
+                h2 {
+                    font-size: 32px;
                 }
             }
             .video-embed {
