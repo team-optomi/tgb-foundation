@@ -6,12 +6,15 @@ import styled from 'styled-components'
 import Layout from "../components/layout-v2"
 import Seo from "../components/seo"
 
+import downloadFile from "../downloads/QR_code_sheet.pdf"
+
 const CharmPage = ({ data: { queryContent } }) => {
 
     const bannerImage = getImage(queryContent.BuyACharmContent.charmBannerImage.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.BuyACharmContent.charmSectionOneImage.localFile.childImageSharp.gatsbyImageData)
     const sectionTwoImage = getImage(queryContent.BuyACharmContent.charmSectionTwoImage.localFile.childImageSharp.gatsbyImageData)
     const sectionThreeImage = getImage(queryContent.BuyACharmContent.charmSectionThreeImage.localFile.childImageSharp.gatsbyImageData)
+    const stepsImage = getImage(queryContent.BuyACharmContent.shamrockedStepsImage.localFile.childImageSharp.gatsbyImageData)
 
     const partnerMap = queryContent.BuyACharmContent.hospitalPartners
 
@@ -78,6 +81,7 @@ const CharmPage = ({ data: { queryContent } }) => {
                     </div>
                     <div class="bottom-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>For your lucky charm yard sign</span></Link>
+                        <a href={downloadFile} download>QR Code Sheet</a>
                     </div>
                     <div class="title-row">
                         <h2>Here's how you "shamrock"</h2>
@@ -95,6 +99,9 @@ const CharmPage = ({ data: { queryContent } }) => {
                                 type="video/mp4"
                             />
                         </video>
+                    </div>
+                    <div class="bottom-row">
+                        <GatsbyImage image={stepsImage} alt={queryContent.BuyACharmContent.shamrockedStepsImage.title} />
                     </div>
                 </div>
             </SectionThree>
@@ -339,7 +346,7 @@ const SectionTwo = styled.section`
 const SectionThree = styled.section`
     position: relative;
     background-color: #fff;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
     .flex-row {
         max-width: 1200px;
         width: 100%;
@@ -435,6 +442,7 @@ const SectionThree = styled.section`
             padding: 70px 20px;
             padding-bottom: 0px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             a {
                 font-family: "Bodoni Classic";
@@ -446,10 +454,10 @@ const SectionThree = styled.section`
                 padding-top: 15px;
                 text-align: center;
                 text-decoration: none;
-                font-size: 24px;
+                font-size: 20px;
                 line-height: .5;
                 text-transform: uppercase;
-                margin-bottom: 0px;
+                margin: 10px;
                 span {
                     font-size: 9px;
                 }
@@ -688,6 +696,14 @@ export const pageQuery = graphql`
                     }
                 }
                 videoThumbnailSource
+                shamrockedStepsImage {
+                    title
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
             }
         }
     }
