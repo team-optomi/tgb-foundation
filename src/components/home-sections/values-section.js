@@ -124,7 +124,7 @@ const ValuesSection = () => {
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    class="col-five">
+                    class="col-five image-adjust">
                         <Link to={"/programs/kids-coding-camps/"}>
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
                         <GatsbyImage image={iconOneHalf} alt={data.queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
@@ -253,6 +253,15 @@ const MainSection = styled.section`
                 object-fit: contain;
             }
         }
+        .image-adjust {
+            .gatsby-image-wrapper {
+                max-width: 130px;
+                img {
+                    max-width: 130px; 
+                    object-fit: contain;
+                }
+            }
+        }
         a {
             text-decoration: none;
         }
@@ -346,6 +355,7 @@ const MainSection = styled.section`
             display: block;
             margin: 0 auto;
             margin-top: -28px;
+            margin-bottom: -19px;
         }
     }
     .flex-row {
