@@ -120,6 +120,14 @@ const BannerSection = styled.section`
             text-align: right;
         }
     }
+    @media(max-width:1000px) {
+        .banner-content {
+            h1 {
+                font-size: 60px;
+                text-align: center;
+            }
+        }
+    }
     @media(max-width:767px) {
         padding: 120px 20px;
         h1 {
@@ -187,6 +195,35 @@ const SectionOne = styled.section`
             }
         }
     }
+    @media(max-width:1000px) {
+        .flex-row {
+            flex-wrap: wrap;
+            margin-top: 0px;
+            padding-top: 20px;
+            .gatsby-image-wrapper {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .content {
+                max-width: 700px;
+                width: 100%;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .gatsby-image-wrapper {
+                max-width: 400px;
+                width: 100%;
+            }
+        }
+    }
 `
 
 const SectionTwo = styled.section`
@@ -231,12 +268,13 @@ const SectionTwo = styled.section`
                 width: 100%;
                 text-align: center;
                 span {
+                    font-size: 24px;
                     color: rgb(0, 127, 61);
                 }
             }
             ul {
                 font-family: "Bodoni Classic";
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: bold;
                 width: 100%;
                 display: flex;
@@ -246,6 +284,19 @@ const SectionTwo = styled.section`
                 li {
                     margin-left: 30px;
                 }
+            }
+        }
+    }
+    @media(max-width:1000px) {
+        .flex-row {
+            flex-wrap: wrap;
+            .left-col {
+                padding-right: 0;
+                width: 100%;
+                border-right: none;
+            }
+            .right-col {
+                width: 100%;
             }
         }
     }
@@ -273,6 +324,11 @@ const SectionFour = styled.section`
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
+    }
+    @media(max-width:767px) {
+        h2 {
+            font-size: 44px;
+        }
     }
 `
 
@@ -314,6 +370,21 @@ const SectionFive = styled.section`
             }
         }
     }
+    @media(max-width:767px) {
+        .flex-row {
+            h2 {
+                font-size: 24px;
+            }
+            .partner-map {
+                .partner {
+                    width: 50%;
+                    h3 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 `
 
 const SectionSix = styled.section`
@@ -333,7 +404,7 @@ const SectionSix = styled.section`
             font-weight: bold;
             line-height: 1.2;
             span {
-                font-size: 100px;
+                font-size: 120px;
                 color: #d4a949;
             }
         }
@@ -359,6 +430,16 @@ const SectionSix = styled.section`
             margin: 10px;
             span {
                 font-size: 9px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .donate-box {
+            padding: 40px 20px;
+            p {
+                span {
+                    font-size: 80px;
+                }
             }
         }
     }
@@ -391,6 +472,49 @@ const SectionSeven = styled.section`
             &:nth-child(7) {
                 width: 50%;
                 height: 70vh;
+            }
+        }
+    }
+    @media(max-width:1300px) {
+        .gallery-map {
+            .gallery-image {
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    height: 400px;
+                }
+                &:nth-child(6),
+                &:nth-child(7) {
+                    height: 400px;
+                }
+            }
+        }
+    }
+    @media(max-width:1000px) {
+        .gallery-map {
+            .gallery-image {
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .gallery-map {
+            .gallery-image {
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    width: 100%;
+                    height: auto;
+                }
+                &:nth-child(6),
+                &:nth-child(7) {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
