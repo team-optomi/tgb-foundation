@@ -44,10 +44,10 @@ const GolfPage = ({ data: { queryContent } }) => {
                 <div class="contact" dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfContactInformation }} />
             </SectionOne>
             <SectionTwo>
-                <div class="buttons">
+                {/* <div class="buttons">
                     <a href="#"><span class="fancy">register as</span> a foursome</a>
                     <a href="#"><span class="fancy">register as</span> a corporate sponsor</a>
-                </div>
+                </div> */}
                 <h2>Corporate Sponsorship Opportunities</h2>
                 <div class="sponsor-opportunities">
                     <GatsbyImage image={infoGraphic} alt={queryContent.golfFundraiser.golfLargeIcon.title} />
@@ -207,6 +207,71 @@ const SectionOne = styled.section`
             padding-right: 10px;
         }
     }
+    @media(max-width:1000px) {
+        .flex-row {
+            flex-wrap: wrap;
+            margin-top: 0px;
+            padding-top: 20px;
+            .left-col {
+                width: 100%;
+                text-align: center;
+            }
+            .right-col {
+                width: 100%;
+                margin-left: 0;
+                text-align: center;
+                .gatsby-image-wrapper {
+                    transform: scale(1);
+                    top: auto;
+                    right: auto;
+                    max-width: 350px;
+                }
+            }
+        }
+        .contact {
+            padding-top: 20px;
+            p.large {
+                text-align: center;
+            }
+            p.medium {
+                text-align: center;
+            }
+            p {
+                text-align: center;
+            }
+            p.small {
+                text-align: center;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .left-col {
+                .content {
+                    h2 {
+                        font-size: 44px;
+                        .fancy {
+                            font-size: 60px;
+                        }
+                    }
+                }
+            }
+        }
+        div.contact {
+            p.large {
+                font-size: 32px;
+            }
+            p.medium {
+                font-size: 28px;
+            }
+            p {
+                font-size: 20px;
+            }
+            p.small {
+                font-size: 20px;
+            }
+        }
+    }
 `
 
 const SectionTwo = styled.section`
@@ -270,6 +335,49 @@ const SectionTwo = styled.section`
                     font-size: 20px;
                     font-weight: 700;
                     color: #000;
+                }
+            }
+        }
+    }
+    @media(max-width: 1000px) {
+        .buttons {
+            a {
+                margin-left: auto;
+                text-align: center;
+            }
+        }
+    }
+    @media(max-width: 767px) {
+        .buttons {
+            a {
+                font-size: 24px;
+                width: auto;
+                .fancy {
+                    font-size: 32px;
+                }
+            }
+        }
+        h2 {
+            font-size: 44px;
+        }
+        .sponsor-opportunities {
+            flex-wrap: wrap;
+            justify-content: center;
+            > div:first-child {
+                order: 2;
+                width: 100%;
+                text-align: center;
+            }
+            > div:last-child {
+                order: 1;
+                width: 100%;
+                .flex-row {
+                    flex-wrap: wrap;
+                    ul {
+                        width: 100%;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                    }
                 }
             }
         }

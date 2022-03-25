@@ -106,9 +106,9 @@ class SideMainMenu extends Component {
                 </MenuItem>
                 <MenuItem>
                     <Link
-                    to="/shamrocked/"
+                    to="/campaigns/"
                     >
-                    Get Rocked
+                    Campaigns
                     </Link>
                 </MenuItem>
                 <MenuItem>

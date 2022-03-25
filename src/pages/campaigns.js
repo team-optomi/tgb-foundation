@@ -224,6 +224,45 @@ const ContentSection = styled.section`
             }
         }
     }
+    @media(max-width:1000px) {
+        .main-row {
+            h2 {
+                font-size: 80px;
+            }
+            .campaign-map {
+                flex-wrap: wrap;
+                .campaign {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .main-row {
+            h2 {
+                font-size: 50px;
+            }
+            .campaign-map {
+                flex-wrap: wrap;
+                .campaign {
+                    width: 100%;
+                    a {
+                        > div.gatsby-image-wrapper {
+                            &:first-child {
+                                opacity: 0;
+                            }
+                            &:nth-child(2) {
+                                opacity: 1;
+                            }
+                        }
+                        h3 {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
 `
 
 export default CampaignsPage

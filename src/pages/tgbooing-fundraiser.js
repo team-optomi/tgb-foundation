@@ -10,6 +10,7 @@ const TGBooingPage = ({ data: { queryContent } }) => {
 
     const bannerImage = getImage(queryContent.tgbooingContent.booingBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.tgbooingContent.booingFirstSectionImage.localFile.childImageSharp.gatsbyImageData)
+    const sectionOneLarge = getImage(queryContent.tgbooingContent.booingLargeImage.localFile.childImageSharp.gatsbyImageData)
     const infoGraphic = getImage(queryContent.tgbooingContent.booingInfoGraphic.localFile.childImageSharp.gatsbyImageData)
 
     const partnerMap = queryContent.tgbooingContent.booingPartners
@@ -30,17 +31,25 @@ const TGBooingPage = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1 TGBooing Fundraiser />
+                    <h1>TG<span class="orange">Booing Fundraiser</span></h1>
                 </div>
             </BannerSection>
             <SectionOne>
                 <div class="flex-row">
-                    <GatsbyImage image={sectionOneImage} alt={queryContent.tgbooingContent.booingFirstSectionImage.title} />
-                    <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.tgbooingContent.booingFirstSectionContent }} />
+                    <div class="left-col">
+                        <GatsbyImage image={sectionOneImage} alt={queryContent.tgbooingContent.booingFirstSectionImage.title} />
+                        <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.tgbooingContent.booingFirstSectionContent }} />
+                    </div>
+                    <div class="right-col">
+                        <GatsbyImage image={sectionOneLarge} alt={queryContent.tgbooingContent.booingLargeImage.title} />
+                    </div>
                 </div>
             </SectionOne>
             <SectionTwo>
-                <GatsbyImage image={infoGraphic} alt={queryContent.tgbooingContent.booingInfoGraphic.title} />
+                <div class="flex-row">
+                    <h2>How to Boo</h2>
+                    <GatsbyImage image={infoGraphic} alt={queryContent.tgbooingContent.booingInfoGraphic.title} />
+                </div>
             </SectionTwo>
             <SectionFive>
                 <div class="flex-row">
@@ -88,6 +97,9 @@ const BannerSection = styled.section`
             line-height: 1.2;
             transition-duration: 0.3s;
             text-align: right;
+            .orange {
+                color: #fc9500;
+            }
         }
     }
     @media(max-width:1000px) {
@@ -118,50 +130,66 @@ const SectionOne = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
-        .gatsby-image-wrapper {
-            max-width: 40%;
-            width: 100%;
-            margin-right: 10%;
-        }
-        .content {
-            position: relative;
-            max-width: 50%;
-            width: 100%;
-            margin-top: 150px;
-            p {
-                font-family: "Bodoni Classic";
-                font-size: 20px;
-                line-height: 1.2;
-                margin-bottom: 25px;
-                &:last-child {
+        .left-col {
+            width: 55%;
+            .gatsby-image-wrapper {
+                max-width: 450px;
+                width: 100%;
+                border: 2px solid #000;
+                background-color: #fff;
+            }
+            .content {
+                position: relative;
+                width: 100%;
+                margin-top: 50px;
+                padding: 0 25px;
+                h2 {
+                    font-family: "Bodoni Classic";
+                    color: #fc9500;
+                    font-size: 72px;
+                    font-weight: 100;
                     text-align: center;
+                    text-shadow: 4px 4px 10px rgba(0,0,0,.3);
+                    .fancy {
+                        font-family: "Stay Bright Script";
+                        font-size: 100px;
+                        color: #fc9500;
+                    }
+                }
+                p {
+                    font-family: "Bodoni Classic";
+                    font-size: 20px;
+                    line-height: 1.2;
+                    margin-bottom: 25px;
+                    color: #684521;
+                    &.fancy {
+                        font-family: "Stay Bright Script";
+                        font-size: 44px;
+                        font-weight: 100;
+                        color: #00234f;
+                        text-align: center;
+                    }
+                }
+                a {
+                    font-family: "Stay Bright Script";
+                    font-size: 32px;
+                    line-height: 1.2;
+                    background-color: #000;
+                    color: #fc9500;
+                    text-decoration: none;
+                    padding: 10px 35px;
+                    display: inline-block;
+                    margin: 0 auto;
                 }
             }
-            a {
-                font-family: "Bodoni Classic";
-                color: rgb(0, 0, 0);
-                background-color: rgb(0, 255, 0);
-                display: inline-block;
-                width: 250px;
-                padding: 15px 35px 10px;
-                text-align: center;
-                text-decoration: none;
-                font-size: 20px;
-                line-height: 0.5;
-                text-transform: uppercase;
-                margin: 10px;
-                span.small {
-                    font-size: 9px;
-                }
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                top: 59px;
-                left: -175px;
-                width: 165px;
-                height: 2px;
-                background-color: rgb(0, 127, 61);
+        }
+        .right-col {
+            width: 55%;
+            margin-left: -10%;
+            .gatsby-image-wrapper {
+                transform: scale(2);
+                top: 120px;
+                right: 0px;
             }
         }
     }
@@ -170,27 +198,63 @@ const SectionOne = styled.section`
             flex-wrap: wrap;
             margin-top: 0px;
             padding-top: 20px;
-            .gatsby-image-wrapper {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .content {
-                max-width: 700px;
+            .left-col {
                 width: 100%;
-                margin-top: 50px;
-                margin-left: auto;
-                margin-right: auto;
-                &:before {
-                    display: none;
+                text-align: center;
+            }
+            .right-col {
+                width: 100%;
+                margin-left: 0;
+                text-align: center;
+                .gatsby-image-wrapper {
+                    transform: scale(1);
+                    top: auto;
+                    right: auto;
+                    max-width: 350px;
                 }
+            }
+        }
+        .contact {
+            padding-top: 20px;
+            p.large {
+                text-align: center;
+            }
+            p.medium {
+                text-align: center;
+            }
+            p {
+                text-align: center;
+            }
+            p.small {
+                text-align: center;
             }
         }
     }
     @media(max-width:767px) {
         .flex-row {
-            .gatsby-image-wrapper {
-                max-width: 400px;
-                width: 100%;
+            .left-col {
+                .content {
+                    h2 {
+                        font-size: 44px;
+                        .fancy {
+                            font-size: 60px;
+                        }
+                    }
+                }
+            }
+        }
+        div.contact {
+            p.large {
+                font-size: 32px;
+            }
+            p.medium {
+                font-size: 28px;
+            }
+            p {
+                font-size: 20px;
+            }
+            p.small {
+                font-size: 20px;
             }
         }
     }
@@ -204,69 +268,32 @@ const SectionTwo = styled.section`
         width: 100%;
         padding: 0 20px;
         margin: 0 auto;
+        margin-top: 100px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        .left-col {
-            width: 45%;
-            border-right: 3px solid rgb(0, 127, 61);
-            padding-right: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            p {
-                font-family: "Bodoni Classic";
-                color: rgb(0, 127, 61);
-                font-size: 40px;
-                text-align: center;
-                line-height: 1;
-                span {
-                    font-family: "Stay Bright Script";
-                }
-                &:nth-child(2) {
-                    margin-left: 20px;
-                    margin-right: 20px;
-                }
-            }
+        text-align: center;
+        h2 {
+            width: 100%;
+            font-family: "Bodoni Classic";
+            color: #fc9500;
+            font-size: 72px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
         }
-        .right-col {
-            width: 55%;
-            p {
-                font-family: "Bodoni Classic";
-                font-size: 20px;
-                font-weight: bold;
-                width: 100%;
-                text-align: center;
-                span {
-                    font-size: 24px;
-                    color: rgb(0, 127, 61);
-                }
-            }
-            ul {
-                font-family: "Bodoni Classic";
-                font-size: 18px;
-                font-weight: bold;
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                li {
-                    margin-left: 30px;
-                }
-            }
+        .gatsby-image-wrapper {
+            margin: 0 auto;
         }
     }
     @media(max-width:1000px) {
         .flex-row {
-            flex-wrap: wrap;
-            .left-col {
-                padding-right: 0;
-                width: 100%;
-                border-right: none;
-            }
-            .right-col {
-                width: 100%;
+            margin-top: 0px;
+            h2 {
+                margin-top: 0px;
+                font-size: 44px;
             }
         }
     }
@@ -277,13 +304,13 @@ const SectionFive = styled.section`
     .flex-row {
         max-width: 1040px;
         width: 100%;
-        margin: 0 auto;
-        padding: 0 20px;
+        margin: 0px auto;
+        padding: 60px 20px;
         h2 {
             font-family: "Bodoni Classic";
             text-align: center;
             margin-top: 0px;
-            color: rgb(0, 127, 61);
+            color: #5c007d;
             font-size: 32px;
             text-transform: uppercase;
         }
