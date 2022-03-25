@@ -36,6 +36,7 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
                 data-sal-easing="ease"
                 class="banner-content">
                     <h1 dangerouslySetInnerHTML={{ __html: queryContent.title }} />
+                    <p>coming back next March</p>
                 </div>
             </BannerSection>
             <SectionOne>
@@ -119,12 +120,24 @@ const BannerSection = styled.section`
             transition-duration: 0.3s;
             text-align: right;
         }
+        p {
+            text-align: right;
+            font-family: "Bodoni Classic";
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.2;
+            padding-right: 300px;
+        }
     }
     @media(max-width:1000px) {
         .banner-content {
             h1 {
                 font-size: 60px;
                 text-align: center;
+            }
+            p {
+                text-align: center;
+                padding-right: 0px;
             }
         }
     }
