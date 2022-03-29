@@ -42,6 +42,7 @@ const CampaignsPage = ({ data: { queryContent } }) => {
                                     <GatsbyImage image={campaign.campaignMainIcon.localFile.childImageSharp.gatsbyImageData} alt={campaign.campaignMainIcon.title} />
                                     <GatsbyImage image={campaign.campaignHoverIcon.localFile.childImageSharp.gatsbyImageData} alt={campaign.campaignHoverIcon.title} />
                                     <h3>{campaign.campaignTitle}</h3>
+                                    <h3>{campaign.campaignRolloverTitle}</h3>
                                 </Link>
                             </div>
                         ))}
@@ -202,8 +203,14 @@ const ContentSection = styled.section`
                         transition-duration: .3s;
                         opacity: .5;
                         margin: 0;
-                        position: relative;
+                        position: absolute;
                         z-index: 1;
+                        &:nth-last-child(2) {
+                            opacity: 0.5;
+                        }
+                        &:last-child {
+                            opacity: 0;
+                        }
                     }
                 }
                 &:hover {
@@ -217,7 +224,12 @@ const ContentSection = styled.section`
                             }
                         }
                         h3 {
-                            opacity: 1;
+                            &:nth-last-child(2) {
+                                opacity: 0;
+                            }
+                            &:last-child {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -315,6 +327,7 @@ export const pageQuery = graphql`
                         }
                     }
                     campaignTitle
+                    campaignRolloverTitle
                     campaignLink
                 }
             }

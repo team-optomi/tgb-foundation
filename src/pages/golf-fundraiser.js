@@ -130,7 +130,7 @@ const SectionOne = styled.section`
                 padding: 0 25px;
                 h2 {
                     font-family: "Bodoni Classic";
-                    color: #4ccf19;
+                    color: #00843d;
                     font-size: 72px;
                     font-weight: 100;
                     text-align: center;
@@ -306,7 +306,7 @@ const SectionTwo = styled.section`
         font-family: "Stay Bright Script";
         font-size: 72px;
         font-weight: 100;
-        color: #00234f;
+        color: #00843d;
         text-align: center;
         padding: 0 20px;
     }
@@ -334,7 +334,7 @@ const SectionTwo = styled.section`
                     font-family: "Bodoni Classic";
                     font-size: 20px;
                     font-weight: 700;
-                    color: #000;
+                    color: #00234f;
                 }
             }
         }

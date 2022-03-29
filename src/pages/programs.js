@@ -54,7 +54,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                         <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
                     </div>
                 </div>
-                <div class="gallery-row">
+                <div class="gallery-row gallery-row-one">
                 {galleryFive.map(imageSrc => (
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
@@ -318,6 +318,15 @@ const MainSection = styled.section`
     .gallery-row {
         display: flex;
     }
+    .gallery-row-one {
+        .gatsby-image-wrapper {
+            height: 60vh;
+            width: 50%;
+            img {
+                object-position: 50% 20%;
+            }
+        }
+    }
     @media(max-width: 1540px) {
         &:nth-child(4) {
             .main-row {
@@ -350,6 +359,15 @@ const MainSection = styled.section`
                         max-width: 150px;
                     }
                 }
+            }
+        }
+    }
+    @media(max-width:900px) {
+        .gallery-row-one {
+            flex-wrap: wrap;
+            .gatsby-image-wrapper {
+                height: 50vh;
+                width: 100% !important;
             }
         }
     }
