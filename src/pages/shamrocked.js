@@ -14,7 +14,7 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
     const sectionOneImage = getImage(queryContent.shamrocked.shamSectionOneImage.localFile.childImageSharp.gatsbyImageData)
     const sectionThreeImage = getImage(queryContent.shamrocked.shamSectionThreeImage.localFile.childImageSharp.gatsbyImageData)
     const sectionFourImage = getImage(queryContent.shamrocked.shamSectionFourImage.localFile.childImageSharp.gatsbyImageData)
-
+    const sectionFourMobile = getImage(queryContent.shamrocked.shamSectionFourMobile.localFile.childImageSharp.gatsbyImageData)
 
     const partnerMap = queryContent.shamrocked.shamHospitalPartners
     const shamMap = queryContent.shamrocked.shamSectionSevenGallery
@@ -53,7 +53,8 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
             </SectionThree>
             <SectionFour>
                 <h2>How to Shamrock</h2>
-                <GatsbyImage image={sectionFourImage} alt={queryContent.shamrocked.shamSectionFourImage.title} />
+                <GatsbyImage className={"main-image"} image={sectionFourImage} alt={queryContent.shamrocked.shamSectionFourImage.title} />
+                <GatsbyImage className={"mobile-image"} image={sectionFourMobile} alt={queryContent.shamrocked.shamSectionFourMobile.title} />
             </SectionFour>
             <SectionFive>
                 <div class="flex-row">
@@ -338,9 +339,18 @@ const SectionFour = styled.section`
         width: 100%;
         margin: 0 auto;
     }
+    .mobile-image {
+        display: none;
+    }
     @media(max-width:767px) {
         h2 {
-            font-size: 44px;
+            display: none;
+        }
+        .main-image {
+            display: none;
+        }
+        .mobile-image {
+            display: block;
         }
     }
 `
@@ -611,6 +621,18 @@ export const pageQuery = graphql`
                         childImageSharp {
                             gatsbyImageData (
                                 width: 2000
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                shamSectionFourMobile {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 700
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )

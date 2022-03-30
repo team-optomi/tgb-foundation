@@ -12,6 +12,7 @@ const TGBooingPage = ({ data: { queryContent } }) => {
     const sectionOneImage = getImage(queryContent.tgbooingContent.booingFirstSectionImage.localFile.childImageSharp.gatsbyImageData)
     const sectionOneLarge = getImage(queryContent.tgbooingContent.booingLargeImage.localFile.childImageSharp.gatsbyImageData)
     const infoGraphic = getImage(queryContent.tgbooingContent.booingInfoGraphic.localFile.childImageSharp.gatsbyImageData)
+    const mobileGraphic = getImage(queryContent.tgbooingContent.booingMobileGraphic.localFile.childImageSharp.gatsbyImageData)
 
     const partnerMap = queryContent.tgbooingContent.booingPartners
 
@@ -48,7 +49,8 @@ const TGBooingPage = ({ data: { queryContent } }) => {
             <SectionTwo>
                 <div class="flex-row">
                     <h2>How to Boo</h2>
-                    <GatsbyImage image={infoGraphic} alt={queryContent.tgbooingContent.booingInfoGraphic.title} />
+                    <GatsbyImage className={"main-image"} image={infoGraphic} alt={queryContent.tgbooingContent.booingInfoGraphic.title} />
+                    <GatsbyImage className={"mobile-image"} image={mobileGraphic} alt={queryContent.tgbooingContent.booingMobileGraphic.title} />
                 </div>
             </SectionTwo>
             <SectionFive>
@@ -287,6 +289,9 @@ const SectionTwo = styled.section`
         .gatsby-image-wrapper {
             margin: 0 auto;
         }
+        .mobile-image {
+            display: none;
+        }
     }
     @media(max-width:1000px) {
         .flex-row {
@@ -294,6 +299,19 @@ const SectionTwo = styled.section`
             h2 {
                 margin-top: 0px;
                 font-size: 44px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            h2 {
+                display: none;
+            }
+            .main-image {
+                display: none;
+            }
+            .mobile-image {
+                display: block;
             }
         }
     }
@@ -431,6 +449,18 @@ export const pageQuery = graphql`
                         childImageSharp {
                             gatsbyImageData (
                                 width: 1800
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                booingMobileGraphic {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 700
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )
