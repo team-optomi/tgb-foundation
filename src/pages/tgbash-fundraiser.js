@@ -62,17 +62,15 @@ const TGBashPage = ({ data: { queryContent } }) => {
 
 const BannerSection = styled.section`
     position: relative;
-    padding: 80px;
-    padding-top: 120px;
+    padding: 40px;
+    padding-top: 80px;
     .banner-background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        .gatsby-image-wrapper {
-            height: 100%;
-        }
+        background-color: #00234f;
     }
     .banner-content {
         position: relative;
@@ -126,17 +124,20 @@ const SectionOne = styled.section`
             .gatsby-image-wrapper {
                 max-width: 450px;
                 width: 100%;
-                border: 2px solid #000;
-                background-color: #fff;
+                height: 450px;
+                margin-left: 60px;
+                img {
+                    object-fit: cover;
+                }
             }
             .content {
                 position: relative;
                 width: 100%;
                 margin-top: 50px;
-                padding: 0 25px;
+                padding: 0px;
                 h2 {
                     font-family: "Bodoni Classic";
-                    color: #fc9500;
+                    color: #684521;
                     font-size: 72px;
                     font-weight: 100;
                     text-align: center;
@@ -144,7 +145,7 @@ const SectionOne = styled.section`
                     .fancy {
                         font-family: "Stay Bright Script";
                         font-size: 100px;
-                        color: #fc9500;
+                        color: #00234f;
                     }
                 }
                 p {
@@ -165,10 +166,10 @@ const SectionOne = styled.section`
                     font-family: "Stay Bright Script";
                     font-size: 32px;
                     line-height: 1.2;
-                    background-color: #000;
-                    color: #fc9500;
+                    background-color: #684521;
+                    color: #fff;
                     text-decoration: none;
-                    padding: 10px 35px;
+                    padding: 10px 50px;
                     display: inline-block;
                     margin: 0 auto;
                 }
@@ -178,9 +179,9 @@ const SectionOne = styled.section`
             width: 55%;
             margin-left: -10%;
             .gatsby-image-wrapper {
-                transform: scale(2);
-                top: 120px;
-                right: 0px;
+                transform: scale(1.5);
+                top: 0px;
+                right: -100px;
             }
         }
     }
@@ -192,6 +193,9 @@ const SectionOne = styled.section`
             .left-col {
                 width: 100%;
                 text-align: center;
+                .gatsby-image-wrapper {
+                    margin-left: 0px;
+                }
             }
             .right-col {
                 width: 100%;
@@ -310,7 +314,7 @@ export default TGBashPage
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 1173}) {
+        queryContent: wpPage(databaseId: {eq: 1261}) {
             title
             featuredImage {
               node {
