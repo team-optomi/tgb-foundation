@@ -222,6 +222,9 @@ const MainSection = styled.section`
         justify-content: center;
         .half-col {
             width: 50%;
+            img {
+                object-fit: contain !important;
+            }
         }
         .full-col {
             width: 100%;
