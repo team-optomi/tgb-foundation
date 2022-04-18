@@ -28,7 +28,7 @@ const GlowPage = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>TGB Day <span class="purple">Glow Walk</span></h1>
+                    <h1>TGB Day Run Walk</h1>
                 </div>
             </BannerSection>
             <SectionOne>
@@ -188,8 +188,8 @@ const SectionOne = styled.section`
                     font-family: "Stay Bright Script";
                     font-size: 40px;
                     line-height: 1.2;
-                    background-color: #4affff;
-                    color: #d73fa1;
+                    background-color: #FF9700;
+                    color: #00234f;
                     text-decoration: none;
                     padding: 10px 70px;
                     display: inline-block;
@@ -292,7 +292,7 @@ const SectionTwo = styled.section`
         h2 {
             width: 100%;
             font-family: "Stay Bright Script";
-            color: #4affff;
+            color: #FF9700;
             font-size: 120px;
             font-weight: 100;
             text-align: center;
@@ -310,7 +310,7 @@ const SectionTwo = styled.section`
         }
         p {
             font-family: "Bodoni Classic";
-            color: #d73fa1;
+            color: #FF9700;
             font-size: 32px;
             line-height: 1.1;
         }
