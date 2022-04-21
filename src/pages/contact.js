@@ -66,6 +66,7 @@ const ContactPage = ({ data: { queryContent } }) => {
 
 }
 
+
 const HeroSection = styled.section`
     position: relative;
     width: 100%;
@@ -74,17 +75,6 @@ const HeroSection = styled.section`
         position: absolute;
         width: 100%;
         height: 100vh;
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #002855;
-            opacity: .8;
-            z-index: 2;
-        }
         .gatsby-image-wrapper {
             width: 100%;
         }
@@ -99,34 +89,45 @@ const HeroSection = styled.section`
         width: 100%;
         display: flex;
         align-items: flex-end;
-        z-index: 3;
         > div {
             max-width: 1620px;
             width: 100%;
             padding: 0 20px;
             margin: 0 auto;
             margin-bottom: 150px;
+            > div {
+                max-width: 800px;
+                position: relative;
+                background-color: rgb(255 255 255 / 80%);
+                padding: 20px;
+                margin-left: auto;
+            }
             h1 {
                 font-family: "Stay Bright Script";
                 width: 100%;
                 font-size: 72px;
                 font-weight: 100;
                 line-height: 1.2;
-                color: #fff;
+                color: #012756;
                 margin-top: 0;
                 margin-bottom: 0;
-                text-align: right;
+                text-align: center;
             }
             p {
                 font-family: "Bodoni Classic";
-                color: #fff;
+                color: #012756;
                 font-weight: 100;
-                font-size: 16px;
+                font-size: 20px;
                 line-height: 1.3;
                 letter-spacing: 1px;
                 margin-top: 0;
                 margin-bottom: 0;
-                text-align: right;
+                text-align: center;
+            }
+            p.hashtag {
+                text-align: center;
+                font-size: 14px;
+                color: #8e8f91;
             }
         }
     }
@@ -134,11 +135,22 @@ const HeroSection = styled.section`
         .hero-content {
             > div {
                 margin-bottom: 50px;
-                h1 {
-                    text-align: center;
+                > div {
+                    margin-right: auto; 
                 }
-                p {
-                    text-align: center;
+            }
+        }
+    }
+    @media(max-width:550px) {
+        .hero-content {
+            > div {
+                > div {
+                    h1 {
+                        font-size: 44px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
                 }
             }
         }

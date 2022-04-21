@@ -3,57 +3,45 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-import Layout from "../components/layout-v2"
-import Seo from "../components/seo"
+import Layout from "../../components/layout-v2"
+import Seo from "../../components/seo"
 
-const GolfPage = ({ data: { queryContent } }) => {
+const GlowPageCharlotte = ({ data: { queryContent } }) => {
 
-    const bannerImage = getImage(queryContent.golfFundraiser.golfTopBanner.localFile.childImageSharp.gatsbyImageData)
-    const sectionOneImage = getImage(queryContent.golfFundraiser.golfSmallImage.localFile.childImageSharp.gatsbyImageData)
-    const infoGraphic = getImage(queryContent.golfFundraiser.golfLargeIcon.localFile.childImageSharp.gatsbyImageData)
+    const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
+    const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
+    const sectionOneLarge = getImage(queryContent.glowWalk.glowLargeIcon.localFile.childImageSharp.gatsbyImageData)
 
     return(
         <Layout>
             <Seo 
-            title={queryContent.seo.title} 
+            title={'TGB Day Run Walk - Charlotte'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
             <BannerSection>
                 <div class="banner-background">
-                    <GatsbyImage image={bannerImage} alt={queryContent.golfFundraiser.golfTopBanner.title} />
+                    <GatsbyImage image={bannerImage} alt={queryContent.glowWalk.glowTopBanner.title} />
                 </div>
                 <div 
                 data-sal="fade"
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>Golf Fundraiser</h1>
+                    <h1>TGB Day Run Walk</h1>
                 </div>
             </BannerSection>
             <SectionOne>
                 <div class="flex-row">
                     <div class="left-col">
-                        <GatsbyImage image={sectionOneImage} alt={queryContent.golfFundraiser.golfSmallImage.title} />
-                        <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfMainContent }} />
+                        <GatsbyImage image={sectionOneImage} alt={queryContent.glowWalk.glowLeftImage.title} />
+                        <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.glowWalk.charlotteInformation }} />
                     </div>
                     <div class="right-col">
-                        <GatsbyImage image={infoGraphic} alt={queryContent.golfFundraiser.golfLargeIcon.title} />
+                        <GatsbyImage image={sectionOneLarge} alt={queryContent.glowWalk.glowLargeIcon.title} />
                     </div>
                 </div>
-                <div class="contact" dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfContactInformation }} />
             </SectionOne>
-            <SectionTwo>
-                {/* <div class="buttons">
-                    <a href="#"><span class="fancy">register as</span> a foursome</a>
-                    <a href="#"><span class="fancy">register as</span> a corporate sponsor</a>
-                </div> */}
-                <h2>Corporate Sponsorship Opportunities</h2>
-                <div class="sponsor-opportunities">
-                    <GatsbyImage image={infoGraphic} alt={queryContent.golfFundraiser.golfLargeIcon.title} />
-                    <div class="list" dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfSponsorOpportunities }} />
-                </div>
-            </SectionTwo>
         </Layout>
     );
 
@@ -61,8 +49,8 @@ const GolfPage = ({ data: { queryContent } }) => {
 
 const BannerSection = styled.section`
     position: relative;
-    padding: 80px;
-    padding-top: 120px;
+    padding: 40px;
+    padding-top: 80px;
     .banner-background {
         position: absolute;
         top: 0;
@@ -71,6 +59,11 @@ const BannerSection = styled.section`
         height: 100%;
         .gatsby-image-wrapper {
             height: 100%;
+            width: 100%;
+            img {
+                width: 100%;
+                object-fit: inherit !important;
+            }
         }
     }
     .banner-content {
@@ -87,6 +80,9 @@ const BannerSection = styled.section`
             line-height: 1.2;
             transition-duration: 0.3s;
             text-align: right;
+            .purple {
+                color: #d73fa1;
+            }
         }
     }
     @media(max-width:1000px) {
@@ -103,6 +99,13 @@ const BannerSection = styled.section`
             font-size: 44px;
             text-align: center;
         }
+        .banner-background {
+            .gatsby-image-wrapper {
+                img {
+                    object-fit: cover !important;
+                }
+            }
+        }
     }
 `
 
@@ -113,7 +116,7 @@ const SectionOne = styled.section`
         width: 100%;
         padding: 0 20px;
         margin: 0 auto;
-        margin-top: -100px;
+        margin-top: -160px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -130,7 +133,7 @@ const SectionOne = styled.section`
                 padding: 0 25px;
                 h2 {
                     font-family: "Bodoni Classic";
-                    color: #00843d;
+                    color: #d73fa1;
                     font-size: 72px;
                     font-weight: 100;
                     text-align: center;
@@ -138,8 +141,29 @@ const SectionOne = styled.section`
                     .fancy {
                         font-family: "Stay Bright Script";
                         font-size: 100px;
-                        color: #00234f;
+                        color: #d73fa1;
                     }
+                }
+                h3 {
+                    font-family: "Bodoni Classic";
+                    color: #d73fa1;
+                    font-size: 28px;
+                    font-weight: 100;
+                    text-align: center;
+                    text-transform: uppercase;
+                    .fancy {
+                        font-family: "Stay Bright Script";
+                        font-size: 80px;
+                        color: #d73fa1;
+                    }
+                }
+                h4 {
+                    font-family: "Stay Bright Script";
+                    font-size: 40px;
+                    color: #d73fa1;
+                    font-weight: 100;
+                    text-align: center;
+                    margin-top: 0px;
                 }
                 p {
                     font-family: "Bodoni Classic";
@@ -155,64 +179,27 @@ const SectionOne = styled.section`
                         text-align: center;
                     }
                 }
+                a {
+                    font-family: "Stay Bright Script";
+                    font-size: 40px;
+                    line-height: 1.2;
+                    background-color: #FF9700;
+                    color: #00234f;
+                    text-decoration: none;
+                    padding: 10px 70px;
+                    display: inline-block;
+                    margin: 0 auto;
+                }
             }
         }
         .right-col {
-            width: 55%;
-            margin-left: -10%;
+            width: 50%;
+            margin-left: -5%;
             .gatsby-image-wrapper {
-                transform: scale(2);
-                top: 120px;
-                right: -200px;
+                transform: scale(1.3);
+                top: -100px;
+                right: 0px;
             }
-        }
-    }
-    div.contact {
-        padding: 70px 20px 0px;
-        text-align: right;
-        p.large {
-            font-family: "Bodoni Classic";
-            font-size: 72px;
-            color: #684521;
-            letter-spacing: 10px;
-            margin-bottom: 0px;
-        }
-        p.medium {
-            font-family: "Bodoni Classic";
-            font-size: 44px;
-            color: #00234f;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            padding-right: 10px;
-            margin-bottom: 0px;
-            a {
-                font-family: "Bodoni Classic";
-                font-size: 44px;
-                color: #00234f;
-                letter-spacing: 2px;
-                line-height: 1.1;
-                margin-bottom: 0px;
-            }
-        }
-        p {
-            margin-bottom: 0px;
-        }
-        a {
-            font-family: "Bodoni Classic";
-            font-weight: 700;
-            color: #684521;
-            text-decoration: none;
-            font-size: 28px;
-            margin-bottom: 0px;
-            padding-right: 10px;
-        }
-        p.small {
-            font-family: "Bodoni Classic";
-            font-size: 24px;
-            color: #00234f;
-            margin-bottom: 0px;
-            line-height: 1.1;
-            padding-right: 10px;
         }
     }
     @media(max-width:1000px) {
@@ -271,9 +258,6 @@ const SectionOne = styled.section`
             }
             p.medium {
                 font-size: 28px;
-                a {
-                    font-size: 28px;
-                }
             }
             p {
                 font-size: 20px;
@@ -285,121 +269,11 @@ const SectionOne = styled.section`
     }
 `
 
-const SectionTwo = styled.section`
-    background-color: #fff;
-    padding: 35px 0px;
-    .buttons {
-        max-width: 1240px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0px 20px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        a {
-            font-family: "Bodoni Classic";
-            font-size: 32px;
-            color: #00234f;
-            background-color: #87de66;
-            padding: 5px 20px;
-            text-decoration: none;
-            margin-right: auto;
-            margin-bottom: 20px;
-            display; block;
-            width: 440px;
-            .fancy {
-                font-family: "Stay Bright Script";
-                font-size: 44px;
-            }
-        }
-    }
-    h2 {
-        font-family: "Stay Bright Script";
-        font-size: 72px;
-        font-weight: 100;
-        color: #00843d;
-        text-align: center;
-        padding: 0 20px;
-    }
-    .sponsor-opportunities {
-        max-width: 1240px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0px 20px;
-        display: flex;
-        .gatsby-image-wrapper {
-            max-width: 300px;
-            max-height: 350px;
-            width: 100%;
-        }
-        .list {
-            width: calc(100% - 300px);
-        }
-        .flex-row {
-            display: flex;
-            padding: 20px 50px;
-            ul {
-                list-style: none;
-                width: 50%;
-                li {
-                    font-family: "Bodoni Classic";
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: #00234f;
-                }
-            }
-        }
-    }
-    @media(max-width: 1000px) {
-        .buttons {
-            a {
-                margin-left: auto;
-                text-align: center;
-            }
-        }
-    }
-    @media(max-width: 767px) {
-        .buttons {
-            a {
-                font-size: 24px;
-                width: auto;
-                .fancy {
-                    font-size: 32px;
-                }
-            }
-        }
-        h2 {
-            font-size: 44px;
-        }
-        .sponsor-opportunities {
-            flex-wrap: wrap;
-            justify-content: center;
-            > div:first-child {
-                order: 2;
-                width: 100%;
-                text-align: center;
-            }
-            > div:last-child {
-                order: 1;
-                width: 100%;
-                .flex-row {
-                    flex-wrap: wrap;
-                    ul {
-                        width: 100%;
-                        margin-top: 0px;
-                        margin-bottom: 0px;
-                    }
-                }
-            }
-        }
-    }
-`
-
-export default GolfPage
+export default GlowPageCharlotte
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 1211}) {
+        queryContent: wpPage(databaseId: {eq: 1263}) {
             title
             featuredImage {
               node {
@@ -428,8 +302,8 @@ export const pageQuery = graphql`
                   }
                 }
             }
-            golfFundraiser {
-                golfTopBanner {
+            glowWalk {
+                glowTopBanner {
                     title
                     localFile {
                         childImageSharp {
@@ -441,7 +315,8 @@ export const pageQuery = graphql`
                         }
                     }
                 }
-                golfSmallImage {
+                charlotteInformation
+                glowLeftImage {
                     title
                     localFile {
                         childImageSharp {
@@ -453,7 +328,7 @@ export const pageQuery = graphql`
                         }
                     }
                 }
-                golfLargeIcon {
+                glowLargeIcon {
                     title
                     localFile {
                         childImageSharp {
@@ -465,9 +340,6 @@ export const pageQuery = graphql`
                         }
                     }
                 }
-                golfMainContent
-                golfContactInformation
-                golfSponsorOpportunities
             }
         }
     }
