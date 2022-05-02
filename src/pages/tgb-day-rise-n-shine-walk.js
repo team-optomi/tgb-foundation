@@ -282,12 +282,8 @@ const SectionTwo = styled.section`
         max-width: 1240px;
         width: 100%;
         padding: 0 20px;
-        margin: 0 auto;
-        margin-top: -200px;
+        margin: 35px auto;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: right;
-        align-items: center;
         text-align: right;
         h2 {
             width: 100%;
@@ -307,6 +303,11 @@ const SectionTwo = styled.section`
             text-transform: uppercase;
             margin-top: 0px;
             margin-bottom: 0px;
+            opacity: .6;
+            transition-duration: .3s;
+            &:hover {
+                opacity: 1;
+            }
         }
         p {
             font-family: "Bodoni Classic";
@@ -322,7 +323,6 @@ const SectionTwo = styled.section`
     }
     @media(max-width:1000px) {
         .flex-row {
-            justify-content: center;
             text-align: center;
             h2 {
                 font-size: 72px;
