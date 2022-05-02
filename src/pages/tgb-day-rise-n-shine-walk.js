@@ -281,17 +281,18 @@ const SectionTwo = styled.section`
     .flex-row {
         max-width: 1240px;
         width: 100%;
-        padding: 0 20px;
-        margin: 35px auto;
-        display: flex;
+        padding: 35px 20px;
+        margin: 0px auto;
         text-align: right;
+        .content {
+            width: 100%;
+        }
         h2 {
             width: 100%;
             font-family: "Stay Bright Script";
             color: #FF9700;
             font-size: 120px;
             font-weight: 100;
-            text-align: center;
             margin-top: 0px;
         }
         h3 {
