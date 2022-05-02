@@ -315,6 +315,10 @@ const SectionTwo = styled.section`
             color: #FF9700;
             font-size: 32px;
             line-height: 1.1;
+            a {
+                color: #FF9700;
+                text-decoration: none;
+            }
         }
     }
     @media(max-width:1120px) {
