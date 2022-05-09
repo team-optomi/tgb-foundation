@@ -15,7 +15,7 @@ const GlowPageCharlotte = ({ data: { queryContent } }) => {
     return(
         <Layout>
             <Seo 
-            title={'TGB Day Run Walk - Charlotte'} 
+            title={'TGB Day Run Walk - Dallas'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
