@@ -39,7 +39,14 @@ const GolfSponsorsPage = ({ data: { queryContent } }) => {
 
 }
 
-const BannerSection = styled.section``
+const BannerSection = styled.section`
+    @media(max-width:767px) {
+        height: 300px;
+        .gatsby-image-wrapper {
+            height: 300px;
+        }
+    }
+`
 
 const SectionOne = styled.section`
     background-color: #fff;
