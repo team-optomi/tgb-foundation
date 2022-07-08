@@ -116,7 +116,7 @@ const SectionOne = styled.section`
             }
         }
     }
-    @media(max-width:560px) {
+    @media(max-width:600px) {
         .top-section {
             h1 {
                 font-size: 60px;
@@ -125,6 +125,12 @@ const SectionOne = styled.section`
         .middle-section {
             ul {
                 margin-left: 5px;
+            }
+            ul.theme-list {
+                margin-left: 35px;
+                li {
+                    width: 100%;
+                }
             }
         }
     }
