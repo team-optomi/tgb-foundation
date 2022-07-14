@@ -109,6 +109,23 @@ const SectionOne = styled.section`
         max-width: 400px;
         margin: 0 auto;
         margin-top: 50px;
+        min-height: 1200px;
+    }
+    .button {
+        text-align: center;
+        a {
+            background-color: rgb(1, 39, 86);
+            padding: 10px 30px;
+            border-radius: 35px;
+            color: rgb(255, 255, 255);
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
     }
     @media(max-width:991px) {
         .middle-section {

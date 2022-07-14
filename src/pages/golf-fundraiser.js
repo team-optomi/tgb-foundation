@@ -280,7 +280,8 @@ const SectionOne = styled.section`
                     a {
                         font-family: "Bodoni Classic";
                         color: #00843d;
-                        font-size: 12px;
+                        font-size: 18px;
+                        letter-spacing: 1px;
                         text-transform: uppercase;
                         text-decoration: none;
                     }
