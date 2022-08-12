@@ -63,6 +63,7 @@ const MainSection = styled.section`
         width: 100%;
         margin: 0 auto;
         padding: 0 20px;
+        padding-top: 50px;
         text-align: center;
         div {
             transition-delay: .6s;
@@ -94,6 +95,7 @@ const MainSection = styled.section`
         a.blue-button {
             background-color: #012756;
             padding: 10px 30px;
+            margin: 10px;
             border-radius: 35px;
             color: #fff;
             font-family: sans-serif;

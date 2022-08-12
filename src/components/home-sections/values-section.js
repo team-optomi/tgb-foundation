@@ -81,6 +81,7 @@ const ValuesSection = () => {
                         homeValuesTitle
                         homeValuesContent
                     }
+                    fundraiserSection
                     homeImpactSection {
                         homeImpactTitle
                         hiColumnOne
@@ -176,6 +177,7 @@ const ValuesSection = () => {
                     dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.homeOurValuesSection.homeValuesContent}} />
                 </div>
             </div>
+            <div class="fundraiser-row" dangerouslySetInnerHTML={{__html: data.queryContent.homePageContent.fundraiserSection}} />
             <div class="row-three">
                 <div class="flex-row">
                     <h2
@@ -315,6 +317,62 @@ const MainSection = styled.section`
             display: block;
         }
     }
+    .fundraiser-row {
+        background-color: #fff;
+        .flex-row {
+            max-width: 1420px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .content-col {
+                width: 65%;
+                text-align: center;
+                h2 {
+                  color: #8a8f8f;  
+                }
+                h3 {
+                    font-family: "Bodoni Classic";
+                    color: #876b4a;
+                    font-size: 36px;
+                    text-transform: uppercase;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+                    letter-spacing: 5px;
+                    margin-top: 0px;
+                    span {
+                        font-size: 48px;
+                    }
+                }
+                p {
+                    text-align: left;
+                    font-family: "Bodoni Classic";
+                    font-size: 20px;
+                    line-height: 1.2;
+                    color: #8e8f91;
+                }
+                p.button {
+                    text-align: center;
+                    a {
+                        background-color: #012756;
+                        padding: 10px 30px;
+                        border-radius: 35px;
+                        color: #fff;
+                        font-family: sans-serif;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                    }
+                }
+            }
+            .image-col {
+                width: 35%;
+            }
+        }
+    }
     .row-three {
         background-color: #012756;
         text-align: center;
@@ -436,6 +494,36 @@ const MainSection = styled.section`
             br {
                 display: none;
             }
+        }
+        .fundraiser-row {
+            .flex-row {
+                .content-col {
+                    width: 100%;
+                }
+                .image-col {
+                    max-width: 500px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            } 
+        }
+    }
+    @media(max-width: 650px) {
+        .fundraiser-row {
+            .flex-row {
+                .content-col {
+                    h2 {
+                        font-size: 42px;
+                    }
+                    h3 {
+                        font-size: 24px;
+                        letter-spacing: 3px;
+                        span {
+                            font-size: 32px;
+                        }
+                    }
+                }
+            } 
         }
     }
     @media(max-width: 530px) {

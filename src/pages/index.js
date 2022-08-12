@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 import HomeHero from "../components/home-sections/home-hero"
 import WordsSection from "../components/home-sections/words-section"
 import ValuesSection from "../components/home-sections/values-section"
-import TogetherSection from "../components/home-sections/together-section"
+//import TogetherSection from "../components/home-sections/together-section"
 import LegacySection from "../components/home-sections/legacy-section"
 import FormSection from "../components/home-sections/form-section"
 
@@ -23,7 +23,7 @@ const IndexPage = ({ data: { queryContent } }) => {
             <HomeHero />
             <WordsSection />
             <ValuesSection />
-            <TogetherSection />
+            {/* <TogetherSection /> */}
             <LegacySection />
             <FormSection />
         </Layout>
