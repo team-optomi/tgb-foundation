@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const GlowPageCharlotte = ({ data: { queryContent } }) => {
+const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
 
     const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
@@ -28,20 +28,28 @@ const GlowPageCharlotte = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>TGB Day Run Walk</h1>
+                    <h1>TGB Day</h1>
                 </div>
             </BannerSection>
             <SectionOne>
                 <div class="flex-row">
                     <div class="left-col">
                         <GatsbyImage image={sectionOneImage} alt={queryContent.glowWalk.glowLeftImage.title} />
-                        <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.glowWalk.atlantaInformation }} />
+                        <div class="content" dangerouslySetInnerHTML={{ __html: cityContent.content }} />
                     </div>
                     <div class="right-col">
                         <GatsbyImage image={sectionOneLarge} alt={queryContent.glowWalk.glowLargeIcon.title} />
                     </div>
                 </div>
             </SectionOne>
+            <EventSection>
+                <h2>Atlanta Gallery</h2>
+                <div class="gallery-flex">
+                    {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
+                        <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                    ))}
+                </div>
+            </EventSection>
         </Layout>
     );
 
@@ -197,7 +205,7 @@ const SectionOne = styled.section`
             margin-left: -5%;
             .gatsby-image-wrapper {
                 transform: scale(1.3);
-                top: -100px;
+                top: 0px;
                 right: 0px;
             }
         }
@@ -269,7 +277,46 @@ const SectionOne = styled.section`
     }
 `
 
-export default GlowPageCharlotte
+
+const EventSection = styled.section`
+    background-color: #fff;
+    padding-top: 50px;
+    h2 {
+        font-family: "Stay Bright Script";
+        font-size: 72px;
+        color: #d73fa1;
+        font-weight: 100;
+        text-align: center;
+        text-shadow: 4px 4px 10px rgba(0,0,0,.3);
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+    .gallery-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .gatsby-image-wrapper {
+            width: 33.33%;
+        }
+    }
+    @media(max-width:991px) {
+        .gallery-flex {
+            justify-content: center;
+            .gatsby-image-wrapper {
+                width: 50%;
+            }
+        }
+    }
+    @media(max-width:520px) {
+        .gallery-flex {
+            .gatsby-image-wrapper {
+                width: 100%;
+            }
+        }
+    }
+`
+
+export default GlowPageAtlanta
 
 export const pageQuery = graphql`
     query {
@@ -334,6 +381,23 @@ export const pageQuery = graphql`
                         childImageSharp {
                             gatsbyImageData (
                                 width: 1800
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        cityContent: wpPage(databaseId: {eq: 1713}) {
+            content
+            tgbDayCityTemplate {
+                cityEventGallery {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 600
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )

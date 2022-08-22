@@ -28,7 +28,7 @@ const GlowPage = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>TGB Day Run Walk</h1>
+                    <h1>TGB Day</h1>
                 </div>
             </BannerSection>
             <SectionOne>
@@ -47,6 +47,14 @@ const GlowPage = ({ data: { queryContent } }) => {
                     <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.glowWalk.glowLocationInformation }} />
                 </div>
             </SectionTwo>
+            <EventSection>
+                <h2>Event Gallery</h2>
+                <div class="gallery-flex">
+                    {queryContent.glowWalk.walkMainEventGallery.map(imageSrc => (
+                        <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                    ))}
+                </div>
+            </EventSection>
         </Layout>
     );
 
@@ -282,30 +290,39 @@ const SectionTwo = styled.section`
         max-width: 1240px;
         width: 100%;
         padding: 35px 20px;
-        margin: 0px auto;
-        text-align: right;
+        margin: 0px auto;     
         .content {
+            max-width: 1000px;
             width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         h2 {
+            font-family: "Bodoni Classic";
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: #684521;
+            text-align: center;
             width: 100%;
-            font-family: "Stay Bright Script";
-            color: #FF9700;
-            font-size: 120px;
-            font-weight: 100;
-            margin-top: 0px;
         }
         h3 {
             font-family: "Bodoni Classic";
             color: #d73fa1;
             font-weight: 100;
-            font-size: 60px;
-            letter-spacing: 10px;
+            font-size: 32px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            opacity: .6;
+            margin: 20px;
+            opacity: 1;
             transition-duration: .3s;
+            background-color: #ffa126;
+            display: inline-block;
+            padding: 8px 35px;
+            border-radius: 5px;
             &:hover {
                 opacity: 1;
             }
@@ -329,29 +346,59 @@ const SectionTwo = styled.section`
     @media(max-width:1000px) {
         .flex-row {
             text-align: center;
-            h2 {
-                font-size: 72px;
-            }
-            h3 {
-                font-size: 44px;
-                letter-spacing: 6px;
-            }
-            p {
-                font-size: 26px;
-            }
         }
     }
     @media(max-width:767px) {
         .flex-row {
+            .content {
+                max-width: 430px;
+            }
             h2 {
-                font-size: 60px;
+                font-size: 20px;
             }
             h3 {
-                font-size: 36px;
-                letter-spacing: 4px;
+                font-size: 24px;
             }
             p {
                 font-size: 24px;
+            }
+        }
+    }
+`
+
+const EventSection = styled.section`
+    background-color: #fff;
+    padding-top: 50px;
+    h2 {
+        font-family: "Stay Bright Script";
+        font-size: 72px;
+        color: #d73fa1;
+        font-weight: 100;
+        text-align: center;
+        text-shadow: 4px 4px 10px rgba(0,0,0,.3);
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+    .gallery-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .gatsby-image-wrapper {
+            width: 33.33%;
+        }
+    }
+    @media(max-width:991px) {
+        .gallery-flex {
+            justify-content: center;
+            .gatsby-image-wrapper {
+                width: 50%;
+            }
+        }
+    }
+    @media(max-width:520px) {
+        .gallery-flex {
+            .gatsby-image-wrapper {
+                width: 100%;
             }
         }
     }
@@ -423,6 +470,18 @@ export const pageQuery = graphql`
                         childImageSharp {
                             gatsbyImageData (
                                 width: 1800
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                walkMainEventGallery {
+                    title
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData (
+                                width: 600
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )
