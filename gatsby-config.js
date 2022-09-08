@@ -35,6 +35,10 @@
         url:
           process.env.WPGRAPHQL_URL ||
           `https://tgbfoundation.wpengine.com/graphql`,
+        schema: {
+          timeout: 3600000,
+          requestConcurrency: 1,
+        },
       },
     },
 
