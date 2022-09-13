@@ -78,6 +78,7 @@
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
           "G-JLJRDNE4KS", // Google Analytics / GA
+          "AW-10983912858", // Google Ads / Adwords / AW
         ],
       },
     },
