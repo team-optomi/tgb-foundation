@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.3",
     "cross-env": "^7.0.3",
-    "gatsby": "^4.25.0",
+    "gatsby": "^4.3.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^4.25.0",
     "gatsby-plugin-google-gtag": "^4.7.0",
