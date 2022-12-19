@@ -72,6 +72,7 @@
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-page-transitions',
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
