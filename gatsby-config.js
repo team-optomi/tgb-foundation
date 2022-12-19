@@ -39,6 +39,12 @@
           timeout: 3600000,
           requestConcurrency: 1,
         },
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+        html: {
+          generateWebpImages: true,
+        }
       },
     },
 
