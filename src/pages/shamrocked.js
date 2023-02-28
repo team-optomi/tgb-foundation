@@ -592,57 +592,6 @@ export const pageQuery = graphql`
                     }
                 }
                 shamSectionTwoContent
-                shamSectionThreeImage {
-                    title
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData (
-                                width: 2000
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                            )
-                        }
-                    }
-                }
-                shamSectionFourImage {
-                    title
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData (
-                                width: 2000
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                            )
-                        }
-                    }
-                }
-                shamSectionFourMobile {
-                    title
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData (
-                                width: 700
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                            )
-                        }
-                    }
-                }
-                shamHospitalPartners {
-                  shamPartnerImage {
-                    title
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData (
-                                width: 400
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                            )
-                        }
-                    }
-                }
-                  shamPartnerLocation
-                }
                 shamSectionSixContent
                 shamSectionSevenGallery  {
                     title
