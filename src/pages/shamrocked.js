@@ -12,11 +12,8 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
 
     const bannerImage = getImage(queryContent.shamrocked.shamBannerBackground.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.shamrocked.shamSectionOneImage.localFile.childImageSharp.gatsbyImageData)
-    const sectionThreeImage = getImage(queryContent.shamrocked.shamSectionThreeImage.localFile.childImageSharp.gatsbyImageData)
-    const sectionFourImage = getImage(queryContent.shamrocked.shamSectionFourImage.localFile.childImageSharp.gatsbyImageData)
-    const sectionFourMobile = getImage(queryContent.shamrocked.shamSectionFourMobile.localFile.childImageSharp.gatsbyImageData)
 
-    const partnerMap = queryContent.shamrocked.shamHospitalPartners
+    // const partnerMap = queryContent.shamrocked.shamHospitalPartners
     const shamMap = queryContent.shamrocked.shamSectionSevenGallery
 
     return(
@@ -36,7 +33,7 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
                 data-sal-easing="ease"
                 class="banner-content">
                     <h1 dangerouslySetInnerHTML={{ __html: queryContent.title }} />
-                    <p>coming back next March</p>
+                    {/* <p>coming back next March</p> */}
                 </div>
             </BannerSection>
             <SectionOne>
@@ -48,15 +45,7 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
             <SectionTwo>
                 <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.shamrocked.shamSectionTwoContent }} />
             </SectionTwo>
-            <SectionThree>
-                <GatsbyImage image={sectionThreeImage} alt={queryContent.shamrocked.shamSectionThreeImage.title} />
-            </SectionThree>
-            <SectionFour>
-                <h2>How to Shamrock</h2>
-                <GatsbyImage className={"main-image"} image={sectionFourImage} alt={queryContent.shamrocked.shamSectionFourImage.title} />
-                <GatsbyImage className={"mobile-image"} image={sectionFourMobile} alt={queryContent.shamrocked.shamSectionFourMobile.title} />
-            </SectionFour>
-            <SectionFive>
+            {/* <SectionFive>
                 <div class="flex-row">
                     <h2>Hospital Partners Include:</h2>
                     <div class="partner-map">
@@ -68,7 +57,7 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
                         ))}
                     </div>    
                 </div>
-            </SectionFive>
+            </SectionFive> */}
             <SectionSix>
                 <div class="flex-row">
                     <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.shamrocked.shamSectionSixContent }} />
