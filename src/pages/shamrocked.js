@@ -12,8 +12,6 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
 
     const bannerImage = getImage(queryContent.shamrocked.shamBannerBackground.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.shamrocked.shamSectionOneImage.localFile.childImageSharp.gatsbyImageData)
-
-    // const partnerMap = queryContent.shamrocked.shamHospitalPartners
     const shamMap = queryContent.shamrocked.shamSectionSevenGallery
 
     return(
@@ -33,7 +31,6 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
                 data-sal-easing="ease"
                 class="banner-content">
                     <h1 dangerouslySetInnerHTML={{ __html: queryContent.title }} />
-                    {/* <p>coming back next March</p> */}
                 </div>
             </BannerSection>
             <SectionOne>
@@ -45,19 +42,6 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
             <SectionTwo>
                 <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.shamrocked.shamSectionTwoContent }} />
             </SectionTwo>
-            {/* <SectionFive>
-                <div class="flex-row">
-                    <h2>Hospital Partners Include:</h2>
-                    <div class="partner-map">
-                        {partnerMap.map(partner => (
-                            <div class="partner">
-                                <GatsbyImage image={partner.shamPartnerImage.localFile.childImageSharp.gatsbyImageData} alt={partner.shamPartnerImage.title} />
-                                <h3>{partner.shamPartnerLocation}</h3>
-                            </div>
-                        ))}
-                    </div>    
-                </div>
-            </SectionFive> */}
             <SectionSix>
                 <div class="flex-row">
                     <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.shamrocked.shamSectionSixContent }} />
