@@ -45,10 +45,10 @@ const ShamrockedPage = ({ data: { queryContent } }) => {
             <SectionSix>
                 <div class="flex-row">
                     <div class="content" dangerouslySetInnerHTML={{ __html: queryContent.shamrocked.shamSectionSixContent }} />
-                    {/* <div class="button-row">
+                    <div class="button-row">
                         <Link to={"/shamrocked-donate/"}>Donate Today<br/><span>Receive an NFT</span></Link>
                         <a href={downloadFile} download>QR Code Sheet</a>
-                    </div> */}
+                    </div>
                 </div>
             </SectionSix>
             <SectionSeven>
@@ -248,16 +248,15 @@ const SectionTwo = styled.section`
         }
         .right-col {
             width: 55%;
-            padding-left: 10%;
             p {
                 font-family: "Bodoni Classic";
                 font-size: 20px;
                 font-weight: bold;
                 width: 100%;
-                text-align: left;
-                color: #007f3d;
+                text-align: center;
                 span {
                     font-size: 24px;
+                    color: rgb(0, 127, 61);
                 }
             }
             ul {
@@ -445,11 +444,11 @@ const SectionSix = styled.section`
 const SectionSeven = styled.section`
     background-color: #fff;
     .gallery-map {
-        height: 50vh;
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
         align-items: stretch;
         .gallery-image {
+            width: 100%;
             height: 100%;
             .gatsby-image-wrapper {
                 height: 100%;
@@ -459,30 +458,59 @@ const SectionSeven = styled.section`
                 height: 100%;
                 object-fit: cover;
             }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                width: 33.33%;
+                height: 70vh;
+            }
+            &:nth-child(6),
+            &:nth-child(7) {
+                width: 50%;
+                height: 70vh;
+            }
         }
     }
-    @media(max-width:1000px) {
+    @media(max-width:1300px) {
         .gallery-map {
-            flex-wrap: wrap;
-            height: 100vh;
-            .gatsby-image-wrapper {
-                width: 100%;
-            }
             .gallery-image {
-                height: 50%;
-                width: 33.33%;
-                &:nth-child(4),
-                &:nth-child(5) {
-                    width: 50%;
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    height: 400px;
+                }
+                &:nth-child(6),
+                &:nth-child(7) {
+                    height: 400px;
                 }
             }
         }
     }
-    @media(max-width:600px) {
+    @media(max-width:1000px) {
         .gallery-map {
-            height: auto;
             .gallery-image {
-                width: 100% !important;
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    @media(max-width:767px) {
+        .gallery-map {
+            .gallery-image {
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    width: 100%;
+                    height: auto;
+                }
+                &:nth-child(6),
+                &:nth-child(7) {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
@@ -554,6 +582,7 @@ export const pageQuery = graphql`
                     localFile {
                         childImageSharp {
                             gatsbyImageData (
+                                width: 1800
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )
