@@ -9,13 +9,13 @@ import Seo from "../components/seo"
 const ProgramsPage = ({ data: { queryContent } }) => {
 
     const heroImage = getImage(queryContent.featuredImage.node.localFile.childImageSharp.gatsbyImageData)
-    const sectionOneImage = getImage(queryContent.programsContent.pSectionOneMainImage.localFile.childImageSharp.gatsbyImageData)
+    // const sectionOneImage = getImage(queryContent.programsContent.pSectionOneMainImage.localFile.childImageSharp.gatsbyImageData)
     //const sectionTwoImage = getImage(queryContent.programsContent.pSectionTwoMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionThreeImage = getImage(queryContent.programsContent.pSectionThreeMainImage.localFile.childImageSharp.gatsbyImageData)
     //const sectionFourImage = getImage(queryContent.programsContent.pSectionFourMainImage.localFile.childImageSharp.gatsbyImageData)
     const sectionFiveImage = getImage(queryContent.programsContent.pSectionFiveMainImage.localFile.childImageSharp.gatsbyImageData)
 
-    const galleryOne = queryContent.programsContent.pSectionOneImageGallery
+    //const galleryOne = queryContent.programsContent.pSectionOneImageGallery
     //const galleryTwo = queryContent.programsContent.pSectionTwoGallery
     const galleryThree = queryContent.programsContent.pSectionThreeGallery
     //const galleryFour = queryContent.programsContent.pSectionFourGallery
@@ -82,7 +82,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                 </div>
             </MainSection>
 
-            <MainSection>
+            {/* <MainSection>
                 <div class="main-row">
                     <div 
                     data-sal="slide-right"
@@ -101,7 +101,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
-            </MainSection>
+            </MainSection> */}
 
             {/* <MainSection>
                 <div class="main-row">
