@@ -98,7 +98,7 @@ const ValuesSection = () => {
     // const iconOne = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.localFile.childImageSharp.gatsbyImageData)
     const iconOneHalf = getImage(data.queryContent.homePageContent.homeProvidingSection.hpNewImage.localFile.childImageSharp.gatsbyImageData)
     const iconTwo = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.localFile.childImageSharp.gatsbyImageData)
-    const iconThree = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
+    //const iconThree = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
     // const iconFour = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.localFile.childImageSharp.gatsbyImageData)
 
     return(
@@ -141,7 +141,7 @@ const ValuesSection = () => {
                         <GatsbyImage image={iconTwo} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
                         </Link>
                     </div>
-                    <div 
+                    {/* <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
@@ -150,7 +150,7 @@ const ValuesSection = () => {
                         <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
                         <GatsbyImage image={iconThree} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
                         </Link>
-                    </div>
+                    </div> */}
                     {/* <div 
                     data-sal="slide-up"
                     data-sal-duration="1000"
