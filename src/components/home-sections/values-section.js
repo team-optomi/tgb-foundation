@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 const ValuesSection = () => {
@@ -11,68 +11,19 @@ const ValuesSection = () => {
                 homePageContent {
                     homeProvidingSection {
                         homeProvidingTitle
-                        hpColumnOneTitle
-                        hpColumnOneIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnOneHalfTitle
-                        hpNewImage {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnTwoTitle
-                        hpColumnTwoIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnThreeTitle
-                        hpColumnThreeIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        hpColumnFourTitle
-                        hpColumnFourIcon {
-                            title
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData (
-                                        width: 200
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
+                        homeProvidingIcons {
+                            homeProvidingIconColTitle
+                            homeProvidingIconColLink
+                            homeProvidingIconColIcon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        gatsbyImageData (
+                                            width: 200
+                                            placeholder: BLURRED
+                                            formats: [AUTO, WEBP, AVIF]
+                                        )
+                                    }
                                 }
                             }
                         }
@@ -95,12 +46,6 @@ const ValuesSection = () => {
         }
     `)
 
-    // const iconOne = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.localFile.childImageSharp.gatsbyImageData)
-    const iconOneHalf = getImage(data.queryContent.homePageContent.homeProvidingSection.hpNewImage.localFile.childImageSharp.gatsbyImageData)
-    const iconTwo = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.localFile.childImageSharp.gatsbyImageData)
-    //const iconThree = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.localFile.childImageSharp.gatsbyImageData)
-    // const iconFour = getImage(data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.localFile.childImageSharp.gatsbyImageData)
-
     return(
 
         <MainSection>
@@ -110,57 +55,23 @@ const ValuesSection = () => {
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    >{data.queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}</h2>
-                    {/* <div 
-                    data-sal="slide-up"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="col-five">
-                        <Link to={"/programs/gifting-gallant-gowns/"}>
-                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneTitle}</h3>
-                        <GatsbyImage image={iconOne} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnOneIcon.title} />
-                        </Link>
-                    </div> */}
-                    <div 
-                    data-sal="slide-up"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="col-five image-adjust">
-                        <Link to={"/programs/kids-coding-camps/"}>
-                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnOneHalfTitle}</h3>
-                        <GatsbyImage image={iconOneHalf} alt={data.queryContent.homePageContent.homeProvidingSection.hpNewImage.title} />
-                        </Link>                    
-                    </div>
-                    <div 
-                    data-sal="slide-up"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="col-five">
-                        <Link to={"/programs/tgbash-in-a-bag/"}>
-                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoTitle}</h3>
-                        <GatsbyImage image={iconTwo} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnTwoIcon.title} />
-                        </Link>
-                    </div>
-                    {/* <div 
-                    data-sal="slide-up"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="col-five">
-                        <Link to={"/programs/volunteering/"}>
-                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeTitle}</h3>
-                        <GatsbyImage image={iconThree} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnThreeIcon.title} />
-                        </Link>
-                    </div> */}
-                    {/* <div 
-                    data-sal="slide-up"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="col-five">
-                        <Link to={"/programs/loving-our-neighbors/"}>
-                        <h3>{data.queryContent.homePageContent.homeProvidingSection.hpColumnFourTitle}</h3>
-                        <GatsbyImage image={iconFour} alt={data.queryContent.homePageContent.homeProvidingSection.hpColumnFourIcon.title} />
-                        </Link>
-                    </div> */}
+                    >
+                        {data.queryContent.homePageContent.homeProvidingSection.homeProvidingTitle}
+                    </h2>
+                    {data.queryContent.homePageContent.homeProvidingSection.homeProvidingIcons.map(icon => {
+                        return(
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-five image-adjust">
+                            <Link to={icon.homeProvidingIconColLink}>
+                            <h3>{icon.homeProvidingIconColTitle}</h3>
+                            <GatsbyImage image={icon.homeProvidingIconColIcon.localFile.childImageSharp.gatsbyImageData} alt={icon.homeProvidingIconColIcon.title} />
+                            </Link>                    
+                        </div>
+                        )
+                    })}
                 </div>
             </div>
             <div class="row-two">
