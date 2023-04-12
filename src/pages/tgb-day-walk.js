@@ -28,7 +28,7 @@ const GlowPage = ({ data: { queryContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>TGB Day</h1>
+                    <h1>{queryContent.title}</h1>
                 </div>
             </BannerSection>
             <SectionOne>
@@ -49,6 +49,7 @@ const GlowPage = ({ data: { queryContent } }) => {
             </SectionTwo>
             <EventSection>
                 <h2>Event Gallery</h2>
+                <h3>2022</h3>
                 <div class="gallery-flex">
                     {queryContent.glowWalk.walkMainEventGallery.map(imageSrc => (
                         <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
@@ -93,6 +94,7 @@ const BannerSection = styled.section`
             line-height: 1.2;
             transition-duration: 0.3s;
             text-align: right;
+            margin-right: 20%;
             .purple {
                 color: #d73fa1;
             }
@@ -103,6 +105,7 @@ const BannerSection = styled.section`
             h1 {
                 font-size: 60px;
                 text-align: center;
+                margin-right: 0;
             }
         }
     }
@@ -183,7 +186,7 @@ const SectionOne = styled.section`
                     font-size: 20px;
                     line-height: 1.2;
                     margin-bottom: 25px;
-                    color: #684521;
+                    color: #000;
                     &.fancy {
                         font-family: "Stay Bright Script";
                         font-size: 44px;
@@ -206,8 +209,9 @@ const SectionOne = styled.section`
             }
         }
         .right-col {
-            width: 50%;
-            margin-left: -5%;
+            width: 45%;
+            margin-left: 5%;
+            margin-right: -5%;
             .gatsby-image-wrapper {
                 transform: scale(1.3);
                 top: -100px;
@@ -305,13 +309,13 @@ const SectionTwo = styled.section`
             font-size: 20px;
             line-height: 1.2;
             margin-bottom: 25px;
-            color: #684521;
+            color: #000;
             text-align: center;
             width: 100%;
         }
         h3 {
             font-family: "Bodoni Classic";
-            color: #d73fa1;
+            color: #69c7bf;
             font-weight: 100;
             font-size: 32px;
             letter-spacing: 2px;
@@ -319,7 +323,7 @@ const SectionTwo = styled.section`
             margin: 20px;
             opacity: 1;
             transition-duration: .3s;
-            background-color: #ffa126;
+            background-color: #533268;
             display: inline-block;
             padding: 8px 35px;
             border-radius: 5px;
@@ -372,12 +376,20 @@ const EventSection = styled.section`
     h2 {
         font-family: "Stay Bright Script";
         font-size: 72px;
-        color: #d73fa1;
+        color: #533268;
         font-weight: 100;
         text-align: center;
         text-shadow: 4px 4px 10px rgba(0,0,0,.3);
         margin-top: 0px;
         margin-bottom: 50px;
+    }
+    h3 {
+        font-family: "Bodoni Classic";
+        color: #D841A2;
+        font-size: 44px;
+        font-weight: 100;
+        text-align: center;
+        text-transform: uppercase;
     }
     .gallery-flex {
         display: flex;
