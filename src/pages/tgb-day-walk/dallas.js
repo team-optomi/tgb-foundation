@@ -28,7 +28,7 @@ const GlowPageDallas = ({ data: { queryContent, cityContent } }) => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
                 class="banner-content">
-                    <h1>TGB Day</h1>
+                    <h1>{cityContent.title}</h1>
                 </div>
             </BannerSection>
             <SectionOne>
@@ -42,6 +42,16 @@ const GlowPageDallas = ({ data: { queryContent, cityContent } }) => {
                     </div>
                 </div>
             </SectionOne>
+            <EmbedSection>
+                <div class="flex-row">
+                    <div class="half-col donor-col">
+                        <div  dangerouslySetInnerHTML={{ __html: cityContent.tgbDayCityTemplate.cityDonorboxEmbed }} />
+                    </div>
+                    <div class="half-col google-col">
+                        <div  dangerouslySetInnerHTML={{ __html: cityContent.tgbDayCityTemplate.cityGoogleMapsEmbed }} />
+                    </div>
+                </div>
+            </EmbedSection>
             <EventSection>
                 <h2>Dallas Gallery</h2>
                 <div class="gallery-flex">
@@ -277,6 +287,32 @@ const SectionOne = styled.section`
     }
 `
 
+const EmbedSection = styled.section`
+    background-color: #fff;
+    .flex-row {
+        max-width: 970px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 50px;
+        .half-col {
+            width: 50%;
+        }
+    }
+    @media(max-width: 1000px) {
+        .flex-row {
+            flex-wrap: wrap;
+            .half-col {
+                max-width: 600px;
+                width: 100%;
+                margin: 20px auto;
+            }
+        }
+    }
+`
 
 const EventSection = styled.section`
     background-color: #fff;
@@ -390,8 +426,11 @@ export const pageQuery = graphql`
             }
         }
         cityContent: wpPage(databaseId: {eq: 1805}) {
+            title
             content
             tgbDayCityTemplate {
+                cityDonorboxEmbed
+                cityGoogleMapsEmbed
                 cityEventGallery {
                     title
                     localFile {

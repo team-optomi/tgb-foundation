@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
+const GlowPageProvalus = ({ data: { queryContent, cityContent } }) => {
 
     const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
@@ -15,7 +15,7 @@ const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
     return(
         <Layout>
             <Seo 
-            title={'TGB Day Run Walk - Atlanta'} 
+            title={'TGB Day Run Walk - Provalus'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
@@ -44,22 +44,11 @@ const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
             </SectionOne>
             <EmbedSection>
                 <div class="flex-row">
-                    <div class="half-col donor-col">
-                        <div  dangerouslySetInnerHTML={{ __html: cityContent.tgbDayCityTemplate.cityDonorboxEmbed }} />
-                    </div>
-                    <div class="half-col google-col">
-                        <div  dangerouslySetInnerHTML={{ __html: cityContent.tgbDayCityTemplate.cityGoogleMapsEmbed }} />
+                    <div class="donor-col">
+                        <div  dangerouslySetInnerHTML={{ __html: cityContent.provalusPage.provalusDonorBoxEmbed }} />
                     </div>
                 </div>
             </EmbedSection>
-            <EventSection>
-                <h2>Atlanta Gallery</h2>
-                <div class="gallery-flex">
-                    {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
-                        <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
-                    ))}
-                </div>
-            </EventSection>
         </Layout>
     );
 
@@ -314,7 +303,6 @@ const EmbedSection = styled.section`
     }
 `
 
-
 const EventSection = styled.section`
     background-color: #fff;
     padding-top: 50px;
@@ -353,7 +341,7 @@ const EventSection = styled.section`
     }
 `
 
-export default GlowPageAtlanta
+export default GlowPageProvalus
 
 export const pageQuery = graphql`
     query {
@@ -426,24 +414,11 @@ export const pageQuery = graphql`
                 }
             }
         }
-        cityContent: wpPage(databaseId: {eq: 1713}) {
+        cityContent: wpPage(databaseId: {eq: 2385}) {
             title
             content
-            tgbDayCityTemplate {
-                cityDonorboxEmbed
-                cityGoogleMapsEmbed
-                cityEventGallery {
-                    title
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData (
-                                width: 600
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                            )
-                        }
-                    }
-                }
+            provalusPage {
+                provalusDonorBoxEmbed
             }
         }
     }

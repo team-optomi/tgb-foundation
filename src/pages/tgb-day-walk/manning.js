@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
+const GlowPageManning = ({ data: { queryContent, cityContent } }) => {
 
     const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
@@ -15,7 +15,7 @@ const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
     return(
         <Layout>
             <Seo 
-            title={'TGB Day Run Walk - Atlanta'} 
+            title={'TGB Day Run Walk - Manning'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
@@ -53,7 +53,7 @@ const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
                 </div>
             </EmbedSection>
             <EventSection>
-                <h2>Atlanta Gallery</h2>
+                <h2>Manning Gallery</h2>
                 <div class="gallery-flex">
                     {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
                         <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
@@ -314,7 +314,6 @@ const EmbedSection = styled.section`
     }
 `
 
-
 const EventSection = styled.section`
     background-color: #fff;
     padding-top: 50px;
@@ -353,7 +352,7 @@ const EventSection = styled.section`
     }
 `
 
-export default GlowPageAtlanta
+export default GlowPageManning
 
 export const pageQuery = graphql`
     query {
@@ -426,7 +425,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        cityContent: wpPage(databaseId: {eq: 1713}) {
+        cityContent: wpPage(databaseId: {eq: 2378}) {
             title
             content
             tgbDayCityTemplate {
