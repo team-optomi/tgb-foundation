@@ -138,6 +138,7 @@ const SectionOne = styled.section`
                 width: 100%;
                 margin-top: 50px;
                 padding: 0 25px;
+                z-index: 10;
                 h2 {
                     font-family: "Bodoni Classic";
                     color: #d73fa1;
@@ -187,6 +188,9 @@ const SectionOne = styled.section`
                     }
                 }
                 a {
+                    text-decoration: none;
+                }
+                a.button {
                     font-family: "Stay Bright Script";
                     font-size: 40px;
                     line-height: 1.2;
