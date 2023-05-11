@@ -25,6 +25,15 @@ exports.createPages = async gatsbyUtilities => {
 
   // And a paginated archive
   await createBlogPostArchive({ posts, gatsbyUtilities })
+
+  // Success stories
+  const successStories = await getSuccessStories(gatsbyUtilities)
+  // If there are no posts in WordPress, don't do anything
+  if (!successStories.length) {
+    return
+  }
+  await createIndividualSuccessStoryPages({ successStories, gatsbyUtilities })
+
 }
 
 /**
@@ -54,6 +63,32 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
           // We also use the next and previous id's to query them and add links!
           previousPostId: previous ? previous.id : null,
           nextPostId: next ? next.id : null,
+        },
+      })
+    )
+  )
+
+// Create Success Story pages
+const createIndividualSuccessStoryPages = async ({ successStories, gatsbyUtilities }) =>
+  Promise.all(
+    successStories.map(({ story }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: `/success-story/${story.slug}`,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/success-story.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: story.id,
         },
       })
     )
@@ -163,4 +198,33 @@ async function getPosts({ graphql, reporter }) {
   }
 
   return graphqlResult.data.allWpPost.edges
+}
+
+// get Success Stories
+async function getSuccessStories({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query SuccessStories {
+      # Query all WordPress success story posts sorted by date
+      allWpSuccessStory(sort: { fields: [date], order: DESC }) {
+        edges {
+          # note: this is a GraphQL alias. It renames "node" to "story" for this query
+          # We're doing this because this "node" is a post! It makes our code more readable further down the line.
+          story: node {
+            id
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      graphqlResult.errors
+    )
+    return
+  }
+
+  return graphqlResult.data.allWpSuccessStory.edges
 }
