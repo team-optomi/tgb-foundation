@@ -331,6 +331,7 @@ const EventSection = styled.section`
         margin-top: 0px;
         margin-bottom: 50px;
     }
+
     .gallery-flex {
         display: flex;
         flex-wrap: wrap;
@@ -447,6 +448,7 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                
             }
         }
     }

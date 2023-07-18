@@ -54,6 +54,17 @@ const GlowPageAtlanta = ({ data: { queryContent, cityContent } }) => {
             </EmbedSection>
             <EventSection>
                 <h2>Atlanta Gallery</h2>
+                {cityContent.tgbDayCityTemplate.cityAdditionalGalleries.map(gallerySection => (
+                    <div class="additional-gallery">
+                        <h3>{gallerySection.cityAdditionalGalleryTitle}</h3>
+                        <div class="gallery-flex">
+                        {gallerySection.cityAdditionalGallery.map(imageSrc => (
+                            <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                        ))}
+                        </div>
+                    </div>
+                ))}
+                <h3>2022</h3>
                 <div class="gallery-flex">
                     {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
                         <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
@@ -332,6 +343,14 @@ const EventSection = styled.section`
         margin-top: 0px;
         margin-bottom: 50px;
     }
+    h3 {
+        font-family: "Bodoni Classic";
+        color: #D841A2;
+        font-size: 44px;
+        font-weight: 100;
+        text-align: center;
+        text-transform: uppercase;
+    }
     .gallery-flex {
         display: flex;
         flex-wrap: wrap;
@@ -448,7 +467,23 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                cityAdditionalGalleries {
+                    cityAdditionalGalleryTitle
+                    cityAdditionalGallery {
+                        title
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 600
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                }
             }
+
         }
     }
 `

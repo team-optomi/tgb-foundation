@@ -48,7 +48,17 @@ const GlowPage = ({ data: { queryContent } }) => {
                 </div>
             </SectionTwo>
             <EventSection>
-                <h2>Event Gallery</h2>
+                <h2>Event Galleries</h2>
+                {queryContent.glowWalk.walkAdditionalGalleries.map(gallerySection => (
+                    <div class="additional-gallery">
+                        <h3>{gallerySection.walkAdditionalGalleryTitle}</h3>
+                        <div class="gallery-flex">
+                        {gallerySection.walkAdditionalGallery.map(imageSrc => (
+                            <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                        ))}
+                        </div>
+                    </div>
+                ))}
                 <h3>2022</h3>
                 <div class="gallery-flex">
                     {queryContent.glowWalk.walkMainEventGallery.map(imageSrc => (
@@ -497,6 +507,21 @@ export const pageQuery = graphql`
                                 placeholder: BLURRED
                                 formats: [AUTO, WEBP, AVIF]
                             )
+                        }
+                    }
+                }
+                walkAdditionalGalleries {
+                    walkAdditionalGalleryTitle
+                    walkAdditionalGallery {
+                        title
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 600
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
                         }
                     }
                 }
