@@ -129,6 +129,11 @@ const BannerSection = styled.section`
 
 const SectionOne = styled.section`
     background-color: #fff;
+    .iframe-container {
+        iframe {
+            width: 100%;
+        }
+    }
     .flex-row {
         max-width: 1240px;
         width: 100%;
