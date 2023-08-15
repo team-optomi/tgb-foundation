@@ -47,15 +47,15 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
-                        <Link to={"/programs/tgbash-in-a-bag/"}>Learn More</Link>
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
+                        <Link to={"/programs/defending-children-against-sex-trafficking/"}>Learn More</Link>
                     </div>
                     <div class="main-image">
-                        <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
-                    </div>
+                        <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
+                    </div>   
                 </div>
-                <div class="gallery-row gallery-row-one">
-                {galleryFive.map(imageSrc => (
+                <div class="gallery-row">
+                {galleryOne.map(imageSrc => (
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
@@ -89,19 +89,23 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-duration="1000"
                     data-sal-easing="ease"
                     class="main-content">
-                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
-                        <Link to={"/programs/defending-children-against-sex-trafficking/"}>Learn More</Link>
+                        <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionFiveContent }} />
+                        <Link to={"/programs/tgbash-in-a-bag/"}>Learn More</Link>
                     </div>
                     <div class="main-image">
-                        <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
-                    </div>   
+                        <GatsbyImage image={sectionFiveImage} alt={queryContent.programsContent.pSectionFiveMainImage.title} />
+                    </div>
                 </div>
-                <div class="gallery-row">
-                {galleryOne.map(imageSrc => (
+                <div class="gallery-row gallery-row-one">
+                {galleryFive.map(imageSrc => (
                     <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
                 ))}
                 </div>
             </MainSection>
+
+           
+
+            
 
             {/* <MainSection>
                 <div class="main-row">

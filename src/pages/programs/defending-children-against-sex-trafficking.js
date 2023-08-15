@@ -132,7 +132,7 @@ const HeroSection = styled.section`
             margin: 0 auto;
             margin-bottom: 150px;
             > div {
-                max-width: 600px;
+                max-width: 900px;
                 position: relative;
                 padding: 20px;
                 margin-left: auto;
@@ -148,6 +148,7 @@ const HeroSection = styled.section`
                 margin-bottom: 0;
                 text-transform: lowercase;
                 text-align: center;
+                text-shadow: 1px 1px 4px rgba(0,0,0,.5);
             }
             p {
                 font-family: "Bodoni Classic";
@@ -159,6 +160,7 @@ const HeroSection = styled.section`
                 margin-top: 0;
                 margin-bottom: 0;
                 text-align: center;
+                text-shadow: 1px 1px 4px rgba(0,0,0,.5);
             }
             p.hashtag {
                 text-align: center;
