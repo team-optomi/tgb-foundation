@@ -90,7 +90,7 @@ const ProgramsPage = ({ data: { queryContent } }) => {
                     data-sal-easing="ease"
                     class="main-content">
                         <div dangerouslySetInnerHTML={{ __html: queryContent.programsContent.pSectionOneContent }} />
-                        <Link to={"/programs/feeding-kids-in-need/"}>Learn More</Link>
+                        <Link to={"/programs/defending-children-against-sex-trafficking/"}>Learn More</Link>
                     </div>
                     <div class="main-image">
                         <GatsbyImage image={sectionOneImage} alt={queryContent.programsContent.pSectionOneMainImage.title} />
