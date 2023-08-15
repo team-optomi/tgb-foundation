@@ -34,7 +34,7 @@ const PickleballPage = ({ data: { queryContent } }) => {
                 data-sal-easing="ease"
                 data-sal-delay="600"
                 class="banner-content">
-                    <h1>Golf Fundraiser</h1>
+                    <h1>Pickleball Fundraiser</h1>
                 </div>
             </BannerSection>
             <SectionOne>
