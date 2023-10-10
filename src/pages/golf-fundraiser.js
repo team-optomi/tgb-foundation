@@ -64,6 +64,7 @@ const GolfPage = ({ data: { queryContent } }) => {
                 data-sal-delay="600"
                 class="contact" dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfContactInformation }} />
             </SectionOne>
+            
             <SectionTwo>
                 <div 
                 data-sal="fade"
@@ -74,11 +75,72 @@ const GolfPage = ({ data: { queryContent } }) => {
                     <div dangerouslySetInnerHTML={{ __html: queryContent.golfFundraiser.golfSponsorOpportunities }} />
                 </div>
             </SectionTwo>
+            <GallerySection>
+            <h2>Event Galleries</h2>
+                {queryContent.golfFundraiser.golfAdditionalGalleries.map(gallerySection => (
+                    <div class="additional-gallery">
+                        <h3>{gallerySection.golfAdditionalGalleryTitle}</h3>
+                        <div class="gallery-flex">
+                        {gallerySection.golfAdditionalGallery.map(imageSrc => (
+                            <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
+                        ))}
+                        </div>
+                    </div>
+                ))}
+                <h3>2022</h3>
+            </GallerySection>
             <GolfGallery />
         </Layout>
     );
 
 }
+
+const GallerySection = styled.div`
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    h2 {
+        font-family: "Stay Bright Script";
+        font-size: 72px;
+        color: #533268;
+        font-weight: 100;
+        text-align: center;
+        text-shadow: 4px 4px 10px rgba(0,0,0,.3);
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+    h3 {
+        font-family: "Bodoni Classic";
+        color: #D841A2;
+        font-size: 44px;
+        font-weight: 100;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .gallery-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .gatsby-image-wrapper {
+            width: 33.33%;
+        }
+    }
+    @media(max-width:991px) {
+        .gallery-flex {
+            justify-content: center;
+            .gatsby-image-wrapper {
+                width: 50%;
+            }
+        }
+    }
+    @media(max-width:520px) {
+        .gallery-flex {
+            .gatsby-image-wrapper {
+                width: 100%;
+            }
+        }
+    }
+`
 
 const BannerSection = styled.section`
     position: relative;
@@ -597,6 +659,21 @@ export const pageQuery = graphql`
                 golfMainContent
                 golfContactInformation
                 golfSponsorOpportunities
+                golfAdditionalGalleries {
+                    golfAdditionalGalleryTitle
+                    golfAdditionalGallery {
+                        title
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData (
+                                    width: 600
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                }
             }
         }
     }
