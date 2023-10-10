@@ -102,7 +102,7 @@ const GallerySection = styled.div`
     h2 {
         font-family: "Stay Bright Script";
         font-size: 72px;
-        color: #533268;
+        color: #00234f;
         font-weight: 100;
         text-align: center;
         text-shadow: 4px 4px 10px rgba(0,0,0,.3);
@@ -111,7 +111,7 @@ const GallerySection = styled.div`
     }
     h3 {
         font-family: "Bodoni Classic";
-        color: #D841A2;
+        color: #734c28;
         font-size: 44px;
         font-weight: 100;
         text-align: center;
