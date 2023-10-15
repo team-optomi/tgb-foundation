@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import Layout from "../components/layout-v2"
 import Seo from "../components/seo"
+import GolfGallery  from "../components/golf-gallery"
 
 const PickleballPage = ({ data: { queryContent } }) => {
 
@@ -33,19 +34,10 @@ const PickleballPage = ({ data: { queryContent } }) => {
                 data-sal-easing="ease"
                 data-sal-delay="600"
                 class="banner-content">
-                    <h1>Pickleball Fundraiser</h1>
+                    <h1>Pickleball Crown Point Fundraiser</h1>
                 </div>
             </BannerSection>
-            <ButtonSection>
-                <div className="flex-row">
-                    <h2>Choose a Location</h2>
-                    <div className="button-row">
-                        <a href="/pickleball-charlotte/">Charlotte</a>
-                        <a href="/pickleball-crown-point">Crown Point</a>
-                    </div>
-                </div>
-            </ButtonSection>
-            {/* <SectionOne>
+            <SectionOne>
                 <div class="flex-row">
                     <div 
                     data-sal="slide-right"
@@ -82,7 +74,7 @@ const PickleballPage = ({ data: { queryContent } }) => {
                     <div dangerouslySetInnerHTML={{ __html: queryContent.pickleballFundraiser.pickleballSponsorOpportunities }} />
                 </div>
             </SectionTwo>
-            <GolfGallery /> */}
+            <GolfGallery />
         </Layout>
     );
 
@@ -133,61 +125,6 @@ const BannerSection = styled.section`
             text-align: center;
         }
     }
-`
-
-const ButtonSection = styled.section`
-    background-color: #fff;
-    padding: 100px 20px;
-    .flex-row {
-        display: flex;
-        flex-direction: column;
-        max-width: 1170px;
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-
-        h2 {
-            font-family: "Bodoni Classic";
-            color: rgb(115, 76, 40);
-            font-size: 48px;
-            font-weight: 100;
-        }
-
-        .button-row {
-            max-width: 800px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-
-            @media(max-width:600px){
-                flex-direction: column;
-            }
-
-            a {
-                font-family: "Bodoni Classic";
-                color: #fff;
-                font-weight: 100;
-                font-size: 32px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                margin: 20px;
-                opacity: 1;
-                transition-duration: 0.3s;
-                background-color: rgb(1, 39, 86);
-                display: inline-block;
-                padding: 8px 35px;
-                border-radius: 5px;
-                text-decoration: none;
-
-                @media(max-width:600px){
-                    font-size: 24px;
-                }
-            }
-        }
-    }
-
 `
 
 const SectionOne = styled.section`
@@ -591,7 +528,7 @@ export default PickleballPage
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 3009}) {
+        queryContent: wpPage(databaseId: {eq: 3433}) {
             title
             featuredImage {
               node {
