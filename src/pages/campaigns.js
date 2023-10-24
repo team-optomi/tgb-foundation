@@ -271,6 +271,9 @@ const ContentSection = styled.section`
                             opacity: 1;
                         }
                     }
+                    &:first-child {
+                        order: 5;
+                    }
                 }
             }
         }
