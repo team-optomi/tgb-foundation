@@ -1,3 +1,2 @@
-[[functions]]
-name = "weekly-build"
+[functions."weekly-build"]
 schedule = "@weekly"
