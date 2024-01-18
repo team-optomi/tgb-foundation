@@ -1,0 +1,3 @@
+[[functions]]
+name = "weekly-build"
+schedule = "@weekly"
