@@ -35,12 +35,7 @@ class GolfGallery extends Component {
 
         return(
             <GolfGallerySection className={active ? "lightbox-active" : ""}>
-                <div
-                data-sal="fade"
-                data-sal-duration="1000"
-                data-sal-easing="ease"
-                data-sal-delay="600"
-                >
+                <div>
                     {data.wpPage.golfFundraiser.golfGallery.map((golfSrc, i) => {
                         return(
                         <GalleryImage id={"GalleryImage_" + i} onClick={() => this.handleClick(i)}>
