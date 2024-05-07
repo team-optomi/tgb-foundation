@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const GlowPageBrewton = ({ data: { queryContent, cityContent } }) => {
+const GlowPageHenderson = ({ data: { queryContent, cityContent } }) => {
 
     const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
@@ -15,7 +15,7 @@ const GlowPageBrewton = ({ data: { queryContent, cityContent } }) => {
     return(
         <Layout>
             <Seo 
-            title={'TGB Day Run Walk - Brewton'} 
+            title={'TGB Day Run Walk - Henderson'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
@@ -357,11 +357,11 @@ const EventSection = styled.section`
     }
 `
 
-export default GlowPageBrewton
+export default GlowPageHenderson
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 3565}) {
+        queryContent: wpPage(databaseId: {eq: 1263}) {
             title
             featuredImage {
               node {
@@ -430,7 +430,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        cityContent: wpPage(databaseId: {eq: 2372}) {
+        cityContent: wpPage(databaseId: {eq: 3565}) {
             title
             content
             tgbDayCityTemplate {
