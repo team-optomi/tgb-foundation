@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Layout from "../../components/layout-v2"
 import Seo from "../../components/seo"
 
-const GlowPageDC = ({ data: { queryContent, cityContent } }) => {
+const GlowPageBrewton = ({ data: { queryContent, cityContent } }) => {
 
     const bannerImage = getImage(queryContent.glowWalk.glowTopBanner.localFile.childImageSharp.gatsbyImageData)
     const sectionOneImage = getImage(queryContent.glowWalk.glowLeftImage.localFile.childImageSharp.gatsbyImageData)
@@ -15,7 +15,7 @@ const GlowPageDC = ({ data: { queryContent, cityContent } }) => {
     return(
         <Layout>
             <Seo 
-            title={'TGB Day Run Walk - D.C.'} 
+            title={'TGB Day Run Walk - Brewton'} 
             description={queryContent.seo.metaDesc}
             metaImage={queryContent.seo.opengraphImage.localFile.childImageSharp.fluid}
             />
@@ -53,7 +53,7 @@ const GlowPageDC = ({ data: { queryContent, cityContent } }) => {
                 </div>
             </EmbedSection>
             <EventSection>
-                <h2>D.C. Gallery</h2>
+                <h2>Brewton Gallery</h2>
                 <div class="gallery-flex">
                     {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
                         <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
@@ -331,6 +331,7 @@ const EventSection = styled.section`
         margin-top: 0px;
         margin-bottom: 50px;
     }
+
     .gallery-flex {
         display: flex;
         flex-wrap: wrap;
@@ -356,11 +357,11 @@ const EventSection = styled.section`
     }
 `
 
-export default GlowPageDC
+export default GlowPageBrewton
 
 export const pageQuery = graphql`
     query {
-        queryContent: wpPage(databaseId: {eq: 1263}) {
+        queryContent: wpPage(databaseId: {eq: 3568}) {
             title
             featuredImage {
               node {
@@ -429,7 +430,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        cityContent: wpPage(databaseId: {eq: 2369}) {
+        cityContent: wpPage(databaseId: {eq: 2372}) {
             title
             content
             tgbDayCityTemplate {
@@ -447,6 +448,7 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                
             }
         }
     }

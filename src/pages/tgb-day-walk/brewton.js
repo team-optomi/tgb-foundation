@@ -189,7 +189,7 @@ const SectionOne = styled.section`
                     font-size: 20px;
                     line-height: 1.2;
                     margin-bottom: 25px;
-                    color: #684521;
+                    color: #000;
                     &.fancy {
                         font-family: "Stay Bright Script";
                         font-size: 44px;
