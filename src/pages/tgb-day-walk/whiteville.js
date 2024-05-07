@@ -53,7 +53,7 @@ const GlowPageWhiteville = ({ data: { queryContent, cityContent } }) => {
                 </div>
             </EmbedSection>
             <EventSection>
-                <h2>Brewton Gallery</h2>
+                <h2>Whiteville Gallery</h2>
                 <div class="gallery-flex">
                     {cityContent.tgbDayCityTemplate.cityEventGallery.map(imageSrc => (
                         <GatsbyImage image={imageSrc.localFile.childImageSharp.gatsbyImageData} alt={imageSrc.title} />
